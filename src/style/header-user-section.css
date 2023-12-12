@@ -1,0 +1,17 @@
+.headerUserSection{
+    padding-top: 3.5vh;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+    margin-left: auto;
+    color: rgb(161, 161, 161);
+}
+
+#userName{
+    transition: .2s;
+}
+
+#userName:hover{
+    color: rgb(16, 16, 16);
+    cursor: pointer;
+}

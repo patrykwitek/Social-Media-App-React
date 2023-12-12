@@ -1,0 +1,19 @@
+.headerLoginSection{
+    padding-top: 3.4vh;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    font-size: 1.2rem;
+    margin-left: auto;
+    color: rgb(40, 101, 171);
+    background-color: rgb(221, 221, 221);
+    font-weight: bold;
+    border-left: 1px rgb(195, 195, 195) solid;
+    transition: .3s;
+}
+
+.headerLoginSection:hover{
+    cursor: pointer;
+    background-color: rgb(41, 41, 41);
+    color: rgb(199, 229, 255);
+    box-shadow: 0px 0px 10px 0px rgb(41, 41, 41);
+}

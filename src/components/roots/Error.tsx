@@ -3,7 +3,7 @@ import { ErrorResponse, useRouteError, isRouteErrorResponse } from "react-router
 import '../../style/error-page.css';
 import '../../style/font.css';
 
-export const Error: FC = () => {
+function Error(){
     const error = useRouteError();
 
     return (
@@ -21,4 +21,6 @@ export const Error: FC = () => {
             </div>
         </>
     );
-}
+  }
+  
+export default Error;

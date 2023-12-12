@@ -1,0 +1,12 @@
+footer{
+    width: 100vw;
+    height: 8vh;
+    background-color: rgb(47, 47, 47);
+    border-top: 1px rgb(195, 195, 195) solid;
+    text-align: center;
+    clear: both;
+    font-weight: bold;
+    color: white;
+    padding-top: 2vh;
+    margin-top: 2rem;
+}

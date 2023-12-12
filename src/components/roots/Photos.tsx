@@ -1,7 +1,10 @@
-import {FC} from "react";
+import '../../style/photos.css';
+import '../../style/font.css';
 
-export const Photos: FC = () => {
-    return(
-        <>Photos</>
-    );
+export const Photos = () => {
+    return (
+        <div className='photosPage'>
+            Photos
+        </div>
+    )
 }
