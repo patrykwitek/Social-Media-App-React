@@ -1,5 +1,5 @@
-import '../../style/header-login-section.css';
-import '../../style/font.css';
+import './style.scss';
+import '../../../style/font.css';
 
 export const LoginBtn = () => {
     return (

@@ -1,0 +1,15 @@
+.photosPage {
+   width: 100vw;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   .photosContent {
+      margin: 0 auto;
+      width: 70vw;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+   }
+}

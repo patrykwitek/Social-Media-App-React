@@ -1,5 +1,6 @@
-import '../../style/photos.css';
-import '../../style/font.css';
+import './style.scss';
+import '../../../style/font.css';
+import profilePicture from '../../../resources/images/profile-picture.png';
 
 type PhotoProps = {
    userName: string
@@ -10,16 +11,18 @@ export const Photo = (props: PhotoProps) => {
       <div className='somePhoto'>
          <div className='leftPartOfPhoto'>
             <div className='userPhoto'>
-               <img src={require("../../resources/images/profile-picture.png")} alt="profilePicture" className='profilePicture' />
+               <div>
+                  <img src={profilePicture} alt="profilePicture" className='profilePicture' />
+               </div>
                <a href='#' className='userPhotoName'>{props.userName}</a>
             </div>
             <div className='photoDescription'>
                <div className='photoDescriptionElement'>
-                  <div>Album name:</div>
+                  <div className='albumNameSection'>Album name:</div>
                   <a className='albumNameLink'>Góry</a>
                </div>
                <div className='photoDescriptionElement'>
-                  <div>Photo name:</div>
+                  <div className='photoNameSection'>Photo name:</div>
                   <a className='photoNameLink'>zdjecie1</a>
                </div>
             </div>

@@ -1,7 +1,7 @@
+import './style.scss';
+import '../../../style/font.css';
 import { FC } from "react";
 import { ErrorResponse, useRouteError, isRouteErrorResponse } from "react-router-dom";
-import '../../style/error-page.css';
-import '../../style/font.css';
 
 function Error(){
     const error = useRouteError();

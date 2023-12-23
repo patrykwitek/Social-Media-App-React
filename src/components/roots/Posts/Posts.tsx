@@ -1,5 +1,5 @@
-import '../../style/posts.css';
-import '../../style/font.css';
+import './style.scss';
+import '../../../style/font.css';
 
 export const Posts = () => {
     return (

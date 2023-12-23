@@ -1,0 +1,77 @@
+.somePhoto{
+    width: auto;
+    height: 60vh;
+    border: 1px solid  lightgray;
+    border-radius: 30px;
+    box-shadow: 0px 5px 16px -10px rgb(40, 40, 40);
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+ }
+ 
+ .profilePicture{
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+ }
+ 
+ .profilePicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+ 
+ .leftPartOfPhoto{
+    width: 8vw;   
+    height: 60vh;
+    border-right: 1px solid  lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 2vh;
+ }
+ 
+ .userPhoto{
+    width: 8vw;
+    text-align: center;
+ }
+ 
+ .userPhotoName{
+    color: rgb(21, 102, 172);
+    text-decoration: none;
+    transition: .2s;
+ }
+ 
+ .userPhotoName:hover{
+    cursor: pointer;
+    color: rgb(89, 167, 235);
+ }
+ 
+ .photoDescription{
+    width: 8vw;
+    padding-left: 1vw;
+ }
+ 
+ .photoDescriptionElement{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    flex-direction: column;
+    margin-bottom: 15px;
+    font-size: .9rem;
+ }
+ 
+ .albumNameSection, .photoNameSection{
+   font-weight: bold;
+ }
+
+ .rightPartOfPhoto{
+    width: auto;
+ }
+ 
+ .displayedPhoto{
+    height: 60vh;
+    border-radius: 0px 30px 30px 0px;
+ }

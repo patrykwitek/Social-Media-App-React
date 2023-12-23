@@ -1,0 +1,97 @@
+.aboutPage {
+    width: 100vw;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.projectInfo {
+    margin: 0 auto;
+    width: 70vw;
+    font-size: 1rem;
+    text-align: left;
+    padding-bottom: 3rem;
+    border-bottom: 1px rgb(165, 165, 165) solid;
+}
+
+.authors {
+    width: 70vw;
+    margin-top: 3rem;
+    text-align: center;
+    margin: 0 auto;
+
+    .authorsTitle {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        margin-top: 3rem;
+    }
+
+    .authorsContent {
+        width: 70vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6vw;
+
+        a {
+            text-decoration: none;
+            color: black;
+            transition: .3s;
+
+            .authorSection {
+                width: 10vw;
+
+                .authorPicture {
+                    width: 10vw;
+                    margin-bottom: .5rem;
+                    border-radius: 50%;
+                    transition: .3s;
+                    box-shadow: 0px 5px 10px -5px rgb(48, 48, 48);
+                }
+
+                .authorName{
+                    position: relative;
+                    left: 10px;
+                    transition: .4s;
+                }
+
+                .linkedInLogo {
+                    width: 20px;
+                    position: relative;
+                    top: 3px;
+                    left: 7px;
+                    visibility: hidden;
+                    transition: .1s;
+                }
+            }
+        }
+
+        a:hover {
+            cursor: pointer;
+            
+            .authorSection {
+                .authorPicture {
+                    border-radius: 40%;
+                    box-shadow: 0px 5px 10px -2px rgb(48, 48, 48);
+                }
+
+                #patrykPhoto{
+                    filter: contrast(160%);
+                    filter: brightness(1.1);
+                }
+
+                #ruslanPhoto{
+                    filter: saturate(2.5);
+                }
+                
+                .authorName{
+                    color: rgb(44, 84, 185);
+                    left: 0;
+                }
+
+                .linkedInLogo{
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

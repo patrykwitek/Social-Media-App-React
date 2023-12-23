@@ -1,5 +1,5 @@
-import '../../style/header-section.css';
-import '../../style/font.css';
+import './style.scss';
+import '../../../style/font.css';
 
 type HeaderSectionProps = {
     name: string

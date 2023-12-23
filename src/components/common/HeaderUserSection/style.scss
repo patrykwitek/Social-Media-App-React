@@ -1,0 +1,107 @@
+.headerUserSection {
+    padding-top: 3.5vh;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+    margin-left: auto;
+    color: rgb(62, 62, 62);
+}
+
+.dropdown-menu-link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: .3s;
+}
+
+.userProfilePicture {
+    width: 3rem;
+    border-radius: 50%;
+    transition: .3s;
+    box-shadow: 0px 2px 12px -5px rgb(58, 58, 58);
+}
+
+.dropdown-menu-link:hover {
+    cursor: pointer;
+    color: rgb(174, 176, 177);
+    
+    .userProfilePicture {
+        border-radius: 46%;
+        scale: 110%;
+        box-shadow: 0px 2px 15px -3px rgb(58, 58, 58);
+    }
+}
+
+.userNameSection {
+    width: auto;
+    margin-right: 1rem;
+}
+
+.userWelcomeSectionPicture {
+    width: 4rem;
+    margin-top: -.8rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 10.5vh;
+    right: 20px;
+    background-color: white;
+    border-radius: 10px;
+    width: 240px;
+    padding: 1rem 2rem 1rem 2rem;
+    border: 1px rgb(195, 195, 195) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .dropdown-user-info {
+        width: 190px;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+
+        .dropdown-userFirstName {
+            width: 100%;
+            font-size: 1.2rem;
+            color: rgb(62, 62, 62);
+            margin-bottom: .3rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .dropdown-userName {
+            width: 100%;
+            font-size: 1rem;
+            text-align: center;
+            color: rgb(134, 134, 134);
+            margin-top: .2rem;
+        }
+    }
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -11px;
+    right: 40px;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+    background-color: white;
+    border-left: 1px rgb(195, 195, 195) solid;
+    border-top: 1px rgb(195, 195, 195) solid;
+}
+
+.dropdown-menu.active {
+    visibility: visible;
+    opacity: 1;
+    transition: .3s;
+    transform: translateY(0);
+}
+
+.dropdown-menu.inactive {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    transform: translateY(-10px);
+}
