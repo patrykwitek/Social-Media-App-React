@@ -3,12 +3,13 @@ import '../../../style/font.css';
 
 type DropdownItemProps = {
     img: any,
-    text: string
+    text: string,
+    onClick: any
 }
 
 export const DropdownItem = (props: DropdownItemProps) => {
     return (
-        <div className='dropdown-menu-item'>
+        <div className='dropdown-menu-item' onClick={props.onClick}>
             <img src={props.img} alt={props.text} />
             <span>{props.text}</span>
         </div>

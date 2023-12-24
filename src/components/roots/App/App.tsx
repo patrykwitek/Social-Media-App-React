@@ -7,6 +7,8 @@ import { About } from '../About/About';
 import { Photos } from '../Photos/Photos';
 import { ToDoS } from '../ToDos/ToDos';
 import { Posts } from '../Posts/Posts';
+import { Settings } from '../Settings/Settings';
+import { PageNotFound } from '../PageNotFound/PageNotFound';
 
 function App(){
   return (
@@ -17,6 +19,8 @@ function App(){
         <Route path='/posts' element={<Posts />}/>
         <Route path='/ToDoS' element={<ToDoS />}/>
         <Route path='/about' element={<About />}/>
+        <Route path='/settings' element={<Settings />}/>
+        <Route path='*' element={<PageNotFound />}/>
       </Routes>
       <Footer/>
     </div>

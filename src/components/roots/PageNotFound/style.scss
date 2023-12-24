@@ -1,0 +1,27 @@
+.pageNotFoundContainer{
+    width: 100vw;
+    height: 69vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-page{
+    text-align: center;
+    margin: 0 auto;
+    padding: 2rem 3rem 2rem 3rem;
+    border: 1px rgb(203, 203, 203) solid;
+    background-color: rgb(249, 249, 249);
+    border-radius: 25px;
+    box-shadow: 0px 0px 22px -12px rgba(66, 68, 90, 1);
+
+    h1{
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+    }
+
+    p{
+        font-style: italic;
+    }
+}

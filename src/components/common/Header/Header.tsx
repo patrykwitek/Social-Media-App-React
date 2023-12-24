@@ -1,6 +1,6 @@
 import './style.scss';
 import '../../../style/font.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { HeaderSection } from '../HeaderSection/HeaderSection';
 import { Greeting } from '../Greeting/Greeting';
 
@@ -12,10 +12,10 @@ export const Header = (props: HeaderProps) => {
     return (
         <nav className="header">
             {/* do przesyłania danych lista z odc 4 */}
-            <Link to='/' className='headerLink'><HeaderSection name="Photos"/></Link>
-            <Link to='/posts' className='headerLink'><HeaderSection name="Posts"/></Link>
-            <Link to='/toDoS' className='headerLink'><HeaderSection name="Your ToDo's"/></Link>
-            <Link to='/about' className='headerLink'><HeaderSection name="About"/></Link>
+            <NavLink to='/' className='headerLink'><HeaderSection name="Photos"/></NavLink>
+            <NavLink to='/posts' className='headerLink'><HeaderSection name="Posts"/></NavLink>
+            <NavLink to='/toDoS' className='headerLink'><HeaderSection name="Your ToDo's"/></NavLink>
+            <NavLink to='/about' className='headerLink'><HeaderSection name="About"/></NavLink>
             <Greeting isLoggedIn={props.isLoggedIn} />
         </nav>
     )

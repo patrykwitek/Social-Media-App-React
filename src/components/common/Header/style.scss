@@ -1,4 +1,4 @@
-.header{
+.header {
     margin: 0 auto;
     width: 100vw;
     height: 10vh;
@@ -7,27 +7,32 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: baseline;
-    margin-bottom: 3rem;
+    margin-bottom: 5vh;
     position: sticky;
     top: 0;
     left: 0;
 }
 
-.headerLink{
+.headerLink {
     text-decoration: none;
     padding-top: 3.4vh;
     padding-right: 2rem;
     padding-left: 2rem;
     font-size: 1.2rem;
     border-right: 1px rgb(195, 195, 195) solid;
-    transition: .3s;
+    transition: .2s;
     color: black;
+    height: 10vh;
 }
 
-.headerLink:hover{
+.headerLink:hover {
     cursor: pointer;
-    background-color: rgb(41, 41, 41);
-    color: rgb(199, 229, 255);
-    box-shadow: 0px 0px 10px 0px rgb(41, 41, 41);
-    border-right: 1px rgb(41, 41, 41) solid;
+    background-color: rgb(228, 228, 228);
+    border-bottom: 3px rgb(198, 198, 198) solid;
+}
+
+.headerLink.active {
+    border-bottom: 3px rgb(53, 53, 53) solid;
+    transition: .2s;
+    background-color: rgb(228, 228, 228);
 }

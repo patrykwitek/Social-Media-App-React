@@ -1,19 +1,24 @@
 .headerLoginSection{
-    padding-top: 3.4vh;
-    padding-right: 3rem;
-    padding-left: 3rem;
-    font-size: 1.2rem;
+    margin-top: 2.4vh;
+    margin-right: 2vw;
+    height: 2.5rem;
     margin-left: auto;
-    color: rgb(40, 101, 171);
-    background-color: rgb(221, 221, 221);
-    font-weight: bold;
-    border-left: 1px rgb(195, 195, 195) solid;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    font-size: 1.1rem;
+    color: black;
+    border: 1px rgb(195, 195, 195) solid;
     transition: .3s;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
 }
 
 .headerLoginSection:hover{
     cursor: pointer;
-    background-color: rgb(41, 41, 41);
-    color: rgb(199, 229, 255);
-    box-shadow: 0px 0px 10px 0px rgb(41, 41, 41);
+    background-color: rgb(243, 243, 243);
+    border: 1px rgb(153, 153, 153) solid;
+    box-shadow: 0px 2px 7px -10px rgb(71, 71, 71);
 }
