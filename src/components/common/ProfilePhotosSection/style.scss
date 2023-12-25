@@ -1,0 +1,13 @@
+.profilePhotosSection{
+    margin: 0 auto;
+    width: 60vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:1vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+.userProfilePhotoSection-photo{
+    width: 18vw;
+}

@@ -9,6 +9,9 @@ import { ToDoS } from '../ToDos/ToDos';
 import { Posts } from '../Posts/Posts';
 import { Settings } from '../Settings/Settings';
 import { PageNotFound } from '../PageNotFound/PageNotFound';
+import { Profile } from '../Profile/Profile';
+import { ProfilePhotosSection } from '../../common/ProfilePhotosSection/ProfilePhotosSection';
+import { ProfilePostsSection } from '../../common/ProfilePostsSection/ProfilePostsSection';
 
 function App(){
   return (
@@ -16,10 +19,18 @@ function App(){
       <Header isLoggedIn={true}/>
       <Routes>
         <Route path='/' element={<Photos />}/>
-        <Route path='/posts' element={<Posts />}/>
-        <Route path='/ToDoS' element={<ToDoS />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/settings' element={<Settings />}/>
+        <Route path='posts' element={<Posts />}/>
+        <Route path='ToDoS' element={<ToDoS />}/>
+        <Route path='about' element={<About />}/>
+        <Route path='profile' element={<Profile />}>
+          <Route path='profilePhotos' element={<ProfilePhotosSection />}/>
+          <Route path='profilePosts' element={<ProfilePostsSection />}/>
+        </Route>
+        <Route path='settings' element={<Settings />}/>
+        <Route path='user' element={<Profile />}>
+          <Route path='profilePhotos' element={<ProfilePhotosSection />}/>
+          <Route path='profilePosts' element={<ProfilePostsSection />}/>
+        </Route>
         <Route path='*' element={<PageNotFound />}/>
       </Routes>
       <Footer/>

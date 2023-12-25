@@ -2,6 +2,8 @@
     width: 100vw;
     text-align: center;
     margin: 0 auto;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
 
 .projectInfo {
@@ -48,7 +50,7 @@
                     box-shadow: 0px 5px 10px -5px rgb(48, 48, 48);
                 }
 
-                .authorName{
+                .authorName {
                     position: relative;
                     left: 10px;
                     transition: .4s;
@@ -67,28 +69,28 @@
 
         a:hover {
             cursor: pointer;
-            
+
             .authorSection {
                 .authorPicture {
                     border-radius: 40%;
                     box-shadow: 0px 5px 10px -2px rgb(48, 48, 48);
                 }
 
-                #patrykPhoto{
+                #patrykPhoto {
                     filter: contrast(160%);
                     filter: brightness(1.1);
                 }
 
-                #ruslanPhoto{
+                #ruslanPhoto {
                     filter: saturate(2.5);
                 }
-                
-                .authorName{
+
+                .authorName {
                     color: rgb(44, 84, 185);
                     left: 0;
                 }
 
-                .linkedInLogo{
+                .linkedInLogo {
                     visibility: visible;
                 }
             }

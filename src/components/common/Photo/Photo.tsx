@@ -1,12 +1,15 @@
 import './style.scss';
 import '../../../style/font.css';
 import profilePicture from '../../../resources/images/profile-picture.png';
+import { useNavigate } from 'react-router-dom';
 
 type PhotoProps = {
    userName: string
 }
 
 export const Photo = (props: PhotoProps) => {
+   const navigate = useNavigate();
+   
    return (
       <div className='somePhoto'>
          <div className='leftPartOfPhoto'>
@@ -14,7 +17,7 @@ export const Photo = (props: PhotoProps) => {
                <div>
                   <img src={profilePicture} alt="profilePicture" className='profilePicture' />
                </div>
-               <a href='#' className='userPhotoName'>{props.userName}</a>
+               <span className='userPhotoName' onClick={() => navigate('user/profilePhotos/')}>{props.userName}</span>
             </div>
             <div className='photoDescription'>
                <div className='photoDescriptionElement'>
