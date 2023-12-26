@@ -6,9 +6,9 @@ export const Photos = () => {
     return (
         <div className='photosPage'>
             <div className='photosContent'>
-                <Photo userName='patryk' />
-                <Photo userName='ruslan' />
-                <Photo userName='ihor' />
+                <Photo userID={1} />
+                <Photo userID={2} />
+                <Photo userID={3} />
             </div>
         </div>
     )

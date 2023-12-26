@@ -4,34 +4,45 @@ import profilePicture from '../../../resources/images/profile-picture.png';
 import { useNavigate } from 'react-router-dom';
 
 type PhotoProps = {
-   userName: string
+   userID: number
 }
 
 export const Photo = (props: PhotoProps) => {
    const navigate = useNavigate();
    
+   let username;
+   // note: temporary solution
+   if (props.userID == 1) {
+      username = 'patrykwitek';
+  }
+  else if (props.userID == 2) {
+      username = 'ruslan';
+  }
+  else if (props.userID == 3) {
+      username = 'ihor';
+  }
+
    return (
       <div className='somePhoto'>
-         <div className='leftPartOfPhoto'>
-            <div className='userPhoto'>
+         <div className='topPartOfPhoto'>
+            <div className='userPhoto' onClick={() => navigate(`user/${props.userID}/photos`)}>
                <div>
                   <img src={profilePicture} alt="profilePicture" className='profilePicture' />
                </div>
-               <span className='userPhotoName' onClick={() => navigate('user/profilePhotos/')}>{props.userName}</span>
+               <div className='userPhotoUsername'>{username}</div>
             </div>
             <div className='photoDescription'>
                <div className='photoDescriptionElement'>
-                  <div className='albumNameSection'>Album name:</div>
                   <a className='albumNameLink'>Góry</a>
                </div>
+               <span className='albumToPhoto'>/</span>
                <div className='photoDescriptionElement'>
-                  <div className='photoNameSection'>Photo name:</div>
                   <a className='photoNameLink'>zdjecie1</a>
                </div>
             </div>
          </div>
-         <div className='rightPartOfPhoto'>
-            <img src="https://via.placeholder.com/600/24f355" alt="sample photo" className='displayedPhoto' />
+         <div className='bottomPartOfPhoto'>
+            <img src="https://via.placeholder.com/600/24f355" alt="Photo" className='displayedPhoto' />
          </div>
       </div>
    )

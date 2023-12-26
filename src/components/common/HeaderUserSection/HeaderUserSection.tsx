@@ -33,6 +33,8 @@ export const HeaderUserSection = (props: HeaderUserSectionProps) => {
     });
 
     const navigate = useNavigate();
+
+    const userID = 1;
     
     return (
         <div className='headerUserSection' ref={dropdownRef}>
@@ -53,7 +55,7 @@ export const HeaderUserSection = (props: HeaderUserSectionProps) => {
                         @patrykwitek
                     </div>
                 </div>
-                <DropdownItem img={profile} text='Profile' onClick={() => navigate('profile/profilePhotos')}/>
+                <DropdownItem img={profile} text='Profile' onClick={() => navigate(`user/${userID}/photos`)}/>
                 <DropdownItem img={edit} text='Edit Profile' onClick={() => navigate('edit-profile')}/>
                 <DropdownItem img={settings} text='Settings' onClick={() => navigate('settings')}/>
                 <DropdownItem img={logout} text='Logout' onClick={() => navigate('')}/>

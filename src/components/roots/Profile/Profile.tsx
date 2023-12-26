@@ -2,9 +2,23 @@ import './style.scss';
 import '../../../style/font.css';
 import profilePicture from '../../../resources/images/profile-picture.png';
 import { ProfileNavigationItem } from '../../common/ProfileNavigationItem/ProfileNavigationItem';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 
 export const Profile = () => {
+    const { userID } = useParams();
+    let username;
+
+    // note: temporary solution
+    if (userID == '1') {
+        username = 'patrykwitek';
+    }
+    else if (userID == '2') {
+        username = 'ruslan';
+    }
+    else if (userID == '3') {
+        username = 'ihor';
+    }
+
     return (
         <div className='userProfilePage'>
             <div className='userProfileTopSection'>
@@ -14,28 +28,17 @@ export const Profile = () => {
                     </div>
                     <div className='userInfo'>
                         <div className='username'>
-                            patrykwitek
+                            {username}
                         </div>
                         <div className='userDignity'>
                             Patryk Witek
-                        </div>
-                        <div className='userBottomData'>
-                            <div>
-                                patrykwitek@mail.com
-                            </div>
-                            <div>
-                                Przykładowa 43 St.
-                            </div>
-                            <div>
-                                Cracow, 12-345
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div className='userProfileMainConent'>
                     <div className='userProfileNavigation'>
-                        <NavLink to='profilePhotos' className='profileNavigationLink'><ProfileNavigationItem name='Photos'/></NavLink>
-                        <NavLink to='profilePosts' className='profileNavigationLink'><ProfileNavigationItem name='Posts'/></NavLink>
+                        <NavLink to='photos' className='profileNavigationLink'><ProfileNavigationItem name='Photos' /></NavLink>
+                        <NavLink to='posts' className='profileNavigationLink'><ProfileNavigationItem name='Posts' /></NavLink>
                     </div>
                 </div>
             </div>
@@ -55,6 +58,17 @@ export const Profile = () => {
                     </div>
                     <div className='more-info-company'>
                         Company: Company Name
+                    </div>
+                </div>
+                <div className='userBottomData'>
+                    <div>
+                        Mail: patrykwitek@mail.com
+                    </div>
+                    <div>
+                        Address: Przykładowa 43 St.
+                    </div>
+                    <div>
+                        City: Cracow, 12-345
                     </div>
                 </div>
             </div>

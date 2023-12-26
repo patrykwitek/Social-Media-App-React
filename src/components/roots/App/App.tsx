@@ -5,7 +5,7 @@ import { Footer } from '../../common/Footer/Footer';
 import { Header } from '../../common/Header/Header';
 import { About } from '../About/About';
 import { Photos } from '../Photos/Photos';
-import { ToDoS } from '../ToDos/ToDos';
+import { Friends } from '../Friends/Friends';
 import { Posts } from '../Posts/Posts';
 import { Settings } from '../Settings/Settings';
 import { PageNotFound } from '../PageNotFound/PageNotFound';
@@ -20,16 +20,13 @@ function App(){
       <Routes>
         <Route path='/' element={<Photos />}/>
         <Route path='posts' element={<Posts />}/>
-        <Route path='ToDoS' element={<ToDoS />}/>
+        <Route path='friends' element={<Friends />}/>
         <Route path='about' element={<About />}/>
-        <Route path='profile' element={<Profile />}>
-          <Route path='profilePhotos' element={<ProfilePhotosSection />}/>
-          <Route path='profilePosts' element={<ProfilePostsSection />}/>
-        </Route>
         <Route path='settings' element={<Settings />}/>
-        <Route path='user' element={<Profile />}>
-          <Route path='profilePhotos' element={<ProfilePhotosSection />}/>
-          <Route path='profilePosts' element={<ProfilePostsSection />}/>
+        <Route path='user/:userID' element={<Profile />}>
+          <Route index element={<ProfilePhotosSection />}/>
+          <Route path='photos' element={<ProfilePhotosSection />}/>
+          <Route path='posts' element={<ProfilePostsSection />}/>
         </Route>
         <Route path='*' element={<PageNotFound />}/>
       </Routes>

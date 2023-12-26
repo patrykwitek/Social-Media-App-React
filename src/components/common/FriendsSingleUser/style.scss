@@ -1,0 +1,39 @@
+.singleUser {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    padding-bottom: 1.5vh;
+    margin-bottom: 1.5vh;
+    border-bottom: 1px lightgray solid;
+
+    img {
+        height: 5vh;
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px -2px;
+        transition: .3s;
+    }
+
+    .singleUser-name {
+        height: 5vh;
+        padding-top: 1.35vh;
+        font-size: .95rem;
+        display: flex;
+        justify-items: center;
+        margin-left: .8vw;
+        color: rgb(21, 102, 172);
+        transition: .3s;
+    }
+}
+
+.singleUser:hover {
+    cursor: pointer;
+
+    .singleUser-name {
+        color: rgb(50, 138, 215);
+    }
+
+    img {
+        scale: 109%;
+        opacity: .8;
+    }
+}

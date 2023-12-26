@@ -14,7 +14,7 @@ export const Header = (props: HeaderProps) => {
             {/* do przesyłania danych lista z odc 4 */}
             <NavLink to='/' className='headerLink'><HeaderSection name="Photos"/></NavLink>
             <NavLink to='/posts' className='headerLink'><HeaderSection name="Posts"/></NavLink>
-            <NavLink to='/toDoS' className='headerLink'><HeaderSection name="Your ToDo's"/></NavLink>
+            <NavLink to='/friends' className='headerLink'><HeaderSection name="Friends"/></NavLink>
             <NavLink to='/about' className='headerLink'><HeaderSection name="About"/></NavLink>
             <Greeting isLoggedIn={props.isLoggedIn} />
         </nav>

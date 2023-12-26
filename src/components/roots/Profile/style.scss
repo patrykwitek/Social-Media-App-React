@@ -17,12 +17,12 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: baseline;
-            gap: 1.5rem;
+            gap: 2.5vw;
             height: 20vh;
 
             .userInfo {
                 width: auto;
-                padding-top: 1.3vh;
+                padding-top: 5vh;
                 height: 20vh;
                 display: flex;
                 flex-direction: column;
@@ -30,16 +30,13 @@
 
                 .username {
                     font-size: 2rem;
+                    font-weight: bold;
                 }
-
+                
                 .userDignity {
                     font-size: 1rem;
                     margin-top: .5rem;
                     margin-bottom: 1.4rem;
-                }
-
-                .userBottomData {
-                    font-size: .9rem;
                 }
             }
 
@@ -50,7 +47,7 @@
                 img {
                     border-radius: 50%;
                     width: 20vh;
-                    box-shadow: 0px 5px 10px -5px rgb(66, 66, 66);
+                    box-shadow: 0px 0px 10px -4px rgb(66, 66, 66);
                 }
             }
         }
@@ -59,14 +56,13 @@
     .userProfileMoreInfo{
         width: 60vw;
         margin: 0 auto;
-        // background-color: white;
-        // border-top: 1px rgb(165, 165, 165) solid;
-        padding-top: 1.7vh;
-        padding-bottom: 1.7vh;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
 
         .more-info-title{
             font-size: 1.5rem;
             font-weight: bold;
+            margin-bottom: 2vh;
         }
 
         .more-info-content{
@@ -83,6 +79,10 @@
                     color: rgb(89, 167, 235);
                 }
             }
+        }
+
+        .userBottomData {
+            margin-top: 2vh;
         }
     }
 }

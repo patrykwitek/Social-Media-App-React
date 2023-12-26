@@ -1,0 +1,30 @@
+.friendsPage {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+
+    .friendsContainer {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+
+        .friendsTitle {
+            width: 50vw;
+            font-size: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .usersSections {
+            width: 50vw;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
