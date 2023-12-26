@@ -46,7 +46,6 @@
   },
   "devDependencies": {
     "@types/node-sass": "^4.11.7",
-    "node-sass": "^7.0.3",
     "sass": "^1.69.5",
     "web-vitals": "^3.5.0"
   }
