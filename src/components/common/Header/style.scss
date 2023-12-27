@@ -1,7 +1,7 @@
 .header {
     margin: 0 auto;
     width: 100vw;
-    height: 10vh;
+    height: 7vh;
     background-color: rgb(237, 237, 237);
     border-bottom: 1px rgb(195, 195, 195) solid;
     display: flex;
@@ -14,24 +14,27 @@
 
 .headerLink {
     text-decoration: none;
-    padding-top: 3.4vh;
     padding-right: 2rem;
     padding-left: 2rem;
     font-size: 1.2rem;
     border-right: 1px rgb(195, 195, 195) solid;
-    transition: .2s;
+    transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
     color: black;
-    height: 10vh;
+    height: 7vh;
+    display: flex;
+    align-items: center;
 }
 
 .headerLink:hover {
     cursor: pointer;
     background-color: rgb(228, 228, 228);
     border-bottom: 3px rgb(198, 198, 198) solid;
+    padding-top: 3px;
 }
 
 .headerLink.active {
-    border-bottom: 3px rgb(53, 53, 53) solid;
-    transition: .2s;
     background-color: rgb(228, 228, 228);
+    border-bottom: 3px rgb(53, 53, 53) solid;
+    padding-top: 3px;
+    transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
 }
