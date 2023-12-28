@@ -39,7 +39,7 @@ export const HeaderUserSection = (props: HeaderUserSectionProps) => {
     return (
         <div className='headerUserSection' ref={dropdownRef}>
             <div className='dropdown-menu-link' onClick={() => { setOpen(!open) }}>
-                <div className='userNameSection'>
+                <div className={`userNameSection ${open ? 'highlight' : 'nothighlight'}`}>
                     {props.userName}
                 </div>
                 <div className='userWelcomeSectionPicture'>

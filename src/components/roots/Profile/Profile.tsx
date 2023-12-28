@@ -6,18 +6,6 @@ import { NavLink, Outlet, useParams } from 'react-router-dom';
 
 export const Profile = () => {
     const { userID } = useParams();
-    let username;
-
-    // note: temporary solution
-    if (userID == '1') {
-        username = 'patrykwitek';
-    }
-    else if (userID == '2') {
-        username = 'ruslan';
-    }
-    else if (userID == '3') {
-        username = 'ihor';
-    }
 
     return (
         <div className='userProfilePage'>
@@ -28,7 +16,7 @@ export const Profile = () => {
                     </div>
                     <div className='userInfo'>
                         <div className='username'>
-                            {username}
+                            patrykwitek
                         </div>
                         <div className='userDignity'>
                             Patryk Witek

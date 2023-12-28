@@ -16,25 +16,27 @@
     text-decoration: none;
     padding-right: 2rem;
     padding-left: 2rem;
-    font-size: 1.2rem;
+    font-size: 2.1vh;
     border-right: 1px rgb(195, 195, 195) solid;
-    transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
+    transition: all .2s ease, border-bottom 0ms, padding-top 0ms;
     color: black;
     height: 7vh;
     display: flex;
     align-items: center;
-}
 
-.headerLink:hover {
-    cursor: pointer;
-    background-color: rgb(228, 228, 228);
-    border-bottom: 3px rgb(198, 198, 198) solid;
-    padding-top: 3px;
-}
+    &:hover {
+        cursor: pointer;
+        color: rgb(129, 143, 173);
+        background-color: rgb(228, 228, 228);
+        border-bottom: 3px rgb(169, 178, 198) solid;
+        padding-top: 3px;
+    }
 
-.headerLink.active {
-    background-color: rgb(228, 228, 228);
-    border-bottom: 3px rgb(53, 53, 53) solid;
-    padding-top: 3px;
-    transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
+    &.active {
+        color: rgb(48, 123, 230);
+        background-color: rgb(228, 228, 228);
+        border-bottom: 3px rgb(56, 124, 220) solid;
+        padding-top: 3px;
+        transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
+    }
 }

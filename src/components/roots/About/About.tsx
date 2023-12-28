@@ -5,7 +5,7 @@ export const About = () => {
     return (
         <div className='aboutPage'>
             <div className='projectInfo'>
-                <h3>That is React Project which uses Placeholder API as data. On this page user can log in if exists, watch photos of other users & checks his ToDo'S.</h3>
+                <h3>That is React Project which uses <a href='https://jsonplaceholder.typicode.com/' target='_blank'>Placeholder API</a> as data. On this page user can log in if exists, watch photos of other users & checks his ToDo'S.</h3>
                 <p>TODO: finish with screenshots, description etc. in the future</p>
             </div>
             <div className='authors'>

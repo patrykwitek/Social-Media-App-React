@@ -1,7 +1,7 @@
 .headerUserSection {
-    padding-right: 2rem;
-    padding-left: 2rem;
-    font-size: 1.2rem;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    font-size: 2vh;
     margin-left: auto;
     color: rgb(62, 62, 62);
     height: 7vh;
@@ -14,24 +14,24 @@
     flex-wrap: wrap;
     justify-content: center;
     transition: .3s;
+
+    &:hover {
+        cursor: pointer;
+        color: rgb(129, 143, 173);
+        
+        .userProfilePicture {
+            border-radius: 46%;
+            scale: 105%;
+            box-shadow: 0px 2px 10px -3px rgb(58, 58, 58);
+        }
+    }
 }
 
 .userProfilePicture {
-    width: 3rem;
+    height: 5vh;
     border-radius: 50%;
     transition: .3s;
     box-shadow: 0px 2px 12px -5px rgb(58, 58, 58);
-}
-
-.dropdown-menu-link:hover {
-    cursor: pointer;
-    color: rgb(117, 117, 117);
-    
-    .userProfilePicture {
-        border-radius: 46%;
-        scale: 105%;
-        box-shadow: 0px 2px 10px -3px rgb(58, 58, 58);
-    }
 }
 
 .userNameSection {
@@ -40,6 +40,11 @@
     margin-right: 1rem;
     display: flex;
     align-items: center;
+
+    &.highlight{
+        color: rgb(129, 143, 173);
+        transition: .3s;
+    }
 }
 
 .userWelcomeSectionPicture {
