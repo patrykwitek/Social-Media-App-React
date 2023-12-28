@@ -12,6 +12,7 @@ import { PageNotFound } from '../PageNotFound/PageNotFound';
 import { Profile } from '../Profile/Profile';
 import { ProfilePhotosSection } from '../../common/ProfilePhotosSection/ProfilePhotosSection';
 import { ProfilePostsSection } from '../../common/ProfilePostsSection/ProfilePostsSection';
+import { UsersPhotosGallery } from '../../common/UsersPhotosGallery/UsersPhotosGallery';
 
 function App(){
   return (
@@ -26,6 +27,7 @@ function App(){
         <Route path='user/:userID' element={<Profile />}>
           <Route index element={<ProfilePhotosSection />}/>
           <Route path='photos' element={<ProfilePhotosSection />}/>
+          <Route path='photos-gallery' element={<UsersPhotosGallery />}/>
           <Route path='posts' element={<ProfilePostsSection />}/>
         </Route>
         <Route path='*' element={<PageNotFound />}/>

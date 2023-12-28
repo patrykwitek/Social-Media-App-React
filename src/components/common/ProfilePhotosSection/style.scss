@@ -7,7 +7,32 @@
     gap:1vw;
     padding-top: 2vh;
     padding-bottom: 2vh;
-}
-.userProfilePhotoSection-photo{
-    width: 18vw;
+
+    .userProfilePhotoSection-photo{
+        width: 18vw;
+    }
+
+    .show-users-gallery{
+        width: 14vw;
+        height: 4vh;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+        border: 1px lightgray solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 3rem;
+        color: rgb(56, 124, 220);
+        transition: .2s;
+        box-shadow: 0px 2px 8px -5px rgb(66, 66, 66);
+        font-size: 1.7vh;
+
+        &:hover{
+            cursor: pointer;
+            color: white;
+            background-color: rgb(71, 105, 154);
+            border: 1px rgb(71, 105, 154) solid;
+        }
+    }
 }
