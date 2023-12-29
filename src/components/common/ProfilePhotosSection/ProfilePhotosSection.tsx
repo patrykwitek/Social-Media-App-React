@@ -8,8 +8,9 @@ export const ProfilePhotosSection = () => {
     const { userID } = useParams();
 
     const [user, setUserData] = useState<any>({});
-    const [albums, setAlbumData] = useState<any[]>([]);
     const [photosList, setPhotoList] = useState<any[]>([]);
+
+    const photosToDisplayNumber: number = 9;
 
     useEffect(() => {
         const fetchUserPhotos = async () => {
@@ -17,51 +18,43 @@ export const ProfilePhotosSection = () => {
                 const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${userID}`);
                 const userData = await userResponse.json();
                 setUserData(userData);
-            } catch (error) {
-                console.error('Fetching user data failed: ', error);
-            }
 
-            try {
                 const albumsResponse = await fetch(`https://jsonplaceholder.typicode.com/albums?userId=${userID}`);
                 const albumsData = await albumsResponse.json();
-                setAlbumData(albumsData);
-            } catch (error) {
-                console.error('Fetching albums data failed: ', error);
-            }
 
-            const fetchPhotos = async () => {
-                const photosArray = [];
-                for (const album of albums) {
-                    try {
-                        const photosFromAlbumResponse = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${album.id}`);
-                        const photosData = await photosFromAlbumResponse.json();
-                        photosArray.push(...photosData);
-                    }
-                    catch (error) {
-                        console.error('Fetching photos data failed: ', error);
-                    }
+                const photosArray: any[] = [];
+                for (const album of albumsData) {
+                    const photosFromAlbumResponse = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${album.id}`);
+                    const photosData = await photosFromAlbumResponse.json();
+                    photosArray.push(...photosData);
                 }
-                setPhotoList(photosArray);
-            };
-
-            fetchPhotos();
+                setPhotoList(photosArray.slice(0, photosToDisplayNumber));
+            } catch (error) {
+                console.error('Fetching data failed: ', error);
+            }
         };
 
         fetchUserPhotos();
-    }, [userID, albums]);
+    }, [userID]);
 
     const navigate = useNavigate();
-    
+
     return (
         <div className='profilePhotosSection'>
             {
-                photosList.slice(0, 9).map((photo: any) => {
-                    return <img key={photo.id} src={photo.url} alt="Photo" className='userProfilePhotoSection-photo' />
+                photosList.map((photo: any) => {
+                    return <img
+                        key={photo.id}
+                        src={photo.url}
+                        alt="Photo"
+                        className='userProfilePhotoSection-photo'
+                        loading='lazy'
+                    />
                 })
             }
             {user && user.name && (
                 <React.Fragment>
-                    <div className='show-users-gallery' onClick={() => navigate(`../../user/${userID}/photos-gallery`)}>
+                    <div className='show-users-gallery' onClick={() => navigate(`../../user/${userID}/gallery`)}>
                         Show {user.name.split(" ")[0]}'s gallery
                     </div>
                 </React.Fragment>

@@ -47,6 +47,7 @@ export const Profile = () => {
                             <div className='userProfileNavigation'>
                                 <NavLink to='photos' className='profileNavigationLink'><ProfileNavigationItem name='Photos' /></NavLink>
                                 <NavLink to='posts' className='profileNavigationLink'><ProfileNavigationItem name='Posts' /></NavLink>
+                                <NavLink to='gallery' className='profileNavigationLink'><ProfileNavigationItem name='Gallery' /></NavLink>
                             </div>
                         </div>
                     </div>

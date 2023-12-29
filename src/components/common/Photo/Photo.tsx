@@ -56,7 +56,7 @@ export const Photo = (props: PhotoProps) => {
             </div>
          </div>
          <div className='bottomPartOfPhoto'>
-            <img src={props.photo.url} alt="Photo" className='displayedPhoto' />
+            <img src={props.photo.url} alt="Photo" className='displayedPhoto' loading='lazy'/>
          </div>
       </div>
    )

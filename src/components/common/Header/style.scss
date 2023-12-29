@@ -2,7 +2,8 @@
     margin: 0 auto;
     width: 100vw;
     height: 7vh;
-    background-color: rgb(237, 237, 237);
+    backdrop-filter: blur(10px);
+    background-color: rgb(224, 224, 224, 0.461);
     border-bottom: 1px rgb(195, 195, 195) solid;
     display: flex;
     flex-wrap: wrap;
@@ -25,15 +26,15 @@
 
     &:hover {
         cursor: pointer;
-        color: rgb(36, 103, 197);
-        border-bottom: 3px rgb(36, 103, 197) solid;
+        color: rgb(63, 63, 67);
+        border-bottom: 3px rgb(63, 63, 67) solid;
         padding-top: 3px;
     }
 
     &.active {
         color: white;
-        background-color: rgb(71, 105, 154);
-        border-bottom: 3px rgb(71, 105, 154) solid;
+        background-color: rgb(63, 63, 67);
+        border-bottom: 3px rgb(63, 63, 67) solid;
         padding-top: 3px;
         transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
     }

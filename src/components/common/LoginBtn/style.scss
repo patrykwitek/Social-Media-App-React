@@ -1,24 +1,30 @@
-.headerLoginSection{
-    margin-top: 2.4vh;
-    margin-right: 2vw;
-    height: 2.5rem;
-    margin-left: auto;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-    font-size: 1.1rem;
-    color: black;
-    border: 1px rgb(195, 195, 195) solid;
-    transition: .3s;
+.login-btn-container {
+    height: 7vh;
     display: flex;
     align-items: center;
-    border-radius: 20px;
-    background-color: rgb(248, 248, 248);
-    box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
-}
+    margin-left: auto;
+    margin-right: 1.5vw;
 
-.headerLoginSection:hover{
-    cursor: pointer;
-    background-color: rgb(243, 243, 243);
-    border: 1px rgb(153, 153, 153) solid;
-    box-shadow: 0px 2px 7px -10px rgb(71, 71, 71);
+    .headerLoginSection {
+        height: 4.5vh;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        font-size: 1.8vh;
+        display: flex;
+        align-items: center;
+        color: black;
+        border: 1px rgb(195, 195, 195) solid;
+        transition: .3s;
+        border-radius: 20px;
+        background-color: rgb(248, 248, 248);
+        box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
+
+        &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: rgb(63, 63, 67);
+            border: 1px rgb(63, 63, 67) solid;
+            box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
+        }
+    }
 }

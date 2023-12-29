@@ -3,6 +3,7 @@ import '../../../style/font.css';
 import { FriendsSingleUser } from '../../common/FriendsSingleUser/FriendsSingleUser';
 import { SearchBar } from '../../common/SearchBar/SearchBar';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Friends = () => {
     const [filterUsers, setFilterUsers] = useState<{}[]>([]);
@@ -23,6 +24,8 @@ export const Friends = () => {
         fetchUsers();
     }, []);
 
+    const navigate = useNavigate();
+
     return (
         <div className='friendsPage'>
             <div className='friendsContainer'>
@@ -33,11 +36,11 @@ export const Friends = () => {
                     {
                         searchInput == '' ?
                             allUsers.map((user: any, id: number) => {
-                                return <FriendsSingleUser key={id} username={user.name} />
+                                return <FriendsSingleUser key={id} username={user.name} onClick={() => navigate(`../user/${user.id}/photos`)} />
                             })
                             :
                             filterUsers.map((user: any, id: number) => {
-                                return <FriendsSingleUser key={id} username={user.name} />
+                                return <FriendsSingleUser key={id} username={user.name} onClick={() => navigate(`../user/${user.id}/photos`)} />
                             })
                     }
                 </div>

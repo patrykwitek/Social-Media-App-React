@@ -14,13 +14,15 @@ export const Photos = () => {
         return array;
     };
 
+    const displayedPhotosNumber:number = 15;
+
     useEffect(() => {
         const fetchPhotos = async () => {
             try {
                 const response = await fetch('https://jsonplaceholder.typicode.com/photos');
                 let photosData = await response.json();
                 photosData = shuffle(photosData); 
-                setPhotosAPI(photosData);
+                setPhotosAPI(photosData.slice(0, displayedPhotosNumber));
             } catch (error) {
                 console.error('Fetching data failed: ', error);
             }
@@ -29,13 +31,11 @@ export const Photos = () => {
         fetchPhotos();
     }, []);
 
-    const displayedPhotosNumber = 15;
-
     return (
         <div className='photosPage'>
             <div className='photosContent'>
                 {
-                    photosAPI.slice(0, displayedPhotosNumber).map((photo: any, id: number) => {
+                    photosAPI.map((photo: any, id: number) => {
                         return <Photo key={photo.id} photo={photo} />
                     })
                 }
