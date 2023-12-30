@@ -1,0 +1,14 @@
+.single-post{
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    background-color: white;
+    border-radius: 2.5rem;
+    border: 1px solid lightgray;
+    box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.19);
+
+    .single-post-title{
+        margin-bottom: 1.5vh;
+    }
+}
