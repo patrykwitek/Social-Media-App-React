@@ -1,7 +1,7 @@
 import './style.scss';
 import '../../../style/font.css';
 import { useParams } from 'react-router-dom';
-import { UsersPhotosGalleryItem } from '../UsersPhotosGelleryItem/UsersPhotosGelleryItem';
+import { UsersPhotosGalleryItem } from '../UsersPhotosGalleryItem/UsersPhotosGalleryItem';
 import { useEffect, useState } from 'react';
 
 export const UsersPhotosGallery = () => {
@@ -26,9 +26,13 @@ export const UsersPhotosGallery = () => {
     return (
         <div className='usersGalleryPage'>
             {
+                albums[0] ? (
                 albums.map((album: any) => {
                     return <UsersPhotosGalleryItem key={album.id} album={album} />
                 })
+                ) : (
+                    <p>Loading...</p>
+                )
             }
         </div>
     )

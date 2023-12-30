@@ -35,9 +35,13 @@ export const Photos = () => {
         <div className='photosPage'>
             <div className='photosContent'>
                 {
+                    photosAPI[0] ? (
                     photosAPI.map((photo: any, id: number) => {
                         return <Photo key={photo.id} photo={photo} />
                     })
+                    ) : (
+                        <p>Loading...</p>
+                    )
                 }
             </div>
         </div>

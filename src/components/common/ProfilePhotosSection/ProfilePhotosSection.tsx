@@ -42,6 +42,7 @@ export const ProfilePhotosSection = () => {
     return (
         <div className='profilePhotosSection'>
             {
+                photosList[0] ? (
                 photosList.map((photo: any) => {
                     return <img
                         key={photo.id}
@@ -51,6 +52,9 @@ export const ProfilePhotosSection = () => {
                         loading='lazy'
                     />
                 })
+                ) : (
+                    <p>Loading...</p>
+                )
             }
             {user && user.name && (
                 <React.Fragment>

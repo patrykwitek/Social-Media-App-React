@@ -2,12 +2,16 @@ import './style.scss';
 import '../../../style/font.css';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { Photo } from '../Photo/Photo';
+import { BiX } from "react-icons/bi";
 
 export const Album = () => {
     const { albumID } = useParams();
 
     const [albums, setAlbumData] = useState<any[]>([]);
     const [photos, setPhotosData] = useState<any[]>([]);
+    const [photoModal, setPhotoModal] = useState(false);
+    const [chosenPhoto, setChosenPhoto] = useState<any>({});
 
     useEffect(() => {
         const fetchAlbum = async () => {
@@ -27,6 +31,18 @@ export const Album = () => {
         fetchAlbum();
     }, [albumID]);
 
+    const switchPhotoModal = (photo: any) => {
+        setPhotoModal(!photoModal);
+        setChosenPhoto(photo);
+    }
+
+    if(photoModal) {
+        document.body.classList.add('freeze-scrolling');
+    }
+    else {
+        document.body.classList.remove('freeze-scrolling');
+    }
+
     return (
         <div className='albumPage'>
             {albums[0] && photos ? (
@@ -42,13 +58,32 @@ export const Album = () => {
                     <div className='album-photos'>
                         {
                             photos.map((photo: any) => {
-                                return <img key={photo.id} src={photo.thumbnailUrl} alt='Photo' loading='lazy' className='album-photo-item'/>
+                                return <img
+                                    key={photo.id}
+                                    src={photo.thumbnailUrl}
+                                    alt='Photo'
+                                    loading='lazy'
+                                    className='album-photo-item'
+                                    onClick={() => switchPhotoModal(photo)}
+                                />
                             })
                         }
                     </div>
                 </div>
             ) : (
                 <p>Loading...</p>
+            )}
+
+            {photoModal && (
+                <div className='photo-modal'>
+                    <div className='overlay' onClick={() => setPhotoModal(!photoModal)}></div>
+                    <div className='photo-modal-content'>
+                        <Photo key={chosenPhoto.id} photo={chosenPhoto} />
+                        <div className='close' onClick={() => setPhotoModal(!photoModal)}>
+                            <BiX />
+                        </div>
+                    </div>
+                </div>
             )}
         </div>
     )
