@@ -1,0 +1,13 @@
+.loading-screen{
+    margin: 0 auto;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+    color: rgb(47, 47, 47);
+
+    &:hover{
+       cursor: wait;
+    }
+ }

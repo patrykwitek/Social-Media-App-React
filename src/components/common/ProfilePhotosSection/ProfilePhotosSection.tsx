@@ -3,6 +3,7 @@ import '../../../style/font.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import { LoadingScreen } from '../LoadingScreen/LoadingScreen';
 
 export const ProfilePhotosSection = () => {
     const { userID } = useParams();
@@ -53,7 +54,7 @@ export const ProfilePhotosSection = () => {
                     />
                 })
                 ) : (
-                    <p>Loading...</p>
+                    <LoadingScreen />
                 )
             }
             {user && user.name && (

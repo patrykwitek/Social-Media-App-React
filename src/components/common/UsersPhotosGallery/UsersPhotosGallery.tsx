@@ -3,6 +3,7 @@ import '../../../style/font.css';
 import { useParams } from 'react-router-dom';
 import { UsersPhotosGalleryItem } from '../UsersPhotosGalleryItem/UsersPhotosGalleryItem';
 import { useEffect, useState } from 'react';
+import { LoadingScreen } from '../LoadingScreen/LoadingScreen';
 
 export const UsersPhotosGallery = () => {
     const { userID } = useParams();
@@ -31,7 +32,7 @@ export const UsersPhotosGallery = () => {
                     return <UsersPhotosGalleryItem key={album.id} album={album} />
                 })
                 ) : (
-                    <p>Loading...</p>
+                    <LoadingScreen />
                 )
             }
         </div>

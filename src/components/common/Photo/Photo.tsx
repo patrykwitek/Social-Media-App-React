@@ -33,10 +33,15 @@ export const Photo = (props: PhotoProps) => {
       fetchAlbum();
    }, [props.photo.albumId]);
 
+   const handleNavigateToUserPage = (userId: number) => {
+      document.body.classList.remove('freeze-scrolling');
+      navigate(`/user/${userId}/photos`);
+   }
+
    return (
       <div className='somePhoto'>
          <div className='topPartOfPhoto'>
-            <div className='userPhoto' onClick={() => navigate(`user/${user.id}/photos`)}>
+            <div className='userPhoto' onClick={() => handleNavigateToUserPage(user.id)}>
                <div>
                   <img src={profilePicture} alt="profilePicture" className='profilePicture' />
                </div>

@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Photo } from '../Photo/Photo';
 import { BiX } from "react-icons/bi";
+import { HiEye } from "react-icons/hi2";
+import { LoadingScreen } from '../LoadingScreen/LoadingScreen';
 
 export const Album = () => {
     const { albumID } = useParams();
@@ -58,20 +60,22 @@ export const Album = () => {
                     <div className='album-photos'>
                         {
                             photos.map((photo: any) => {
-                                return <img
-                                    key={photo.id}
-                                    src={photo.thumbnailUrl}
-                                    alt='Photo'
-                                    loading='lazy'
-                                    className='album-photo-item'
-                                    onClick={() => switchPhotoModal(photo)}
-                                />
+                                return <div className='displayed-photo' onClick={() => switchPhotoModal(photo)}>
+                                    <img
+                                        key={photo.id}
+                                        src={photo.thumbnailUrl}
+                                        alt='Photo'
+                                        loading='lazy'
+                                        className='album-photo-item'
+                                    />
+                                    <HiEye className='eye'/>
+                                </div>
                             })
                         }
                     </div>
                 </div>
             ) : (
-                <p>Loading...</p>
+                <LoadingScreen />
             )}
 
             {photoModal && (

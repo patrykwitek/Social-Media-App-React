@@ -2,8 +2,10 @@ import './style.scss';
 import '../../../style/font.css';
 import { Photo } from '../../common/Photo/Photo';
 import { useEffect, useState } from 'react';
+import { PulseLoader } from 'react-spinners';
+import { LoadingScreen } from '../../common/LoadingScreen/LoadingScreen';
 
-export const Photos = () => {
+const Photos = () => {
     const [photosAPI, setPhotosAPI] = useState<{}[]>([]);
 
     const shuffle = (array: {}[]) => {
@@ -14,7 +16,7 @@ export const Photos = () => {
         return array;
     };
 
-    const displayedPhotosNumber:number = 15;
+    const displayedPhotosNumber:number = 1000;
 
     useEffect(() => {
         const fetchPhotos = async () => {
@@ -40,10 +42,12 @@ export const Photos = () => {
                         return <Photo key={photo.id} photo={photo} />
                     })
                     ) : (
-                        <p>Loading...</p>
+                        <LoadingScreen />
                     )
                 }
             </div>
         </div>
     )
 }
+
+export default Photos;

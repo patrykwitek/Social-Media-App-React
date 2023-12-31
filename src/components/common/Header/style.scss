@@ -11,31 +11,32 @@
     position: sticky;
     top: 0;
     left: 0;
-}
+    z-index: 1;
 
-.headerLink {
-    text-decoration: none;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    font-size: 2.1vh;
-    border-right: 1px rgb(195, 195, 195) solid;
-    color: black;
-    height: 7vh;
-    display: flex;
-    align-items: center;
+    .headerLink {
+        text-decoration: none;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        font-size: 2.1vh;
+        border-right: 1px rgb(195, 195, 195) solid;
+        color: black;
+        height: 7vh;
+        display: flex;
+        align-items: center;
 
-    &:hover {
-        cursor: pointer;
-        color: rgb(63, 63, 67);
-        border-bottom: 3px rgb(63, 63, 67) solid;
-        padding-top: 3px;
-    }
+        &:hover {
+            cursor: pointer;
+            color: rgb(63, 63, 67);
+            border-bottom: 3px rgb(63, 63, 67) solid;
+            padding-top: 3px;
+        }
 
-    &.active {
-        color: white;
-        background-color: rgb(63, 63, 67);
-        border-bottom: 3px rgb(63, 63, 67) solid;
-        padding-top: 3px;
-        transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
+        &.active {
+            color: white;
+            background-color: rgb(63, 63, 67);
+            border-bottom: 3px rgb(63, 63, 67) solid;
+            padding-top: 3px;
+            transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
+        }
     }
 }

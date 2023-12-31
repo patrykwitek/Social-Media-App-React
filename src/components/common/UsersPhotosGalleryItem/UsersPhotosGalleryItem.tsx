@@ -4,6 +4,7 @@ import { BiX } from "react-icons/bi";
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { Photo } from '../Photo/Photo';
+import { HiEye } from "react-icons/hi2";
 
 type UsersPhotosGalleryItemProps = {
     album: any
@@ -52,12 +53,15 @@ export const UsersPhotosGalleryItem = (props: UsersPhotosGalleryItemProps) => {
                     <div className='album-photos'>
                         {
                             photos.map((photo: any) => {
-                                return <img
-                                    key={photo.id}
-                                    src={photo.thumbnailUrl}
-                                    alt='Photo'
-                                    loading='lazy'
-                                    onClick={() => switchPhotoModal(photo)} />
+                                return <div className='displayed-photo' onClick={() => switchPhotoModal(photo)}>
+                                    <img
+                                        key={photo.id}
+                                        src={photo.thumbnailUrl}
+                                        alt='Photo'
+                                        loading='lazy'
+                                    />
+                                    <HiEye className='eye' />
+                                </div>
                             })
                         }
                     </div>

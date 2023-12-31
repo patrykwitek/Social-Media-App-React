@@ -57,28 +57,50 @@
 
             &:hover {
                 border: 1px rgb(167, 167, 167) solid;
-
-                img {
-                    opacity: .6;
-                }
             }
 
-            img {
-                width: 6vw;
+            .displayed-photo {
+                position: relative;
                 transition: .3s;
+
+                img {
+                    width: 6vw;
+                    position: relative;
+                }
+
+                .eye {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 3vh;
+                    color: white;
+                    visibility: hidden;
+                }
 
                 &:hover {
                     cursor: pointer;
-                    scale: 120%;
+                    scale: 105%;
                     opacity: 1;
-                    z-index: 2;
-                    filter: brightness(1.2);
+
+                    img {
+                        filter: brightness(.6);
+                    }
+
+                    .eye {
+                        visibility: visible;
+                    }
                 }
             }
         }
     }
 
+    .loading-screen {
+        height: 75vh;
+    }
+
     .photo-modal {
+
         &,
         .overlay {
             width: 100vw;
@@ -114,22 +136,22 @@
             right: 1.5vw;
             scale: 150%;
 
-            &:hover{
+            &:hover {
                 cursor: pointer;
                 color: rgb(255, 65, 65);
             }
         }
 
-        .somePhoto{
+        .somePhoto {
             border: none;
             box-shadow: none;
             border-radius: 0;
 
-            .showTitle{
+            .showTitle {
                 display: none;
             }
 
-            .displayedPhoto{
+            .displayedPhoto {
                 border-radius: 0;
             }
         }

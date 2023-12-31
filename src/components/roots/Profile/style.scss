@@ -32,7 +32,7 @@
                     font-size: 2rem;
                     font-weight: bold;
                 }
-                
+
                 .userDignity {
                     font-size: 1rem;
                     margin-top: .5rem;
@@ -53,30 +53,30 @@
         }
     }
 
-    .userProfileMoreInfo{
+    .userProfileMoreInfo {
         width: 60vw;
         margin: 0 auto;
         padding-top: 3vh;
         padding-bottom: 3vh;
 
-        .more-info-title{
+        .more-info-title {
             font-size: 1.1rem;
             font-weight: bold;
             margin-bottom: 1.5vh;
         }
 
-        .more-info-content{
+        .more-info-content {
             margin-top: .5vh;
             font-size: .9rem;
 
-            .more-info-webside{
-                a{
+            .more-info-webside {
+                a {
                     text-decoration: none;
                     color: rgb(21, 102, 172);
                     transition: .2s;
                 }
 
-                a:hover{
+                a:hover {
                     color: rgb(89, 167, 235);
                 }
             }
@@ -107,17 +107,17 @@
     background-color: white;
 }
 
-.profileNavigationLink{
+.profileNavigationLink {
     text-decoration: none;
     color: black;
     transition: .2s;
 }
 
-.profileNavigationLink:hover{
+.profileNavigationLink:hover {
     cursor: pointer;
     border-bottom: 2px rgb(198, 198, 198) solid;
 }
 
-.profileNavigationLink.active{
+.profileNavigationLink.active {
     border-bottom: 2px rgb(81, 81, 81) solid;
 }

@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap:1vw;
-    padding-top: 2vh;
+    padding-top: 4vh;
     padding-bottom: 2vh;
 
     .userProfilePhotoSection-photo{
@@ -34,10 +34,5 @@
             background-color: rgb(47, 47, 47);
             border: 1px rgb(47, 47, 47) solid;
         }
-    }
-
-    p{
-        width: 100vw;
-        text-align: center;
     }
 }
