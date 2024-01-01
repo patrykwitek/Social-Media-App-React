@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { User } from "../../types/UserType";
 
 export const FetchUsers = () => {
-    const [allUsers, setAllUsers] = useState<{}[]>([]);
+    const [allUsers, setAllUsers] = useState<User[]>([]);
 
     useEffect(() => {
         const fetchUsers = async () => {

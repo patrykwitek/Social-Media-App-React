@@ -8,13 +8,12 @@ import logout from '../../../resources/images/dropdown-logout.png';
 import { DropdownItem } from '../DropdownItem/DropdownItem';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../hooks/Auth/Auth';
 
-type HeaderUserSectionProps = {
-    userName: string
-}
-
-export const HeaderUserSection = (props: HeaderUserSectionProps) => {
+export const HeaderUserSection = () => {
     const [open, setOpen] = useState(false);
+
+    const auth = useAuth();
 
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -34,13 +33,17 @@ export const HeaderUserSection = (props: HeaderUserSectionProps) => {
 
     const navigate = useNavigate();
 
-    const userID = 1;
+    const userID = auth.user?.id;
     
+    const handleLogout = () => {
+        auth.logout();
+        navigate('/');
+    }
     return (
         <div className='headerUserSection' ref={dropdownRef}>
             <div className='dropdown-menu-link' onClick={() => { setOpen(!open) }}>
                 <div className={`userNameSection ${open ? 'highlight' : 'nothighlight'}`}>
-                    {props.userName}
+                    {auth.user?.name.split(" ")[0]}
                 </div>
                 <div className='userWelcomeSectionPicture'>
                     <img src={profilePicture} alt="Profile Picture" className='userProfilePicture' />
@@ -49,16 +52,16 @@ export const HeaderUserSection = (props: HeaderUserSectionProps) => {
             <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`}>
                 <div className='dropdown-user-info'>
                     <div className='dropdown-userFirstName'>
-                        Patryk Witek
+                        {auth.user?.name}
                     </div>
                     <div className='dropdown-userName'>
-                        @patrykwitek
+                        @{auth.user?.username}
                     </div>
                 </div>
                 <DropdownItem img={profile} text='Profile' onClick={() => navigate(`user/${userID}/photos`)}/>
                 <DropdownItem img={edit} text='Edit Profile' onClick={() => navigate('edit-profile')}/>
                 <DropdownItem img={settings} text='Settings' onClick={() => navigate('settings')}/>
-                <DropdownItem img={logout} text='Logout' onClick={() => navigate('')}/>
+                <DropdownItem img={logout} text='Logout' onClick={handleLogout}/>
             </div>
         </div>
     )

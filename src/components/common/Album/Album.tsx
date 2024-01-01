@@ -42,9 +42,8 @@ export const Album = () => {
                     <div className='album-photos'>
                         {
                             photos.map((photo: any) => {
-                                return <div className='displayed-photo' onClick={() => switchPhotoModal(photo)}>
+                                return <div key={photo.id} className='displayed-photo' onClick={() => switchPhotoModal(photo)}>
                                     <img
-                                        key={photo.id}
                                         src={photo.thumbnailUrl}
                                         alt='Photo'
                                         loading='lazy'

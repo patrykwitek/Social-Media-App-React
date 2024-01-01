@@ -1,5 +1,6 @@
 import './style.scss';
 import '../../../style/font.css';
+import { RiLoginBoxLine } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 
 export const LoginBtn = () => {
@@ -9,7 +10,7 @@ export const LoginBtn = () => {
     return (
         <div className='login-btn-container'>
             <div className='headerLoginSection' onClick={() => navigate(`login`)}>
-                Log In
+                Login <RiLoginBoxLine className='login-icon'/>
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ export const FetchPhotos = () => {
         return array;
     };
 
-    const displayedPhotosNumber: number = 1000;
+    const displayedPhotosNumber: number = 200;
 
     useEffect(() => {
         const fetchPhotos = async () => {

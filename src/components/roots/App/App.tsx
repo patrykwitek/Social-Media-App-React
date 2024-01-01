@@ -1,6 +1,5 @@
 import '../../../style/font.css';
 import './style.scss';
-import PulseLoader from "react-spinners/PulseLoader";
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Footer } from '../../common/Footer/Footer';
@@ -16,32 +15,36 @@ import { ProfilePostsSection } from '../../common/ProfilePostsSection/ProfilePos
 import { UsersPhotosGallery } from '../../common/UsersPhotosGallery/UsersPhotosGallery';
 import { Album } from '../../common/Album/Album';
 import { LoadingScreen } from '../../common/LoadingScreen/LoadingScreen';
-const Photos = React.lazy(() => import('../Photos/Photos'))
+import { AuthProvider } from '../../../hooks/Auth/Auth';
+import { Login } from '../Login/Login';
+import { NotLoggedIn } from '../NotLoggedIn/NotLoggedIn';
+import { RequireAuth } from '../../../hooks/Auth/RequireAuth';
+import { MainPage } from '../MainPage/MainPage';
 
 function App() {
   return (
     <div className="app">
-      <Header isLoggedIn={true} />
-      <Routes>
-        <Route path='/' element={
-          <Suspense fallback={<LoadingScreen />}>
-              <Photos />
-          </Suspense>
-        } />
-        <Route path='posts' element={<Posts />} />
-        <Route path='friends' element={<Friends />} />
-        <Route path='about' element={<About />} />
-        <Route path='settings' element={<Settings />} />
-        <Route path='user/:userID' element={<Profile />}>
-          <Route index element={<ProfilePhotosSection />} />
-          <Route path='photos' element={<ProfilePhotosSection />} />
-          <Route path='gallery' element={<UsersPhotosGallery />} />
-          <Route path='posts' element={<ProfilePostsSection />} />
-        </Route>
-        <Route path='album/:albumID' element={<Album />} />
-        <Route path='*' element={<PageNotFound />} />
-      </Routes>
-      <Footer />
+      <AuthProvider>
+        <Header />
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='posts' element={<RequireAuth><Posts /></RequireAuth>} />
+          <Route path='friends' element={<RequireAuth><Friends /></RequireAuth>} />
+          <Route path='about' element={<About />} />
+          <Route path='settings' element={<Settings />} />
+          <Route path='user/:userID' element={<RequireAuth><Profile /></RequireAuth>}>
+            <Route index element={<ProfilePhotosSection />} />
+            <Route path='photos' element={<ProfilePhotosSection />} />
+            <Route path='gallery' element={<UsersPhotosGallery />} />
+            <Route path='posts' element={<ProfilePostsSection />} />
+          </Route>
+          <Route path='album/:albumID' element={<RequireAuth><Album /></RequireAuth>} />
+          <Route path='login' element={<Login />} />
+          <Route path='notloggedin' element={<NotLoggedIn />} />
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </div>
   );
 }

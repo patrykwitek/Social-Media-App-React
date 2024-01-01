@@ -1,0 +1,127 @@
+.login-page {
+    margin: 0 auto;
+    width: 100vw;
+    height: 82vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+
+    .login-container {
+        background-color: white;
+        border: 1px lightgray solid;
+        border-radius: 1.5rem;
+        padding-top: 3vh;
+        padding-bottom: 2vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        box-shadow: 0px 3px 7px -6px rgb(58, 58, 58);
+
+        .username-container {
+            display: flex;
+            align-items: center;
+            height: 2.5rem;
+            width: 15vw;
+            margin-bottom: 2vh;
+
+            .username-icon {
+                font-size: 2rem;
+            }
+
+            .username-input {
+                background-color: transparent;
+                border: none;
+                height: 100%;
+                font-size: 1.1rem;
+                width: 100%;
+                margin-left: .6rem;
+            }
+
+            .username-input:focus {
+                outline: none;
+            }
+        }
+
+        .password-container {
+            display: flex;
+            align-items: center;
+            height: 2.5rem;
+            width: 15vw;
+
+            .password-icon {
+                font-size: 2rem;
+            }
+
+            .password-input {
+                background-color: transparent;
+                border: none;
+                height: 100%;
+                font-size: 1.1rem;
+                width: 100%;
+                margin-left: .6rem;
+                color: rgb(161, 161, 161);
+            }
+
+            .password-input:focus {
+                outline: none;
+            }
+        }
+
+        .password-message {
+            color: rgb(161, 161, 161);
+            width: 15vw;
+            margin-top: 1.5vh;
+            font-size: 1.5vh;
+            text-align: left;
+        }
+
+        .login-button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 3vh;
+            border-top: 1px lightgray solid;
+
+            button {
+                position: relative;
+                margin-top: 3vh;
+                padding-right: 1.3rem;
+                padding-left: 1.3rem;
+                padding-top: .8vh;
+                padding-bottom: .8vh;
+                color: black;
+                border-radius: 20px;
+                background-color: rgb(247, 247, 247);
+                border: 1px lightgray solid;
+                font-size: 1.8vh;
+                box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
+                transition: .3s;
+                display: flex;
+                align-items: center;
+
+                .login-icon {
+                    position: absolute;
+                    right: 50%;
+                    transform: translate(50%);
+                    font-size: 2.7vh;
+                    color: transparent;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: transparent;
+                    background-color: rgb(63, 63, 67);
+                    border: 1px rgb(63, 63, 67) solid;
+                    box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
+
+                    .login-icon {
+                        display: block;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

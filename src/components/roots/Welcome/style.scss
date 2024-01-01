@@ -1,0 +1,73 @@
+.welcome-page {
+    width: 70vw;
+    height: 82vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    position: relative;
+
+    .welcome-page-top{
+        font-size: 3vh;
+        text-align: right;
+
+        #bottom-description{
+            font-size: 2vh;
+            margin-top: 1vh;
+        }
+    }
+
+    .welcome-page-login{
+        align-self: last baseline;
+
+        button {
+            position: relative;
+            margin-top: 1.5vh;
+            padding-right: 1.3rem;
+            padding-left: 1.3rem;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            color: black;
+            border-radius: 3rem;
+            background-color: rgb(247, 247, 247);
+            border: 1px lightgray solid;
+            font-size: 2.5vh;
+            box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
+            transition: .3s;
+            display: flex;
+            align-items: center;
+    
+            .login-icon {
+                position: absolute;
+                right: 50%;
+                transform: translate(50%);
+                font-size: 2.7vh;
+                color: transparent;
+            }
+    
+            &:hover {
+                cursor: pointer;
+                color: transparent;
+                background-color: rgb(63, 63, 67);
+                border: 1px rgb(63, 63, 67) solid;
+                box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
+    
+                .login-icon {
+                    display: block;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .welcome-page-picture{
+        z-index: -1;
+        position: absolute;
+        opacity: .6;
+        bottom: 0;
+        right: 20vw;
+        height: 80vh;
+    }
+}

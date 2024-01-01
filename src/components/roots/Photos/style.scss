@@ -1,21 +1,21 @@
 .photosPage {
-   width: 100vw;
-   margin: 0 auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding-top: 5vh;
-   padding-bottom: 5vh;
-   
-   .photosContent {
-      margin: 0 auto;
-      width: 70vw;
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 
-      .loading-screen {
-         height: 72vh;
-      }
-   }
+    .photosContent {
+        margin: 0 auto;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .loading-screen {
+            height: 72vh;
+        }
+    }
 }
