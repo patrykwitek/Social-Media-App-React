@@ -4,40 +4,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { LoadingScreen } from '../LoadingScreen/LoadingScreen';
+import { FetchPhotosForProfileSection } from '../../../hooks/API/FetchPhotosForProfileSection';
 
 export const ProfilePhotosSection = () => {
     const { userID } = useParams();
 
-    const [user, setUserData] = useState<any>({});
-    const [photosList, setPhotoList] = useState<any[]>([]);
-
-    const photosToDisplayNumber: number = 9;
-
-    useEffect(() => {
-        const fetchUserPhotos = async () => {
-            try {
-                const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${userID}`);
-                const userData = await userResponse.json();
-                setUserData(userData);
-
-                const albumsResponse = await fetch(`https://jsonplaceholder.typicode.com/albums?userId=${userID}`);
-                const albumsData = await albumsResponse.json();
-
-                const photosArray: any[] = [];
-                for (const album of albumsData) {
-                    const photosFromAlbumResponse = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${album.id}`);
-                    const photosData = await photosFromAlbumResponse.json();
-                    photosArray.push(...photosData);
-                }
-                setPhotoList(photosArray.slice(0, photosToDisplayNumber));
-            } catch (error) {
-                console.error('Fetching data failed: ', error);
-            }
-        };
-
-        fetchUserPhotos();
-    }, [userID]);
-
+    const {user, photosList} = FetchPhotosForProfileSection(userID);
+    
     const navigate = useNavigate();
 
     return (

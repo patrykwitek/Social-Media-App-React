@@ -3,6 +3,7 @@ import '../../../style/font.css';
 import profilePicture from '../../../resources/images/profile-picture.png';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { FetchPhotoWithUserData } from '../../../hooks/API/FetchPhotoWithUserData';
 
 type PhotoProps = {
    photo: any
@@ -11,27 +12,8 @@ type PhotoProps = {
 export const Photo = (props: PhotoProps) => {
    const navigate = useNavigate();
 
-   const [album, setAlbumData] = useState<any>({});
-   const [user, setUserData] = useState<any>({});
+   const {album, user} = FetchPhotoWithUserData(props.photo.albumId);
    const [showMore, setShowMore] = useState(false);
-
-   useEffect(() => {
-      const fetchAlbum = async () => {
-         try {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${props.photo.albumId}`);
-            const albumData = await response.json();
-            setAlbumData(albumData);
-
-            const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${albumData.userId}`);
-            const userData = await userResponse.json();
-            setUserData(userData);
-         } catch (error) {
-            console.error('Fetching data failed: ', error);
-         }
-      };
-
-      fetchAlbum();
-   }, [props.photo.albumId]);
 
    const handleNavigateToUserPage = (userId: number) => {
       document.body.classList.remove('freeze-scrolling');

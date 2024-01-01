@@ -6,32 +6,14 @@ import { Photo } from '../Photo/Photo';
 import { BiX } from "react-icons/bi";
 import { HiEye } from "react-icons/hi2";
 import { LoadingScreen } from '../LoadingScreen/LoadingScreen';
+import { FetchAlbumPhotosData } from '../../../hooks/API/FetchAlbumPhotosData';
 
 export const Album = () => {
     const { albumID } = useParams();
-
-    const [albums, setAlbumData] = useState<any[]>([]);
-    const [photos, setPhotosData] = useState<any[]>([]);
+    const { albums, photos } = FetchAlbumPhotosData(albumID);
+    
     const [photoModal, setPhotoModal] = useState(false);
     const [chosenPhoto, setChosenPhoto] = useState<any>({});
-
-    useEffect(() => {
-        const fetchAlbum = async () => {
-            try {
-                const albumsResponse = await fetch(`https://jsonplaceholder.typicode.com/albums?id=${albumID}`);
-                const albumsData = await albumsResponse.json();
-                setAlbumData(albumsData);
-
-                const photosResponse = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumsData[0].id}`);
-                const photosData = await photosResponse.json();
-                setPhotosData(photosData);
-            } catch (error) {
-                console.error('Fetching album data failed: ', error);
-            }
-        };
-
-        fetchAlbum();
-    }, [albumID]);
 
     const switchPhotoModal = (photo: any) => {
         setPhotoModal(!photoModal);

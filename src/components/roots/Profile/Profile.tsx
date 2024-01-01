@@ -5,25 +5,11 @@ import { ProfileNavigationItem } from '../../common/ProfileNavigationItem/Profil
 import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import { FetchUserData } from '../../../hooks/API/FetchUserData';
 
 export const Profile = () => {
     const { userID } = useParams();
-
-    const [user, setUserData] = useState<any>({});
-
-    useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${userID}`);
-                const userData = await userResponse.json();
-                setUserData(userData);
-            } catch (error) {
-                console.error('Fetching data failed: ', error);
-            }
-        };
-
-        fetchUser();
-    }, [userID]);
+    const { user } = FetchUserData(userID);
 
     return (
         <div className='userProfilePage'>

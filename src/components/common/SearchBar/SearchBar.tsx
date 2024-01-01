@@ -11,7 +11,7 @@ type SearchBarProps = {
 export const SearchBar = (props: SearchBarProps) => {    
     const [input, setInput] = useState('');
 
-    const fetchData = (value: string) => {
+    const fetchFilteredUsersData = (value: string) => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then((userData: any[]) => {
@@ -31,7 +31,7 @@ export const SearchBar = (props: SearchBarProps) => {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInput(event.target.value);
         props.setSearchInput(event.target.value);
-        fetchData(event.target.value)
+        fetchFilteredUsersData(event.target.value);
     };
 
     return (
