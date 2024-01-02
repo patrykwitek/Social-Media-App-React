@@ -20,6 +20,7 @@ import { Login } from '../Login/Login';
 import { NotLoggedIn } from '../NotLoggedIn/NotLoggedIn';
 import { RequireAuth } from '../../../hooks/Auth/RequireAuth';
 import { MainPage } from '../MainPage/MainPage';
+import { EditUser } from '../EditUser/EditUser';
 
 function App() {
   return (
@@ -39,8 +40,9 @@ function App() {
             <Route path='posts' element={<ProfilePostsSection />} />
           </Route>
           <Route path='album/:albumID' element={<RequireAuth><Album /></RequireAuth>} />
+          <Route path='edit-user' element={<RequireAuth><EditUser /></RequireAuth>} />
           <Route path='login' element={<Login />} />
-          <Route path='notloggedin' element={<NotLoggedIn />} />
+          <Route path='not-logged-in' element={<NotLoggedIn />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
         <Footer />

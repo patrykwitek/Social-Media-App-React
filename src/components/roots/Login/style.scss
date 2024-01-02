@@ -77,6 +77,16 @@
             text-align: left;
         }
 
+        .wrong-username-message{
+            color: rgb(235, 43, 43);
+            width: 15vw;
+            font-size: 1.5vh;
+            text-align: left;
+            position: relative;
+            bottom: .5vh;
+            margin-bottom: 1vh;
+        }
+
         .login-button {
             width: 100%;
             display: flex;

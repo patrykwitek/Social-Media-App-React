@@ -39,6 +39,7 @@ export const HeaderUserSection = () => {
         auth.logout();
         navigate('/');
     }
+    
     return (
         <div className='headerUserSection' ref={dropdownRef}>
             <div className='dropdown-menu-link' onClick={() => { setOpen(!open) }}>
@@ -59,7 +60,7 @@ export const HeaderUserSection = () => {
                     </div>
                 </div>
                 <DropdownItem img={profile} text='Profile' onClick={() => navigate(`user/${userID}/photos`)}/>
-                <DropdownItem img={edit} text='Edit Profile' onClick={() => navigate('edit-profile')}/>
+                <DropdownItem img={edit} text='Edit Profile' onClick={() => navigate('edit-user')}/>
                 <DropdownItem img={settings} text='Settings' onClick={() => navigate('settings')}/>
                 <DropdownItem img={logout} text='Logout' onClick={handleLogout}/>
             </div>

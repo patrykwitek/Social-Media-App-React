@@ -8,9 +8,10 @@ import { useNavigate } from 'react-router-dom';
 import { FetchUsers } from '../../../hooks/API/FetchUsers';
 
 export const Login = () => {
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState('Antonette'); //Just for quicker testing; TO-DO: remove 'Antonette' in the future
     const [password, setPassword] = useState('');
     const [passwordMessageVisibility, setPasswordMessageVisibility] = useState('none');
+    const [wrongUsernameMessageVisibility, setWrongUsernameMessageVisibility] = useState('none');
 
     const auth = useAuth();
     const navigate = useNavigate();
@@ -30,6 +31,7 @@ export const Login = () => {
                 break;
             }
         }
+        setWrongUsernameMessageVisibility('block');
     }
 
     return (
@@ -41,8 +43,12 @@ export const Login = () => {
                         type='text'
                         className='username-input'
                         placeholder='login'
+                        value={username} //Just for quicker testing; TO-DO: remove this line in the future
                         onChange={(event) => setUsername(event.target.value)}
                     />
+                </div>
+                <div style={{ display: wrongUsernameMessageVisibility }} className='wrong-username-message'>
+                    Wrong username. Try again.
                 </div>
                 <div className='password-container'>
                     <RiLockPasswordFill className='password-icon' />

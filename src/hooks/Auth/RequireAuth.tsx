@@ -5,7 +5,7 @@ export const RequireAuth = ({ children }: any) => {
     const auth = useAuth();
 
     if(!auth.user) {
-        return <Navigate to='/notloggedin'/>
+        return <Navigate to='/not-logged-in'/>
     }
 
     return children;
