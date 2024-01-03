@@ -13,7 +13,10 @@ export const NotLoggedIn = () => {
                 <MdLock className='lock-icon'/>
                 <h1>Not Logged In</h1>
                 <p>
-                    It looks like you're trying to access a page you can't access. Log in to view content.
+                    It looks like you're trying to access a page you can't access. 
+                </p>
+                <p className='message-content'>
+                    Log in to view content.
                 </p>
                 <div className='login-button'>
                     <button onClick={() => navigate('/login')}>

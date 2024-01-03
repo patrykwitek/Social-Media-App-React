@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { LiaUserEditSolid } from "react-icons/lia";
 import { BiUser, BiSolidUserAccount } from "react-icons/bi";
 import { LuMail } from "react-icons/lu";
-import { HiOutlinePhone, HiCheckCircle } from "react-icons/hi2";
+import { HiOutlinePhone } from "react-icons/hi2";
 import { CgWebsite } from "react-icons/cg";
 import { PiAddressBook } from "react-icons/pi";
 import { TbLocation } from "react-icons/tb";
@@ -13,6 +13,7 @@ import { TiLocation } from "react-icons/ti";
 import { MdLocationCity } from "react-icons/md";
 import { RiPriceTagLine } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
+import { SubmitButton } from '../../common/SubmitButton/SubmitButton';
 
 export const EditUser = () => {
     const auth = useAuth();
@@ -64,8 +65,7 @@ export const EditUser = () => {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((response) => response.json());
 
         navigate(`/user/${auth.user?.id}/photos`);
     }
@@ -164,9 +164,7 @@ export const EditUser = () => {
                     </div>
                 </div>
                 <div className='submit-button-section'>
-                    <button onClick={handleSubmit}>
-                        Submit <HiCheckCircle className='submit-icon' />
-                    </button>
+                    <SubmitButton onClick={handleSubmit} />
                 </div>
             </div>
         </div>

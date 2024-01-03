@@ -5,6 +5,9 @@ import profile from '../../../resources/images/dropdown-profile.png';
 import edit from '../../../resources/images/dropdown-edit.png';
 import settings from '../../../resources/images/dropdown-settings.png';
 import logout from '../../../resources/images/dropdown-logout.png';
+import add from '../../../resources/images/add.png';
+import addPhoto from '../../../resources/images/add-photo.png';
+import addPost from '../../../resources/images/add-post.png';
 import { DropdownItem } from '../DropdownItem/DropdownItem';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +15,7 @@ import { useAuth } from '../../../hooks/Auth/Auth';
 
 export const HeaderUserSection = () => {
     const [open, setOpen] = useState(false);
+    const [addSectionOpen, setAddSectionOpen] = useState(false);
 
     const auth = useAuth();
 
@@ -20,6 +24,7 @@ export const HeaderUserSection = () => {
     const handleClickOutside = (event: MouseEvent) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
             setOpen(false);
+            setAddSectionOpen(false);
         }
     };
 
@@ -60,9 +65,14 @@ export const HeaderUserSection = () => {
                     </div>
                 </div>
                 <DropdownItem img={profile} text='Profile' onClick={() => navigate(`user/${userID}/photos`)}/>
+                <DropdownItem img={add} text='Add' onClick={() => { setAddSectionOpen(!addSectionOpen) }}/>
                 <DropdownItem img={edit} text='Edit Profile' onClick={() => navigate('edit-user')}/>
                 <DropdownItem img={settings} text='Settings' onClick={() => navigate('settings')}/>
                 <DropdownItem img={logout} text='Logout' onClick={handleLogout}/>
+                <div className={`add-section ${addSectionOpen ? 'active' : 'inactive'}`}>
+                    <DropdownItem img={addPhoto} text='Photo' onClick={() => navigate('add-photo')}/>
+                    <DropdownItem img={addPost} text='Post' onClick={() => navigate('add-post')}/>
+                </div>
             </div>
         </div>
     )

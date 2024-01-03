@@ -4,7 +4,7 @@ import '../../../style/font.css';
 type DropdownItemProps = {
     img: any,
     text: string,
-    onClick: any
+    onClick: () => void
 }
 
 export const DropdownItem = (props: DropdownItemProps) => {

@@ -3,9 +3,12 @@ import '../../../style/font.css';
 import { Photo } from '../../common/Photo/Photo';
 import { LoadingScreen } from '../../common/LoadingScreen/LoadingScreen';
 import { FetchPhotos } from '../../../hooks/API/FetchPhotos';
+import { AddButton } from '../../common/AddButton/AddButton';
+import { useNavigate } from 'react-router-dom';
 
 const Photos = () => {
     const { photosAPI } = FetchPhotos();
+    const navigate = useNavigate();
     
     return (
         <div className='photosPage'>
@@ -20,6 +23,7 @@ const Photos = () => {
                     )
                 }
             </div>
+            <AddButton onClick={() => navigate('/add-photo')}/>
         </div>
     )
 }

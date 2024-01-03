@@ -4,7 +4,7 @@ import profilePicture from '../../../resources/images/profile-picture.png';
 
 type SingleUserProps = {
     username: string,
-    onClick: any
+    onClick: () => void
 }
 
 export const FriendsSingleUser = (props: SingleUserProps) => {

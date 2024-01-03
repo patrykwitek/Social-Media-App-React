@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Album } from "../../types/Album";
 
 export const FetchUsersAlbums = (userID: string | undefined) => {
-    const [albums, setAlbumData] = useState<any[]>([]);
+    const [albums, setAlbumData] = useState<Album[]>([]);
 
     useEffect(() => {
         const fetchUserAlbums = async () => {

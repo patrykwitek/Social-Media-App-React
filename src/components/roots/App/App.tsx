@@ -21,6 +21,8 @@ import { NotLoggedIn } from '../NotLoggedIn/NotLoggedIn';
 import { RequireAuth } from '../../../hooks/Auth/RequireAuth';
 import { MainPage } from '../MainPage/MainPage';
 import { EditUser } from '../EditUser/EditUser';
+import { AddPhoto } from '../AddPhoto/AddPhoto';
+import { AddPost } from '../AddPost/AddPost';
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
           </Route>
           <Route path='album/:albumID' element={<RequireAuth><Album /></RequireAuth>} />
           <Route path='edit-user' element={<RequireAuth><EditUser /></RequireAuth>} />
+          <Route path='add-photo' element={<RequireAuth><AddPhoto /></RequireAuth>} />
+          <Route path='add-post' element={<RequireAuth><AddPost /></RequireAuth>} />
           <Route path='login' element={<Login />} />
           <Route path='not-logged-in' element={<NotLoggedIn />} />
           <Route path='*' element={<PageNotFound />} />

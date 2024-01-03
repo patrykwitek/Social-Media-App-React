@@ -18,7 +18,7 @@
     &:hover {
         cursor: pointer;
         color: rgb(129, 143, 173);
-        
+
         .userProfilePicture {
             border-radius: 46%;
             scale: 105%;
@@ -41,7 +41,7 @@
     display: flex;
     align-items: center;
 
-    &.highlight{
+    &.highlight {
         color: rgb(129, 143, 173);
         transition: .3s;
     }
@@ -87,6 +87,56 @@
             text-align: center;
             color: rgb(134, 134, 134);
             margin-top: .2rem;
+        }
+    }
+
+    .add-section {
+        background-color: white;
+        position: absolute;
+        top: calc(8.8vh + 100px);
+        right: 250px;
+        border: 1px rgb(195, 195, 195) solid;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 15px;
+        gap: 10px;
+        border-radius: 5px;
+
+        .dropdown-menu-item {
+            width: 100px;
+            padding-top: 0;
+            margin-top: 0;
+            border-top: none;
+            text-align: left;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            right: -8px;
+            height: 14px;
+            width: 14px;
+            transform: rotate(45deg);
+            background-color: white;
+            border-right: 1px rgb(195, 195, 195) solid;
+            border-top: 1px rgb(195, 195, 195) solid;
+        }
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            transition: .3s;
+            transform: translateX(-10px);
+        }
+
+        &.inactive {
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s;
+            transform: translateX(0px);
         }
     }
 }
