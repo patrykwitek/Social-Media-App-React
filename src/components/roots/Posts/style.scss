@@ -1,8 +1,9 @@
 .postsPage {
     width: 100vw;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
+

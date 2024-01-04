@@ -1,0 +1,66 @@
+.comment{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    margin-left: 45px;
+    margin-right: 45px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.19);
+    background-color: whitesmoke;
+    max-width: 730px;
+    max-height: 360px;
+    padding: 10px;
+    
+    .userComment{
+        display: flex;
+        margin-bottom: 1.1vh;
+        
+        .photoUser{
+            display: flex;
+
+            .profilePicture{
+                height: 4.6vh;
+                border-radius: 50%;
+                transition: .2s;
+                box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
+            }
+        }
+        
+        .nicknameUser{
+            margin-left: 0.9vw;
+            transition: .2s;
+
+            .nameComment{
+                font-size: small;
+                font-weight: bold;
+            }
+            .emailComment{
+                font-size: small;
+            }
+        }
+        
+        &:hover{
+            cursor: pointer;
+    
+                .profilePicture {
+                opacity: .8;
+                scale: 105%;
+                }
+    
+                .nicknameUser {
+                    .nameComment{
+                        font-size: small;
+                        color: rgb(50, 138, 215);
+                    }
+                }
+        }
+
+    }    
+
+    .bodyComment{
+        margin-top: 4px;
+        font-size: 14px;
+    }
+}
