@@ -137,6 +137,18 @@
                 color: rgb(255, 65, 65);
             }
         }
+
+        .remove {
+            position: absolute;
+            top: 1.5vw;
+            right: 3vw;
+            scale: 140%;
+
+            &:hover {
+                cursor: pointer;
+                color: rgb(255, 65, 65);
+            }
+        }
     }
 }
 

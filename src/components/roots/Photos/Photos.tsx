@@ -8,12 +8,13 @@ import { useNavigate } from 'react-router-dom';
 import { PhotosSearchBar } from '../../common/PhotosSearchBar/PhotosSearchBar';
 import { useState } from 'react';
 import { PhotosSearchBarByAlbumID } from '../../common/PhotosSearchBarByAlbumID/PhotosSearchBarByAlbumID';
+import { PhotoType } from '../../../types/PhotoType';
 
 const Photos = () => {
     const { photosAPI } = FetchPhotos();
     const navigate = useNavigate();
 
-    const [filterPhotos, setFilterPhotos] = useState<{}[]>([]);
+    const [filterPhotos, setFilterPhotos] = useState<PhotoType[]>([]);
     const [searchInputPhotos, setSearchInputPhotos] = useState('');
     const [searchBarOption, setSearchBarOption] = useState('photoID');
 
@@ -41,11 +42,11 @@ const Photos = () => {
                 {
                     photosAPI[0] ? (
                         searchInputPhotos == '' ?
-                            photosAPI.map((photo: any) => {
+                            photosAPI.map((photo: PhotoType) => {
                                 return <Photo key={photo.id} photo={photo} />
                             })
                             :
-                            filterPhotos.map((photo: any) => {
+                            filterPhotos.map((photo: PhotoType) => {
                                 return <Photo key={photo.id} photo={photo} />
                             })
                     ) : (

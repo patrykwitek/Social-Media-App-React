@@ -4,15 +4,16 @@ import profilePicture from '../../../resources/images/profile-picture.png';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { FetchPhotoWithUserData } from '../../../hooks/API/FetchPhotoWithUserData';
+import { PhotoType } from '../../../types/PhotoType';
 
 type PhotoProps = {
-   photo: any
+   photo: PhotoType
 }
 
 export const Photo = (props: PhotoProps) => {
    const navigate = useNavigate();
 
-   const {album, user} = FetchPhotoWithUserData(props.photo.albumId);
+   const {album, user} = FetchPhotoWithUserData(props.photo.albumId.toString());
    const [showMore, setShowMore] = useState(false);
 
    const handleNavigateToUserPage = (userId: number) => {

@@ -2,10 +2,11 @@ import './style.scss';
 import '../../../style/font.css';
 import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
+import { PhotoType } from '../../../types/PhotoType';
 
 type PhotosSearchBarProps = {
     setSearchInput: React.Dispatch<React.SetStateAction<string>>,
-    setFilterPhotos: React.Dispatch<React.SetStateAction<{}[]>>
+    setFilterPhotos: React.Dispatch<React.SetStateAction<PhotoType[]>>
 }
 
 export const PhotosSearchBar = (props: PhotosSearchBarProps) => {
