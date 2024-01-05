@@ -1,0 +1,21 @@
+.photos-search-bar{
+    border-radius: 10px;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4vh;
+    width: 12vw;
+
+    .search-input{
+        background-color: transparent;
+        border: none;
+        height: 100%;
+        font-size: 1.1rem;
+        width: 100%;
+        margin-left: .6rem;
+    }
+
+    .search-input:focus{
+        outline: none;
+    }
+}

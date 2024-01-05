@@ -2,10 +2,48 @@
     width: 100vw;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 4vh;
     padding-bottom: 5vh;
+
+    .photos-search-bar-container {
+        width: 70vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+
+        .choose-filtering {
+            height: 4vh;
+            width: 6vw;
+            border: none;
+            position: relative;
+            top: .25vh;
+            font-size: 1.9vh;
+            cursor: pointer;
+            padding: .5vh .3vw;
+            transition: .2s;
+            background-color: rgba(128, 128, 128, 0.15);
+
+            option {
+                border: none;
+            }
+
+            &:focus {
+                outline: 0;
+            }
+
+            &:hover {
+                background-color: rgba(128, 128, 128, 0.3);
+            }
+
+            &:active {
+                background-color: rgba(128, 128, 128, 0.3);
+            }
+        }
+    }
 
     .photosContent {
         margin: 0 auto;

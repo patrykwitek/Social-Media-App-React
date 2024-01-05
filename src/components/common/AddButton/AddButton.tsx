@@ -8,7 +8,7 @@ type AddButtonProps = {
 
 export const AddButton = (props: AddButtonProps) => {
     return (
-        <div className='add-button-container' onClick={props.onClick}>
+        <div className='add-button-container' onClick={props.onClick} title='Upload new photo'>
             <div className='nav-add-photo'>
                 <LuPlus className='icon' />
             </div>

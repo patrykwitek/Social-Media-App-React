@@ -3,7 +3,7 @@
     width: 100vw;
     height: 7vh;
     backdrop-filter: blur(10px);
-    background-color: rgb(224, 224, 224, 0.461);
+    background-color: rgba(255, 255, 255, 0.45);
     border-bottom: 1px rgb(195, 195, 195) solid;
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     z-index: 1;
+    box-shadow: 0px 0px 14px -8px rgb(68, 68, 68);
 
     .headerLink {
         text-decoration: none;

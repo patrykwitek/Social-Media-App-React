@@ -1,13 +1,16 @@
 .add-photo-page {
     width: 100vw;
+    height: 82vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     padding-top: 5vh;
     padding-bottom: 5vh;
 
     .add-photo-container {
         width: 50vw;
+        height: 50vh;
         background-color: white;
         border: 1px lightgray solid;
         border-radius: 3rem;
