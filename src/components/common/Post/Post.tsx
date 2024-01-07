@@ -1,31 +1,43 @@
 import './style.scss';
 import '../../../style/font.css';
 import profilePicture from '../../../resources/images/profile-picture.png';
+import { PostType } from '../../../types/PostType';
+import { FetchPostWithUserData } from '../../../hooks/API/FetchPostWithUserData';
 import { Comment } from '../Comment/Comment';
-import { useState } from 'react';
 import { AddComment } from '../AddComment/AddComment';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaRegCommentDots } from "react-icons/fa";
 
 
-// type PostProps = {
-//    post: any,
-// };
 
 
-export const Post = () => {
+type PostProps = {
+   post: PostType,
+};
 
+
+export const Post = (props: PostProps) => {
+   const navigate = useNavigate();
+
+   const { user } = FetchPostWithUserData(props.post.userId.toString());
    const [showMore, setShowMore] = useState(false);
+
+   const handleNavigateToUserPage = (userId: number) => {
+      document.body.classList.remove('freeze-scrolling');
+      navigate(`/user/${userId}/posts`);
+   }
 
    return (
       <div className='postsPage'>
          <div className='somePost'>
             <div className='topPartOfPost'>
-               <div className='userPost'>
+               <div className='userPost' onClick={() => handleNavigateToUserPage(user.id)}>
                   <div>
                      <img src={profilePicture} alt="profilePicture" className='profilePicture' />
                   </div>
                   <div className='userPostUsername'>
-                     Patryk Witek
+                     {user.username}
                   </div>
                </div>
 
@@ -33,11 +45,10 @@ export const Post = () => {
             <div className='bottomPartOfPost'>
                <div className='postDescription'>
                   <div className='postTitle'>
-                     Lorem
+                     {props.post.title}
                   </div>
                   <div className='postText'>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis aut modi, expedita molestiae cum porro possimus, natus tenetur assumenda recusandae quis ratione quas et delectus nisi minima sunt vitae? Voluptas!
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consectetur eius repellat! Minima veniam itaque ad molestiae, minus officia blanditiis molestias pariatur provident, explicabo magnam adipisci quidem placeat saepe. Facere?
+                     {props.post.body}
                   </div>
                </div>
             </div>
@@ -50,7 +61,7 @@ export const Post = () => {
             </div>
 
             <div className='closeComments' onClick={() => { setShowMore(!showMore) }}>
-               {showMore ? <FaRegCommentDots /> : <FaRegCommentDots />}
+               {showMore ? <FaRegCommentDots className='iconComment' /> : <FaRegCommentDots className='iconComment' />}
             </div>
 
          </div>
