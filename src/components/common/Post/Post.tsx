@@ -24,7 +24,6 @@ export const Post = (props: PostProps) => {
    const [showMore, setShowMore] = useState(false);
 
    const handleNavigateToUserPage = (userId: number) => {
-      document.body.classList.remove('freeze-scrolling');
       navigate(`/user/${userId}/posts`);
    }
 

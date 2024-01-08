@@ -39,7 +39,7 @@ export const PhotosSearchBar = (props: PhotosSearchBarProps) => {
             <FaSearch className='search-icon' />
             <input
                 type='text'
-                placeholder='Search for the photos by'
+                placeholder='Search for the photos by photo ID'
                 className='search-input'
                 value={input}
                 onChange={handleInputChange}
