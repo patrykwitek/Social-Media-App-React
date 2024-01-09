@@ -14,20 +14,19 @@
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
-        gap: 1vw;
 
         .choose-filtering {
-            height: 3.5vh;
+            height: 4vh;
             width: 6vw;
             border: none;
             position: relative;
             top: .25vh;
-            font-size: 1.7vh;
+            font-size: 1.9vh;
             cursor: pointer;
             padding: .5vh .3vw;
             transition: .2s;
             background-color: rgba(128, 128, 128, 0.15);
-            margin-top: .3rem;
+
             option {
                 border: none;
             }

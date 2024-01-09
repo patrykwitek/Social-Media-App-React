@@ -7,9 +7,8 @@ import { AddButton } from '../../common/AddButton/AddButton';
 import { useNavigate } from 'react-router-dom';
 import { PhotosSearchBar } from '../../common/PhotosSearchBar/PhotosSearchBar';
 import { useState } from 'react';
-import { PhotoType } from '../../../types/PhotoType';
 import { PhotosSearchBarByAlbumID } from '../../common/PhotosSearchBarByAlbumID/PhotosSearchBarByAlbumID';
-import { PhotosSearchBarByUserID } from '../../common/PhotosSearchBarByUserID/PhotosSearchBarByUser';
+import { PhotoType } from '../../../types/PhotoType';
 
 const Photos = () => {
     const { photosAPI } = FetchPhotos();
@@ -27,22 +26,17 @@ const Photos = () => {
     return (
         <div className='photosPage'>
             <div className='photos-search-bar-container'>
-                <select className='choose-filtering' value={searchBarOption} onChange={handleSelectChange}>
-                    <option value='photoID'>photo ID</option>
-                    <option value='albumID'>album ID</option>
-                    <option value='userID'>user ID</option>
-                </select>
                 {
                     searchBarOption == 'photoID' ? (
                         <PhotosSearchBar setSearchInput={setSearchInputPhotos} setFilterPhotos={setFilterPhotos} />
                     ) : (
-                        searchBarOption == 'albumID' ? (
-                            <PhotosSearchBarByAlbumID setSearchInput={setSearchInputPhotos} setFilterPhotos={setFilterPhotos} />
-                        ) : (
-                            <PhotosSearchBarByUserID setSearchInput={setSearchInputPhotos} setFilterPhotos={setFilterPhotos} />
-                        )
+                        <PhotosSearchBarByAlbumID setSearchInput={setSearchInputPhotos} setFilterPhotos={setFilterPhotos} />
                     )
                 }
+                <select className='choose-filtering' value={searchBarOption} onChange={handleSelectChange}>
+                    <option value='photoID'>photo ID</option>
+                    <option value='albumID'>album ID</option>
+                </select>
             </div>
             <div className='photosContent'>
                 {

@@ -17,6 +17,7 @@ export const Post = (props: PostProps) => {
    const { user } = FetchPostWithUserData(props.post.userId.toString());
 
    const handleNavigateToUserPage = (userId: number) => {
+      document.body.classList.remove('freeze-scrolling');
       navigate(`/user/${userId}/posts`);
    }
 
