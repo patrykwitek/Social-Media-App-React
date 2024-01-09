@@ -1,0 +1,41 @@
+.comments-section{
+
+   .actionPartOfPost{
+      display: flex;
+      flex-direction: column;
+   }
+   
+   .actionPartOfPost.showComments {
+      display: block;
+   }
+   
+   .actionPartOfPost.stoppedShowing {
+      display: none;
+   }
+   
+   .closeComments{
+      margin-left: 1.9vw;
+      margin-bottom: 1.5vh;
+      display: flex;
+      justify-content: flex-start;
+      color: rgb(0, 0, 0);
+
+      &:hover{
+         cursor: pointer;
+         margin-left: 1.9vw;
+         margin-bottom: 1.5vh;
+         display: flex;
+         justify-content: flex-start;
+         color: rgb(52, 52, 52);
+      }
+   }
+
+   .iconComment{
+      transition: .2s;
+      
+      &:hover{
+         cursor: pointer;
+         color: grey;
+      }
+   }
+}

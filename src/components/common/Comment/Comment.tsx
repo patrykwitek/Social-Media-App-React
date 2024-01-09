@@ -1,8 +1,13 @@
 import './style.scss';
 import '../../../style/font.css';
 import profilePictureWoman from '../../../resources/images/profile-picture-woman.jpg'
+import { CommentType } from '../../../types/CommentType';
 
-export const Comment = () => {
+type CommentProps = {
+   comment: CommentType
+};
+
+export const Comment = (props: CommentProps) => {
    return (
       <div className='comment'>
          <div className='userComment'>
@@ -11,11 +16,12 @@ export const Comment = () => {
             </div>
             <div className='nicknameUser'>
                <div className='nameComment'>Amanda Jonson</div>
-               <div className='emailComment'>amanda.jonson@mail.com</div>
+               <div className='emailComment'>{props.comment.email}</div>
             </div>
          </div>
          <div className='bodyComment'>
-            Lorem
+            <div>{props.comment.name}</div>
+            <div>{props.comment.body}</div>
          </div>
       </div>
    );

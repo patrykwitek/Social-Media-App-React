@@ -3,14 +3,8 @@ import '../../../style/font.css';
 import profilePicture from '../../../resources/images/profile-picture.png';
 import { PostType } from '../../../types/PostType';
 import { FetchPostWithUserData } from '../../../hooks/API/FetchPostWithUserData';
-import { Comment } from '../Comment/Comment';
-import { AddComment } from '../AddComment/AddComment';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaRegCommentDots } from "react-icons/fa";
-
-
-
+import { CommentsSection } from '../CommentsSection/CommentsSection';
 
 type PostProps = {
    post: PostType,
@@ -21,7 +15,6 @@ export const Post = (props: PostProps) => {
    const navigate = useNavigate();
 
    const { user } = FetchPostWithUserData(props.post.userId.toString());
-   const [showMore, setShowMore] = useState(false);
 
    const handleNavigateToUserPage = (userId: number) => {
       document.body.classList.remove('freeze-scrolling');
@@ -52,18 +45,7 @@ export const Post = (props: PostProps) => {
                   </div>
                </div>
             </div>
-
-            <div className={`actionPartOfPost ${showMore ? 'showComments' : 'stoppedShowing'}`}>
-               <AddComment />
-               <Comment />
-               <Comment />
-               <Comment />
-            </div>
-
-            <div className='closeComments' onClick={() => { setShowMore(!showMore) }}>
-               {showMore ? <FaRegCommentDots className='iconComment' /> : <FaRegCommentDots className='iconComment' />}
-            </div>
-
+            <CommentsSection postId={props.post.id} />
          </div>
       </div>
    )

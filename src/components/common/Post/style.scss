@@ -6,7 +6,8 @@
     flex-direction: column;
     align-self: center;
     justify-content: center;
-
+    width: 55vw;
+    
     .topPartOfPost{
         border-bottom: 1px solid lightgray;//
         height: 9vh;
@@ -90,38 +91,4 @@
             }
         }
     }
-
-    .actionPartOfPost{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .actionPartOfPost.showComments {
-        display: block;
-    }
-
-    .actionPartOfPost.stoppedShowing {
-        display: none;
-    }
-
-
-    .closeComments{
-        margin-left: 1.9vw;
-        margin-bottom: 1.5vh;
-        display: flex;
-        justify-content: flex-start;
-        color: rgb(0, 0, 0);
-    }
-
-    .closeComments:hover{
-        cursor: pointer;
-
-        margin-left: 1.9vw;
-        margin-bottom: 1.5vh;
-        display: flex;
-        justify-content: flex-start;
-        color: rgb(52, 52, 52);
-    }
 }
-
-
