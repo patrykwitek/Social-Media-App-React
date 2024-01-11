@@ -1,6 +1,6 @@
 import './style.scss';
 import '../../../style/font.css';
-import profilePictureWoman from '../../../resources/images/profile-picture-woman.jpg'
+import profilePictureWoman from '../../../resources/images/profile-picture-comment.png'
 import { CommentType } from '../../../types/CommentType';
 
 type CommentProps = {

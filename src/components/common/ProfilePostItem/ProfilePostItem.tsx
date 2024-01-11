@@ -1,12 +1,16 @@
 import './style.scss';
 import '../../../style/font.css';
 
-export const ProfilePostItem = () => {
+type ProfilePostItemProps = {
+    post: any
+}
+
+export const ProfilePostItem = (props: ProfilePostItemProps) => {
     return (
         <div className='single-post'>
-            <h3 className='single-post-title'>Lorem</h3>
+            <h3 className='single-post-title'>{props.post.title}</h3>
             <div className='single-post-text'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit illum obcaecati architecto nulla adipisci dolores optio tempore molestiae. Veniam eveniet, molestias ad qui distinctio voluptatem autem tenetur id repudiandae quos.
+                {props.post.body}
             </div>
         </div>
     )
