@@ -1,8 +1,10 @@
 .add-post-page{
     width: 100vw;
+    height: 82vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     padding-top: 5vh;
     padding-bottom: 5vh;
 
@@ -34,6 +36,50 @@
                 margin-left: .5vw;
                 font-size: 4vh;
             }
+        }
+
+        .form-section {
+            width: 40vw;
+            padding: 5vh 0;
+            align-self: center;
+
+            .post-title {
+                input {
+                    background-color: transparent;
+                    border: none;
+                    height: 100%;
+                    font-size: 1.1rem;
+                    margin-left: .6rem;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            .post-description {
+                margin-top: 2.5vh;
+                input {
+                    background-color: transparent;
+                    border: none;
+                    padding:2px;
+                    padding-right: 20vw;
+                    font-size: 1rem;
+                    margin-left: .6rem;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .submit-button-section {
+            width: 100%;
+            height: 8vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
