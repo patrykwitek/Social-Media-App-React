@@ -18,16 +18,29 @@
         .single-post-description{
             width: 55vw;
             margin-bottom:2vh;
-            padding-top: 2vh;
+            padding-top: .6vh;
+
+           
     
             .single-post-title{
                 display: flex;
                 text-align: center;
                 font-weight: bold;
-                padding-top: .5vh;
+                padding-top:3vh;
                 padding-bottom: .3vh;
                 padding-left: 1vw;
-                padding-right: 1vw;
+                padding-right: 4vw;
+
+                .icon-delete{
+                position: absolute;
+                right: 23vw;
+                scale: 130%;
+                
+                    &:hover {
+                    cursor: pointer;
+                    color: rgb(255, 65, 65);
+                    }
+                }
             }
 
             .single-post-text{

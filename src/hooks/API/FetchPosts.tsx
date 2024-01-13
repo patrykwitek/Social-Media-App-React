@@ -13,7 +13,7 @@ export const FetchPosts = () => {
       return array;
    };
 
-   const displayedPostCount: number = 78;
+   const displayedPostCount: number = 100;
 
    useEffect(() => {
       const fetchPosts = async () => {

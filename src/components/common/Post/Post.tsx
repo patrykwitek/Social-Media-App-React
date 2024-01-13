@@ -2,7 +2,7 @@ import './style.scss';
 import '../../../style/font.css';
 import profilePicture from '../../../resources/images/profile-picture.png';
 import { PostType } from '../../../types/PostType';
-import { FetchPostWithUserData } from '../../../hooks/API/FetchPostWithUserData';
+import { FetchUserData } from '../../../hooks/API/FetchUserData';
 import { useNavigate } from 'react-router-dom';
 import { CommentsSection } from '../CommentsSection/CommentsSection';
 
@@ -14,7 +14,7 @@ type PostProps = {
 export const Post = (props: PostProps) => {
    const navigate = useNavigate();
 
-   const { user } = FetchPostWithUserData(props.post.userId.toString());
+   const { user } = FetchUserData(props.post.userId.toString());
 
    const handleNavigateToUserPage = (userId: number) => {
       navigate(`/user/${userId}/posts`);
