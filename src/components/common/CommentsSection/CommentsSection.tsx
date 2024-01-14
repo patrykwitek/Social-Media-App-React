@@ -8,7 +8,7 @@ import { FetchPostComments } from '../../../hooks/API/FetchPostComments';
 import { LoadingScreen } from '../LoadingScreen/LoadingScreen';
 
 type CommentsSectionProps = {
-   postId: number,
+   postId: number
 };
 
 export const CommentsSection = (props: CommentsSectionProps) => {
@@ -23,7 +23,7 @@ export const CommentsSection = (props: CommentsSectionProps) => {
             {
                comments[0] ? (
                   comments.map((comment: any) => {
-                     return <Comment key={comment.id} comment={comment} />
+                     return <Comment key={comment.id} comment={comment} postId={props.postId}/>
                   })
                ) : (
                   <LoadingScreen />

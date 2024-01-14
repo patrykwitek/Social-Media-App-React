@@ -1,4 +1,4 @@
-.comment{
+.comment {
     display: flex;
     flex-direction: column;
     margin-top: 4vh;
@@ -7,66 +7,89 @@
     margin-right: 45px;
     border: 1px solid lightgray;
     border-radius: 20px;
-    box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.19);
+    box-shadow: 0px 2px 7px -1px rgba(0, 0, 0, 0.19);
     background-color: whitesmoke;
     max-width: 90vw;
     max-height: 40vh;
     padding: 10px;
-    
-    .userComment{
+
+    .userComment {
         display: flex;
         margin-bottom: 1.1vh;
-        
-        .photoUser{
+        align-items: center;
+
+        .user-section {
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+
+                .profilePicture {
+                    opacity: .8;
+                    scale: 105%;
+                }
+
+                .nicknameUser {
+                    .nameComment {
+                        font-size: small;
+                        color: rgb(50, 138, 215);
+                    }
+                }
+            }
+        }
+
+        .photoUser {
             display: flex;
 
-            .profilePicture{
+            .profilePicture {
                 height: 4.6vh;
                 border-radius: 50%;
                 transition: .2s;
                 box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
             }
         }
-        
-        .nicknameUser{
+
+        .nicknameUser {
             margin-left: 0.9vw;
             transition: .2s;
 
-            .nameComment{
+            .nameComment {
                 font-size: small;
                 font-weight: bold;
             }
-            .emailComment{
+
+            .emailComment {
                 font-size: small;
             }
         }
-        
-        &:hover{
-            cursor: pointer;
-    
-                .profilePicture {
-                opacity: .8;
-                scale: 105%;
+
+        .remove-comment-section {
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            padding-right: .5vw;
+
+            .remove-comment-icon {
+                font-size: 1.5rem;
+                transition: .2s;
+
+                &:hover {
+                    cursor: pointer;
+                    color: rgb(255, 65, 65);
                 }
-    
-                .nicknameUser {
-                    .nameComment{
-                        font-size: small;
-                        color: rgb(50, 138, 215);
-                    }
-                }
+            }
         }
+    }
 
-    }    
-
-    .bodyComment{
+    .bodyComment {
         margin-top: 4px;
         font-size: 14px;
-        width: 47vw;
+        width: 100%;
         padding-bottom: 1vh;
         padding-left: .5vw;
 
-        .comment-title{
+        .comment-title {
             font-weight: bold;
             margin-bottom: 1vh;
         }
