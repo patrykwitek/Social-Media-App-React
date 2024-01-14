@@ -11,8 +11,6 @@ type ProfilePostItemProps = {
 export const ProfilePostItem = (props: ProfilePostItemProps) => {
     const auth = useAuth();
 
-
-
     const handleRemovePost = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${props.post.id}`, {
             method: 'DELETE'

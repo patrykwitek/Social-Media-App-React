@@ -62,5 +62,13 @@
     .bodyComment{
         margin-top: 4px;
         font-size: 14px;
+        width: 47vw;
+        padding-bottom: 1vh;
+        padding-left: .5vw;
+
+        .comment-title{
+            font-weight: bold;
+            margin-bottom: 1vh;
+        }
     }
 }

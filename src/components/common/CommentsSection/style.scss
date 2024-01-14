@@ -1,26 +1,27 @@
-.comments-section{
-
-   .actionPartOfPost{
+.comments-section {
+   margin-bottom: 1vh;
+   
+   .actionPartOfPost {
       display: flex;
       flex-direction: column;
    }
-   
+
    .actionPartOfPost.showComments {
       display: block;
    }
-   
+
    .actionPartOfPost.stoppedShowing {
       display: none;
    }
-   
-   .closeComments{
+
+   .closeComments {
       margin-left: 1.9vw;
       margin-bottom: 1.5vh;
       display: flex;
       justify-content: flex-start;
       color: rgb(0, 0, 0);
 
-      &:hover{
+      &:hover {
          cursor: pointer;
          margin-left: 1.9vw;
          margin-bottom: 1.5vh;
@@ -30,13 +31,13 @@
       }
    }
 
-   .iconComment{
+   .iconComment {
       transition: .2s;
       scale: 120%;
-      
-      &:hover{
+
+      &:hover {
          cursor: pointer;
-         color: grey;
+         color: rgb(50, 138, 215);
       }
    }
 }

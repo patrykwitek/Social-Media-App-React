@@ -15,12 +15,12 @@ export const Comment = (props: CommentProps) => {
                <img src={profilePictureWoman} alt="profilePicture" className='profilePicture' />
             </div>
             <div className='nicknameUser'>
-               <div className='nameComment'>Amanda Jonson</div>
+               <div className='nameComment'>{props.comment.email.split('@')[0]}</div>
                <div className='emailComment'>{props.comment.email}</div>
             </div>
          </div>
          <div className='bodyComment'>
-            <div>{props.comment.name}</div>
+            <div className='comment-title'>{props.comment.name}</div>
             <div>{props.comment.body}</div>
          </div>
       </div>

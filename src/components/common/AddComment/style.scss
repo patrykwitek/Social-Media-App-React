@@ -13,7 +13,7 @@
 
   .createComments{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
     border: 1px solid themed("border");
     border-radius: 5px;
@@ -26,6 +26,10 @@
       width: 100%;
       height: 30px;
       background-color: transparent;
+      border: 1px lightgray solid;
+      border-radius: 20px;
+      background-color: white;
+      padding-left: .5vw;
       
       &:focus{
         outline: none;
@@ -34,12 +38,17 @@
 
     .icon-send{
       transition: .2s;
-      scale: 120%;
+      margin-left: .5vw;
 
       &:hover{
         cursor: pointer;
-        color: grey;
+        color: rgb(50, 138, 215);
       }
+    }
+
+    .create-comment-header{
+      margin-left: .5vw;
+      font-size: .8rem;
     }
   } 
 }
