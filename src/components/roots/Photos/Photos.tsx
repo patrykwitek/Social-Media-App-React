@@ -10,8 +10,11 @@ import { useState } from 'react';
 import { PhotoType } from '../../../types/PhotoType';
 import { PhotosSearchBarByAlbumID } from '../../common/PhotosSearchBarByAlbumID/PhotosSearchBarByAlbumID';
 import { PhotosSearchBarByUserID } from '../../common/PhotosSearchBarByUserID/PhotosSearchBarByUser';
+import { useTranslation } from 'react-i18next';
 
 const Photos = () => {
+    const [translation, i18n] = useTranslation("global");
+    
     const { photosAPI } = FetchPhotos();
     const navigate = useNavigate();
 
@@ -28,9 +31,9 @@ const Photos = () => {
         <div className='photosPage'>
             <div className='photos-search-bar-container'>
                 <select className='choose-filtering' value={searchBarOption} onChange={handleSelectChange}>
-                    <option value='photoID'>photo ID</option>
-                    <option value='albumID'>album ID</option>
-                    <option value='userID'>user ID</option>
+                    <option value='photoID'>{translation("photoId")}</option>
+                    <option value='albumID'>{translation("albumId")}</option>
+                    <option value='userID'>{translation("userId")}</option>
                 </select>
                 {
                     searchBarOption == 'photoID' ? (

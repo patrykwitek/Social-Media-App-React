@@ -8,9 +8,12 @@ import Select from 'react-select';
 import { FetchUsersAlbums } from '../../../hooks/API/FetchUsersAlbums';
 import { useState } from 'react';
 import { FetchPhotos } from '../../../hooks/API/FetchPhotos';
+import { useTranslation } from 'react-i18next';
 
 export const AddPhoto = () => {
     const auth = useAuth();
+    const [translation, i18n] = useTranslation("global");
+
     const navigate = useNavigate();
 
     const [photoTitle, setPhotoTitle] = useState<string>('');
@@ -32,8 +35,8 @@ export const AddPhoto = () => {
 
     const isValid: boolean = (selectedFile != null) && (photoTitle != null) && (selectedAlbum != null);
 
-    const {photosAPI} = FetchPhotos();
-    
+    const { photosAPI } = FetchPhotos();
+
     const handleSubmit = () => {
 
         if (isValid) {
@@ -61,15 +64,15 @@ export const AddPhoto = () => {
         <div className='add-photo-page'>
             <div className='add-photo-container'>
                 <div className='title-section'>
-                    Add Photo
+                    {translation("addPhoto")}
                     <HiOutlinePhoto className='icon' />
                 </div>
                 <div className='form-section'>
                     <div className='photo-title'>
-                        Title:
+                        {translation("title")}:
                         <input
                             type='text'
-                            placeholder='Title'
+                            placeholder={translation("title")}
                             className='search-input'
                             value={photoTitle}
                             onChange={(event) => setPhotoTitle(event.target.value)}
@@ -77,7 +80,7 @@ export const AddPhoto = () => {
                     </div>
                     <div className='choose-photo'>
                         <div>
-                            Choose photo:
+                            {translation("choosePhoto")}:
                         </div>
                         <input
                             type="file"
@@ -87,7 +90,7 @@ export const AddPhoto = () => {
                         />
                     </div>
                     <div className='choose-album'>
-                        Choose album:
+                        {translation("chooseAlbum")}:
                         <Select
                             options={albumOptions}
                             className='select-option-album'

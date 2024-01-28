@@ -4,9 +4,11 @@ import { IoSend } from "react-icons/io5";
 import { useState } from 'react';
 import { useAuth } from '../../../hooks/Auth/Auth';
 import { FetchPosts } from '../../../hooks/API/FetchPosts';
+import { useTranslation } from 'react-i18next';
 
 export const AddComment = () => {
    const auth = useAuth();
+   const [translation, i18n] = useTranslation("global");
 
    const [postTitle, setPostTitle] = useState<string>('');
    const [postBody, setPostBody] = useState<string>('');
@@ -54,9 +56,9 @@ export const AddComment = () => {
    return (
       <div className='addComment'>
          <div className='createComments'>
-            <span className='create-comment-header'>Add a comment</span>
-            <input type="text" placeholder="Name..." onChange={(event) => setPostTitle(event.target.value)} className='title-field' />
-            <input type="text" placeholder="Body..." onChange={(event) => setPostBody(event.target.value)} className='body-field' />
+            <span className='create-comment-header'>{translation("addCommentContent")}</span>
+            <input type="text" placeholder={translation("addCommentPlaceholderTitle")} onChange={(event) => setPostTitle(event.target.value)} className='title-field' />
+            <input type="text" placeholder={translation("addCommentPlaceholderBody")} onChange={(event) => setPostBody(event.target.value)} className='body-field' />
             <IoSend className='icon-send' onClick={handleSubmit} />
          </div>
       </div>

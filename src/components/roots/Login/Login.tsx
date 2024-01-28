@@ -6,14 +6,17 @@ import { useState } from 'react';
 import { useAuth } from '../../../hooks/Auth/Auth';
 import { useNavigate } from 'react-router-dom';
 import { FetchUsers } from '../../../hooks/API/FetchUsers';
+import { useTranslation } from 'react-i18next';
 
 export const Login = () => {
+    const auth = useAuth();
+    const [translation, i18n] = useTranslation("global");
+
     const [username, setUsername] = useState('Antonette'); //Just for quicker testing; TO-DO: remove 'Antonette' in the future
     const [password, setPassword] = useState('');
     const [passwordMessageVisibility, setPasswordMessageVisibility] = useState('none');
     const [wrongUsernameMessageVisibility, setWrongUsernameMessageVisibility] = useState('none');
 
-    const auth = useAuth();
     const navigate = useNavigate();
 
     const { allUsers } = FetchUsers();
@@ -27,7 +30,7 @@ export const Login = () => {
         for (let i = 0; i < allUsers.length; i++) {
             if (allUsers[i].username.toLowerCase() == username.toLowerCase()) {
                 auth.login(allUsers[i]);
-                navigate('/', {replace: true});
+                navigate('/', { replace: true });
                 break;
             }
         }
@@ -42,30 +45,30 @@ export const Login = () => {
                     <input
                         type='text'
                         className='username-input'
-                        placeholder='login'
+                        placeholder={translation("login")}
                         value={username} //Just for quicker testing; TO-DO: remove this line in the future
                         onChange={(event) => setUsername(event.target.value)}
                     />
                 </div>
                 <div style={{ display: wrongUsernameMessageVisibility }} className='wrong-username-message'>
-                    Wrong username. Try again.
+                    {translation("wrongUsernameMessage")}
                 </div>
                 <div className='password-container'>
                     <RiLockPasswordFill className='password-icon' />
                     <input
                         type='password'
                         className='password-input'
-                        placeholder='password'
+                        placeholder={translation("password")}
                         value={password}
                         onChange={displayPasswordAlert}
                     />
                 </div>
                 <div style={{ display: passwordMessageVisibility }} className='password-message'>
-                    Info: Password functionality is unable due to missing password field in JSON Placeholder API. Just enter existing username to log in.
+                    {translation("passwordInfo")}
                 </div>
                 <div className='login-button'>
                     <button onClick={handleLogin}>
-                        Log In <RiLoginBoxLine className='login-icon' />
+                        {translation("loginBtn")} <RiLoginBoxLine className='login-icon' />
                     </button>
                 </div>
             </div>

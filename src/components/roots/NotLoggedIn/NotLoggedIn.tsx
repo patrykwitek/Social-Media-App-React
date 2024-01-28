@@ -3,24 +3,27 @@ import '../../../style/font.css';
 import { MdLock } from "react-icons/md";
 import { RiLoginBoxLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const NotLoggedIn = () => {
+    const [translation, i18n] = useTranslation("global");
+
     const navigate = useNavigate();
-    
+
     return (
         <div className='not-logged-in-page'>
             <div className='not-logged-in-container'>
-                <MdLock className='lock-icon'/>
-                <h1>Not Logged In</h1>
+                <MdLock className='lock-icon' />
+                <h1>{translation("notLoggedIn")}</h1>
                 <p>
-                    It looks like you're trying to access a page you can't access. 
+                    {translation("notLoggedInMessage1")}
                 </p>
                 <p className='message-content'>
-                    Log in to view content.
+                    {translation("notLoggedInMessage2")}
                 </p>
                 <div className='login-button'>
                     <button onClick={() => navigate('/login')}>
-                        Log In <RiLoginBoxLine className='login-icon' />
+                        {translation("loginBtn")} <RiLoginBoxLine className='login-icon' />
                     </button>
                 </div>
             </div>

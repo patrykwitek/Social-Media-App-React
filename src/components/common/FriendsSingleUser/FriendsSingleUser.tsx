@@ -1,6 +1,7 @@
 import './style.scss';
 import '../../../style/font.css';
 import profilePicture from '../../../resources/images/profile-picture.png';
+import { useTranslation } from 'react-i18next';
 
 type SingleUserProps = {
     username: string,
@@ -8,9 +9,11 @@ type SingleUserProps = {
 }
 
 export const FriendsSingleUser = (props: SingleUserProps) => {
+    const [translation, i18n] = useTranslation("global");
+    
     return (
         <div className='singleUser' onClick={props.onClick}>
-            <img src={profilePicture} alt="Profile Picture" />
+            <img src={profilePicture} alt={translation("profilePicture")} />
             <div className='singleUser-name'>
                 {props.username}
             </div>

@@ -5,6 +5,7 @@ import { PostType } from '../../../types/PostType';
 import { FetchUserData } from '../../../hooks/API/FetchUserData';
 import { useNavigate } from 'react-router-dom';
 import { CommentsSection } from '../CommentsSection/CommentsSection';
+import { useTranslation } from 'react-i18next';
 
 type PostProps = {
    post: PostType,
@@ -12,6 +13,8 @@ type PostProps = {
 
 
 export const Post = (props: PostProps) => {
+   const [translation, i18n] = useTranslation("global");
+   
    const navigate = useNavigate();
 
    const { user } = FetchUserData(props.post.userId.toString());
@@ -26,7 +29,7 @@ export const Post = (props: PostProps) => {
             <div className='topPartOfPost'>
                <div className='userPost' onClick={() => handleNavigateToUserPage(user.id)}>
                   <div>
-                     <img src={profilePicture} alt="profilePicture" className='profilePicture' />
+                     <img src={profilePicture} alt={translation("profilePicture")} className='profilePicture' />
                   </div>
                   <div className='userPostUsername'>
                      {user.username}

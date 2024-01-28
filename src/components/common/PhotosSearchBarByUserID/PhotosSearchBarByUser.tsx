@@ -4,6 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
 import { PhotoType } from '../../../types/PhotoType';
 import { Album } from '../../../types/Album';
+import { useTranslation } from 'react-i18next';
 
 type PhotosSearchBarByUserIDProps = {
     setSearchInput: React.Dispatch<React.SetStateAction<string>>,
@@ -11,6 +12,8 @@ type PhotosSearchBarByUserIDProps = {
 }
 
 export const PhotosSearchBarByUserID = (props: PhotosSearchBarByUserIDProps) => {
+    const [translation, i18n] = useTranslation("global");
+    
     const [input, setInput] = useState('');
 
     const fetchFilteredPhotosData = async (value: string) => {
@@ -46,7 +49,7 @@ export const PhotosSearchBarByUserID = (props: PhotosSearchBarByUserIDProps) => 
             <FaSearch className='search-icon' />
             <input
                 type='text'
-                placeholder='Search for the photos by user ID'
+                placeholder={translation("searchByUserIDPlaceholder")}
                 className='search-input'
                 value={input}
                 onChange={handleInputChange}

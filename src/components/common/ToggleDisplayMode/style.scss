@@ -1,0 +1,39 @@
+.display-mode-button {
+    width: 2.2rem;
+    height: 1.2rem;
+    border-radius: .75rem;
+    display: flex;
+    align-items: center;
+    transition: all .3s ease;
+
+    .light-dark-option {
+        width: 1.1rem;
+        height: 1.1rem;
+        border-radius: 50%;
+        background-color: gray;
+        transition: all .3s ease;
+    }
+
+    &.light {
+        background-color: rgb(251, 251, 251);
+        border: 1px gray solid;
+
+        .light-dark-option {
+            background-color: gray;
+        }
+    }
+
+    &.dark {
+        background-color: rgb(47, 47, 47);
+        border: 1px rgb(47, 47, 47) solid;
+
+        .light-dark-option {
+            background-color: rgb(251, 251, 251);
+            transform: translate(1rem);
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

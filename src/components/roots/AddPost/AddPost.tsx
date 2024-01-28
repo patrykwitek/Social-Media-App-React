@@ -6,9 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FetchPosts } from '../../../hooks/API/FetchPosts';
 import { SubmitButton } from '../../common/SubmitButton/SubmitButton';
+import { useTranslation } from 'react-i18next';
 
 export const AddPost = () => {
     const auth = useAuth();
+    const [translation, i18n] = useTranslation("global");
+
     const navigate = useNavigate();
 
     const [postTitle, setPostTitle] = useState<string>('');
@@ -43,25 +46,25 @@ export const AddPost = () => {
         <div className='add-post-page'>
             <div className='add-post-container'>
                 <div className='title-section'>
-                    Add Post
+                    {translation("addPost")}
                     <GoFileDirectory className='icon' />
                 </div>
                 <div className='form-section'>
                     <div className='post-title'>
-                        Title:
+                        {translation("title")}:
                         <input
                             type='text'
-                            placeholder='Title'
+                            placeholder={translation("title")}
                             className='search-input'
                             value={postTitle}
                             onChange={(event) => setPostTitle(event.target.value)}
                         />
                     </div>
                     <div className='post-description'>
-                        Description:
+                        {translation("description")}:
                         <input
                             type='text'
-                            placeholder='Description'
+                            placeholder={translation("description")}
                             className='search-input'
                             value={postDescription}
                             onChange={(event) => setPostDescription(event.target.value)}

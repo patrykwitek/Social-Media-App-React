@@ -34,7 +34,7 @@ function App() {
           <Route path='posts' element={<RequireAuth><Posts /></RequireAuth>} />
           <Route path='friends' element={<RequireAuth><Friends /></RequireAuth>} />
           <Route path='about' element={<About />} />
-          <Route path='settings' element={<Settings />} />
+          <Route path='settings' element={<RequireAuth><Settings /></RequireAuth>} />
           <Route path='user/:userID' element={<RequireAuth><Profile /></RequireAuth>}>
             <Route index element={<ProfilePhotosSection />} />
             <Route path='photos' element={<ProfilePhotosSection />} />

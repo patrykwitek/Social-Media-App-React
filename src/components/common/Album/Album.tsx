@@ -7,8 +7,11 @@ import { BiX } from "react-icons/bi";
 import { HiEye } from "react-icons/hi2";
 import { LoadingScreen } from '../LoadingScreen/LoadingScreen';
 import { FetchAlbumPhotosData } from '../../../hooks/API/FetchAlbumPhotosData';
+import { useTranslation } from 'react-i18next';
 
 export const Album = () => {
+    const [translation, i18n] = useTranslation("global");
+    
     const { albumID } = useParams();
     const { albums, photos } = FetchAlbumPhotosData(albumID);
     
@@ -33,7 +36,7 @@ export const Album = () => {
                 <div className='album-container'>
                     <div className='top-container'>
                         <div className='album-info'>
-                            Album
+                            {translation("album")}
                         </div>
                         <div className='album-title'>
                             {albums[0].title}
@@ -45,7 +48,8 @@ export const Album = () => {
                                 return <div key={photo.id} className='displayed-photo' onClick={() => switchPhotoModal(photo)}>
                                     <img
                                         src={photo.thumbnailUrl}
-                                        alt='Photo'
+                                        alt={translation("photo")}
+                                        title={translation("showPhoto")}
                                         loading='lazy'
                                         className='album-photo-item'
                                     />

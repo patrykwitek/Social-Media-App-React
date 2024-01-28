@@ -14,10 +14,12 @@ import { MdLocationCity } from "react-icons/md";
 import { RiPriceTagLine } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 import { SubmitButton } from '../../common/SubmitButton/SubmitButton';
+import { useTranslation } from 'react-i18next';
 
 export const EditUser = () => {
     const auth = useAuth();
-    
+    const [translation, i18n] = useTranslation("global");
+
     const [username, setUsername] = useState(auth.user?.username);
     const [name, setName] = useState(auth.user?.name);
     const [mail, setMail] = useState(auth.user?.email);
@@ -34,7 +36,7 @@ export const EditUser = () => {
     const [companyBs, setCompanyBs] = useState(auth.user?.company.bs);
 
     const navigate = useNavigate();
-    
+
     const handleSubmit = () => {
         fetch(`https://jsonplaceholder.typicode.com/users/${auth.user?.id}`, {
             method: 'PUT',
@@ -65,7 +67,7 @@ export const EditUser = () => {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
-        .then((response) => response.json());
+            .then((response) => response.json());
 
         navigate(`/user/${auth.user?.id}/photos`);
     }
@@ -74,91 +76,91 @@ export const EditUser = () => {
         <div className='edit-user-page'>
             <div className='edit-user-form'>
                 <div className='form-title'>
-                    Edit Profile <LiaUserEditSolid className='icon-title' />
+                    {translation("editProfile")} <LiaUserEditSolid className='icon-title' />
                 </div>
                 <div className='form-section'>
                     <div className='section-heading'>
-                        General Information
+                        {translation("generalInformation")}
                     </div>
                     <div className='section-content'>
                         <div className='row'>
                             <BiUser className='icon' />
-                            Username:
+                            {translation("username")}:
                             <input type='text' value={username} onChange={(event) => setUsername(event.target.value)} />
                         </div>
                         <div className='row'>
                             <BiSolidUserAccount className='icon' />
-                            Name & Surname:
+                            {translation("nameAndSurname")}:
                             <input type='text' value={name} onChange={(event) => setName(event.target.value)} />
                         </div>
                         <div className='row'>
                             <LuMail className='icon' />
-                            Email:
+                            {translation("email")}:
                             <input type='text' value={mail} onChange={(event) => setMail(event.target.value)} />
                         </div>
                         <div className='row'>
                             <HiOutlinePhone className='icon' />
-                            Phone:
+                            {translation("phone")}:
                             <input type='text' value={phone} onChange={(event) => setPhone(event.target.value)} />
                         </div>
                         <div className='row'>
                             <CgWebsite className='icon' />
-                            Website:
+                            {translation("website")}:
                             <input type='text' value={website} onChange={(event) => setWebsite(event.target.value)} />
                         </div>
                     </div>
                     <div className='section-heading'>
-                        Address
+                        {translation("address")}
                     </div>
                     <div className='section-content'>
                         <div className='row'>
                             <PiAddressBook className='icon' />
-                            Street:
+                            {translation("street")}:
                             <input type='text' value={addressStreet} onChange={(event) => setAddressStreet(event.target.value)} />
                         </div>
                         <div className='row'>
                             <TiLocation className='icon' />
-                            Suite:
+                            {translation("suite")}:
                             <input type='text' value={addressSuite} onChange={(event) => setAddressSuite(event.target.value)} />
                         </div>
                         <div className='row'>
                             <MdLocationCity className='icon' />
-                            City:
+                            {translation("city")}:
                             <input type='text' value={addressCity} onChange={(event) => setAddressCity(event.target.value)} />
                         </div>
                         <div className='row'>
                             <RiPriceTagLine className='icon' />
-                            Zipcode:
+                            {translation("zipcode")}:
                             <input type='text' value={addressZipcode} onChange={(event) => setAddressZipcode(event.target.value)} />
                         </div>
                         <div className='row'>
                             <TbLocation className='icon' />
-                            Longitude:
+                            {translation("longitude")}:
                             <input type='text' value={addressLongitude} onChange={(event) => setAddressLongitude(event.target.value)} />
                         </div>
                         <div className='row'>
                             <TbLocation className='icon' />
-                            Latitude:
+                            {translation("latitude")}:
                             <input type='text' value={addressLatitude} onChange={(event) => setAddressLatitude(event.target.value)} />
                         </div>
                     </div>
                     <div className='section-heading'>
-                        Company
+                        {translation("company")}
                     </div>
                     <div className='section-content'>
                         <div className='row'>
                             <PiAddressBook className='icon' />
-                            Name:
+                            {translation("name")}:
                             <input type='text' value={companyName} onChange={(event) => setCompanyName(event.target.value)} />
                         </div>
                         <div className='row'>
                             <TiLocation className='icon' />
-                            Catch Phrase:
+                            {translation("catchPhrase")}:
                             <input type='text' value={companyCatchPhrase} onChange={(event) => setCompanyCatchPhrase(event.target.value)} />
                         </div>
                         <div className='row'>
                             <MdLocationCity className='icon' />
-                            BS:
+                            {translation("bs")}:
                             <input type='text' value={companyBs} onChange={(event) => setCompanyBs(event.target.value)} />
                         </div>
                     </div>

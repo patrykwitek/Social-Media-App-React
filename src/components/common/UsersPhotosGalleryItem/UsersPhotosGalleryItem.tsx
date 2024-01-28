@@ -10,6 +10,7 @@ import { FetchAlbumPhotosDataForGallery } from '../../../hooks/API/FetchAlbumPho
 import { PhotoType } from '../../../types/PhotoType';
 import { useAuth } from '../../../hooks/Auth/Auth';
 import { FetchPhotoWithUserData } from '../../../hooks/API/FetchPhotoWithUserData';
+import { useTranslation } from 'react-i18next';
 
 type UsersPhotosGalleryItemProps = {
     album: any
@@ -17,6 +18,7 @@ type UsersPhotosGalleryItemProps = {
 
 export const UsersPhotosGalleryItem = (props: UsersPhotosGalleryItemProps) => {
     const auth = useAuth();
+    const [translation, i18n] = useTranslation("global");
 
     const [photoModal, setPhotoModal] = useState(false);
     const [chosenPhoto, setChosenPhoto] = useState<PhotoType>({
@@ -53,7 +55,7 @@ export const UsersPhotosGalleryItem = (props: UsersPhotosGalleryItemProps) => {
     return (
         <div className='single-album'>
             <div className='album-top-part'>
-                <div className='album-info'>Album</div>
+                <div className='album-info'>{translation("album")}</div>
                 <div className='album-title'>{props.album.title}</div>
             </div>
             {
@@ -64,7 +66,8 @@ export const UsersPhotosGalleryItem = (props: UsersPhotosGalleryItemProps) => {
                                 return <div key={photo.id} className='displayed-photo' onClick={() => switchPhotoModal(photo)}>
                                     <img
                                         src={photo.thumbnailUrl}
-                                        alt='Photo'
+                                        alt={translation("photo")}
+                                        title={translation("showPhoto")}
                                         loading='lazy'
                                     />
                                     <HiEye className='eye' />
@@ -80,12 +83,12 @@ export const UsersPhotosGalleryItem = (props: UsersPhotosGalleryItemProps) => {
                     <div className='overlay' onClick={() => setPhotoModal(!photoModal)}></div>
                     <div className='photo-modal-content'>
                         <Photo key={chosenPhoto.id} photo={chosenPhoto} />
-                        <div className='close' title='Close' onClick={() => setPhotoModal(!photoModal)}>
+                        <div className='close' title={translation("close")} onClick={() => setPhotoModal(!photoModal)}>
                             <BiX />
                         </div>
                         {
                             auth.user?.id == user.id ? (
-                                <div className='remove' title='Remove Photo' onClick={handleRemovePhoto}>
+                                <div className='remove' title={translation("removePhoto")} onClick={handleRemovePhoto}>
                                     <MdDelete />
                                 </div>
                             ) : (

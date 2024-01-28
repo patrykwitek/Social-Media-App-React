@@ -5,12 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { FetchPhotoWithUserData } from '../../../hooks/API/FetchPhotoWithUserData';
 import { PhotoType } from '../../../types/PhotoType';
+import { useTranslation } from 'react-i18next';
 
 type PhotoProps = {
    photo: PhotoType
 }
 
 export const Photo = (props: PhotoProps) => {
+   const [translation, i18n] = useTranslation("global");
+   
    const navigate = useNavigate();
 
    const {album, user} = FetchPhotoWithUserData(props.photo.albumId.toString());
@@ -26,7 +29,7 @@ export const Photo = (props: PhotoProps) => {
          <div className='topPartOfPhoto'>
             <div className='userPhoto' onClick={() => handleNavigateToUserPage(user.id)}>
                <div>
-                  <img src={profilePicture} alt="profilePicture" className='profilePicture' />
+                  <img src={profilePicture} alt={translation("profilePicture")} className='profilePicture' />
                </div>
                <div className='userPhotoUsername'>{user.username}</div>
             </div>
@@ -35,16 +38,16 @@ export const Photo = (props: PhotoProps) => {
                   {props.photo.title}
                </div>
                <div className={`albumTitle ${showMore ? 'showMore' : 'showLess'}`}>
-                  <span>Album: </span>
+                  <span>{translation("album")}: </span>
                   <div className='albumLink' onClick={() => navigate(`album/${album.id}`)}>{album.title}</div>
                </div>
                <div className='showTitle' onClick={() => { setShowMore(!showMore) }}>
-                  {showMore ? 'Show Less' : 'Show More'}
+                  {showMore ? translation("showLess") : translation("showMore")}
                </div>
             </div>
          </div>
          <div className='bottomPartOfPhoto'>
-            <img src={props.photo.url} alt="Photo" className='displayedPhoto' loading='lazy'/>
+            <img src={props.photo.url} alt={translation("photo")} className='displayedPhoto' loading='lazy'/>
          </div>
       </div>
    )

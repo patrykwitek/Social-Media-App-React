@@ -12,8 +12,11 @@ import { DropdownItem } from '../DropdownItem/DropdownItem';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../hooks/Auth/Auth';
+import { useTranslation } from 'react-i18next';
 
 export const HeaderUserSection = () => {
+    const [translation, i18n] = useTranslation("global");
+    
     const [open, setOpen] = useState(false);
     const [addSectionOpen, setAddSectionOpen] = useState(false);
 
@@ -52,7 +55,7 @@ export const HeaderUserSection = () => {
                     {auth.user?.name.split(" ")[0]}
                 </div>
                 <div className='userWelcomeSectionPicture'>
-                    <img src={profilePicture} alt="Profile Picture" className='userProfilePicture' />
+                    <img src={profilePicture} alt={translation("profilePicture")} className='userProfilePicture' />
                 </div>
             </div>
             <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`}>
@@ -64,14 +67,14 @@ export const HeaderUserSection = () => {
                         @{auth.user?.username}
                     </div>
                 </div>
-                <DropdownItem img={profile} text='Profile' onClick={() => navigate(`user/${userID}/photos`)}/>
-                <DropdownItem img={add} text='Add' onClick={() => { setAddSectionOpen(!addSectionOpen) }}/>
-                <DropdownItem img={edit} text='Edit Profile' onClick={() => navigate('edit-user')}/>
-                <DropdownItem img={settings} text='Settings' onClick={() => navigate('settings')}/>
-                <DropdownItem img={logout} text='Logout' onClick={handleLogout}/>
+                <DropdownItem img={profile} text={translation("profile")} onClick={() => navigate(`user/${userID}/photos`)}/>
+                <DropdownItem img={add} text={translation("add")} onClick={() => { setAddSectionOpen(!addSectionOpen) }}/>
+                <DropdownItem img={edit} text={translation("editProfile")} onClick={() => navigate('edit-user')}/>
+                <DropdownItem img={settings} text={translation("settings")} onClick={() => navigate('settings')}/>
+                <DropdownItem img={logout} text={translation("logout")} onClick={handleLogout}/>
                 <div className={`add-section ${addSectionOpen ? 'active' : 'inactive'}`}>
-                    <DropdownItem img={addPhoto} text='Photo' onClick={() => navigate('add-photo')}/>
-                    <DropdownItem img={addPost} text='Post' onClick={() => navigate('add-post')}/>
+                    <DropdownItem img={addPhoto} text={translation("photo")} onClick={() => navigate('add-photo')}/>
+                    <DropdownItem img={addPost} text={translation("post")} onClick={() => navigate('add-post')}/>
                 </div>
             </div>
         </div>

@@ -6,8 +6,11 @@ import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { FetchUserData } from '../../../hooks/API/FetchUserData';
+import { useTranslation } from 'react-i18next';
 
 export const Profile = () => {
+    const [translation, i18n] = useTranslation("global");
+
     const { userID } = useParams();
     const { user } = FetchUserData(userID);
 
@@ -18,7 +21,7 @@ export const Profile = () => {
                     <div className='userProfileTopSection'>
                         <div className='userInfoSection'>
                             <div className='userProfileImgSection'>
-                                <img src={profilePicture} alt="Profile Picture" />
+                                <img src={profilePicture} alt={translation("profilePicture")} />
                             </div>
                             <div className='userInfo'>
                                 <div className='username'>
@@ -31,9 +34,9 @@ export const Profile = () => {
                         </div>
                         <div className='userProfileMainConent'>
                             <div className='userProfileNavigation'>
-                                <NavLink to='photos' className='profileNavigationLink'><ProfileNavigationItem name='Photos' /></NavLink>
-                                <NavLink to='posts' className='profileNavigationLink'><ProfileNavigationItem name='Posts' /></NavLink>
-                                <NavLink to='gallery' className='profileNavigationLink'><ProfileNavigationItem name='Gallery' /></NavLink>
+                                <NavLink to='photos' className='profileNavigationLink'><ProfileNavigationItem name={translation("photos")} /></NavLink>
+                                <NavLink to='posts' className='profileNavigationLink'><ProfileNavigationItem name={translation("posts")} /></NavLink>
+                                <NavLink to='gallery' className='profileNavigationLink'><ProfileNavigationItem name={translation("gallery")} /></NavLink>
                             </div>
                         </div>
                     </div>
@@ -42,28 +45,28 @@ export const Profile = () => {
                     </div>
                     <div className='userProfileMoreInfo'>
                         <div className='more-info-title'>
-                            More info:
+                            {translation("moreInfo")}:
                         </div>
                         <div className='more-info-content'>
                             <div className='more-info-telephone'>
-                                Phone: {user.phone}
+                                {translation("phone")}: {user.phone}
                             </div>
                             <div className='more-info-webside'>
-                                Webside: <a href={`https://${user.website}`} target='_blank'>{user.website}</a>
+                                {translation("website")}: <a href={`https://${user.website}`} target='_blank'>{user.website}</a>
                             </div>
                             <div className='more-info-company'>
-                                Company: {user.company.name}
+                                {translation("company")}: {user.company.name}
                             </div>
                         </div>
                         <div className='userBottomData'>
                             <div>
-                                Mail: {user.email}
+                                {translation("email")}: {user.email}
                             </div>
                             <div>
-                                Address: {user.address.street} {user.address.suite}
+                                {translation("address")}: {user.address.street} {user.address.suite}
                             </div>
                             <div>
-                                City: {user.address.city} {user.address.zipcode}
+                                {translation("city")}: {user.address.city} {user.address.zipcode}
                             </div>
                         </div>
                     </div>

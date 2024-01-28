@@ -21,7 +21,6 @@ export const ProfilePostItem = (props: ProfilePostItemProps) => {
         <div className='single-post'>
             <div className='own-single-post'>
                 <div className='single-post-description'>
-
                     <h3 className='single-post-title'>{props.post.title}{
                         auth.user?.id == props.post.userId ? (
                             <div className='icon-delete' onClick={handleRemovePost}>

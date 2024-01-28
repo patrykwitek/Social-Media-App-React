@@ -2,13 +2,16 @@ import './style.scss';
 import '../../../style/font.css';
 import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type SearchBarProps = {
     setSearchInput: React.Dispatch<React.SetStateAction<string>>,
     setFilterUsers: React.Dispatch<React.SetStateAction<{}[]>>
 }
 
-export const SearchBar = (props: SearchBarProps) => {    
+export const SearchBar = (props: SearchBarProps) => {
+    const [translation, i18n] = useTranslation("global");
+    
     const [input, setInput] = useState('');
 
     const fetchFilteredUsersData = (value: string) => {
@@ -39,7 +42,7 @@ export const SearchBar = (props: SearchBarProps) => {
             <FaSearch className='search-icon' />
             <input
                 type='text'
-                placeholder='Search for the users'
+                placeholder={translation("usersSearchBarPlaceholder")}
                 className='search-input'
                 value={input}
                 onChange={handleInputChange}

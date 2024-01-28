@@ -3,6 +3,7 @@ import '../../../style/font.css';
 import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
 import { PhotoType } from '../../../types/PhotoType';
+import { useTranslation } from 'react-i18next';
 
 type PhotosSearchBarProps = {
     setSearchInput: React.Dispatch<React.SetStateAction<string>>,
@@ -10,6 +11,8 @@ type PhotosSearchBarProps = {
 }
 
 export const PhotosSearchBar = (props: PhotosSearchBarProps) => {
+    const [translation, i18n] = useTranslation("global");
+    
     const [input, setInput] = useState('');
 
     const fetchFilteredPhotosData = (value: string) => {
@@ -39,7 +42,7 @@ export const PhotosSearchBar = (props: PhotosSearchBarProps) => {
             <FaSearch className='search-icon' />
             <input
                 type='text'
-                placeholder='Search for the photos by photo ID'
+                placeholder={translation("searchByPhotoIDPlaceholder")}
                 className='search-input'
                 value={input}
                 onChange={handleInputChange}
