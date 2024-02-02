@@ -34,13 +34,6 @@ function App() {
       try {
         const parsedDisplayModeData = JSON.parse(displayedModeData);
         setDisplayMode(parsedDisplayModeData);
-
-        if (displayMode == 'light') {
-          document.body.style.backgroundColor = 'rgb(18, 8, 43)';
-        }
-        else if (displayMode == 'dark') {
-          document.body.style.backgroundColor = 'rgb(244, 244, 244)';
-        }
       } catch (error) {
         console.error('Parsing data from local storage error:', error);
       }
@@ -50,13 +43,6 @@ function App() {
   const changeDisplayMode = () => {
     const newMode = displayMode === 'light' ? 'dark' : 'light';
     setDisplayMode(newMode);
-
-    if (displayMode == 'light') {
-      document.body.style.backgroundColor = 'rgb(18, 8, 43)';
-    }
-    else if (displayMode == 'dark') {
-      document.body.style.backgroundColor = 'rgb(244, 244, 244)';
-    }
   };
 
   return (

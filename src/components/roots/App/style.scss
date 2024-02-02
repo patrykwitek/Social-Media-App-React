@@ -6,8 +6,17 @@
 
 body {
   overflow-x: hidden;
+  background-color: rgb(244, 244, 244);
 }
 
 .app {
   width: 100vw;
+}
+
+#light {
+  background-color: transparent;
+}
+
+#dark {
+  background-color: rgb(15, 15, 15);
 }
