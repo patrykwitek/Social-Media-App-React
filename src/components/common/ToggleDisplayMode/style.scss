@@ -14,26 +14,26 @@
         transition: all .3s ease;
     }
 
-    &.light {
-        background-color: rgb(251, 251, 251);
-        border: 1px gray solid;
-
-        .light-dark-option {
-            background-color: gray;
-        }
-    }
-
-    &.dark {
-        background-color: rgb(47, 47, 47);
-        border: 1px rgb(47, 47, 47) solid;
-
-        .light-dark-option {
-            background-color: rgb(251, 251, 251);
-            transform: translate(1rem);
-        }
-    }
-
     &:hover {
         cursor: pointer;
+    }
+}
+
+#light .display-mode-button {
+    background-color: rgb(251, 251, 251);
+    border: 1px gray solid;
+
+    .light-dark-option {
+        background-color: gray;
+    }
+}
+
+#dark .display-mode-button {
+    background-color: rgb(47, 47, 47);
+    border: 1px rgb(47, 47, 47) solid;
+
+    .light-dark-option {
+        background-color: rgb(251, 251, 251);
+        transform: translate(1rem);
     }
 }

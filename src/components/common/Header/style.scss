@@ -3,8 +3,6 @@
     width: 100vw;
     height: 7vh;
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.45);
-    border-bottom: 1px rgb(195, 195, 195) solid;
     display: flex;
     flex-wrap: wrap;
     justify-content: baseline;
@@ -12,32 +10,68 @@
     top: 0;
     left: 0;
     z-index: 1;
-    box-shadow: 0px 0px 14px -8px rgb(68, 68, 68);
 
     .headerLink {
         text-decoration: none;
         padding-right: 2rem;
         padding-left: 1.6rem;
         font-size: 2.1vh;
-        border-right: 1px rgb(195, 195, 195) solid;
-        color: black;
         height: 7vh;
         display: flex;
         align-items: center;
 
         &:hover {
             cursor: pointer;
+            padding-top: 3px;
+        }
+
+        &.active {
+            padding-top: 3px;
+            transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
+        }
+    }
+}
+
+#light .header {
+    background-color: rgba(255, 255, 255, 0.45);
+    border-bottom: 1px rgb(195, 195, 195) solid;
+    box-shadow: 0px 0px 14px -8px rgb(68, 68, 68);
+
+    .headerLink {
+        border-right: 1px rgb(195, 195, 195) solid;
+        color: black;
+
+        &:hover {
             color: rgb(113, 113, 125);
             border-bottom: 3px rgb(63, 63, 67) solid;
-            padding-top: 3px;
         }
 
         &.active {
             color: white;
             background-color: rgb(63, 63, 67);
             border-bottom: 3px rgb(63, 63, 67) solid;
-            padding-top: 3px;
-            transition: all .3s ease, border-bottom 0ms, padding-top 0ms;
+        }
+    }
+}
+
+#dark .header {
+    background-color: rgba(47, 47, 47, 0.6);
+    border-bottom: 1px white solid;
+    box-shadow: 0px 0px 14px -8px rgb(255, 255, 255);
+
+    .headerLink {
+        border-right: 1px rgb(195, 195, 195) solid;
+        color: white;
+
+        &:hover {
+            color: rgb(255, 255, 255);
+            border-bottom: 3px white solid;
+        }
+
+        &.active {
+            color: white;
+            background-color: rgb(47, 47, 47);
+            border-bottom: 3px white solid;
         }
     }
 }
