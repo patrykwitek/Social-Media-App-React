@@ -1,18 +1,18 @@
-.profilePhotosSection{
+.profilePhotosSection {
     margin: 0 auto;
     width: 60vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap:1vw;
+    gap: 1vw;
     padding-top: 4vh;
     padding-bottom: 2vh;
 
-    .userProfilePhotoSection-photo{
+    .userProfilePhotoSection-photo {
         width: 18vw;
     }
 
-    .show-users-gallery{
+    .show-users-gallery {
         width: 14vw;
         height: 4vh;
         margin-top: 4vh;
@@ -28,11 +28,28 @@
         box-shadow: 0px 2px 8px -5px rgb(66, 66, 66);
         font-size: 1.7vh;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
             color: white;
             background-color: rgb(47, 47, 47);
             border: 1px rgb(47, 47, 47) solid;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .profilePhotosSection {
+        width: 90vw;
+        gap: 1.5vw;
+
+        .userProfilePhotoSection-photo {
+            width: 28vw;
+        }
+
+        .show-users-gallery {
+            width: 60vw;
+            margin-top: 3vh;
+            margin-bottom: 2vh;
         }
     }
 }

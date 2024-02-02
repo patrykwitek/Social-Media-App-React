@@ -63,3 +63,29 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .single-post {
+        width: 80vw;
+
+        .own-single-post {
+            .single-post-description {
+                width: 70vw;
+
+                .single-post-title {
+                    text-align: left;
+                    padding-left: 3vw;
+
+                    .icon-delete {
+                        right: 15vw;
+                    }
+                }
+
+                .single-post-text {
+                    width: 70vw;
+                    padding-left: 3vw;
+                }
+            }
+        }
+    }
+}

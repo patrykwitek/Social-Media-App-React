@@ -167,3 +167,32 @@
     transition: .3s;
     transform: translateY(-10px);
 }
+
+@media (max-width: 480px) {
+    .userNameSection {
+        display: none;
+    }
+
+    .dropdown-menu {
+        top: 8vh;
+        right: 1vw;
+        width: 50vw;
+    
+        .dropdown-user-info {
+            width: 40vw;
+    
+            .dropdown-userFirstName {
+                font-size: 1rem;
+            }
+    
+            .dropdown-userName {
+                font-size: .9rem;
+            }
+        }
+    
+        .add-section {
+            top: calc(8vh + 100px);
+            right: 50vw;
+        }
+    }
+}

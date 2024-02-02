@@ -11,8 +11,8 @@ export const LoginBtn = () => {
 
     return (
         <div className='login-btn-container'>
-            <div className='headerLoginSection' onClick={() => navigate(`login`)}>
-                {translation("login")} <RiLoginBoxLine className='login-icon' />
+            <div className='headerLoginSection' onClick={() => navigate(`login`)} title={translation("login")}>
+                <span className='login-text'>{translation("login")}</span> <RiLoginBoxLine className='login-icon' />
             </div>
         </div>
     )

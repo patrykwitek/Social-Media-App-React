@@ -1,4 +1,4 @@
-footer{
+footer {
     width: 100vw;
     height: 11vh;
     background-color: rgb(47, 47, 47);
@@ -9,4 +9,11 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+    footer {
+        font-size: .8rem;
+    }
 }

@@ -4,3 +4,11 @@
     padding-right: 1.5rem;
     padding-top: 2.5vh;
 }
+
+@media (max-width: 480px) {
+    .userProfileNavigation-item {
+        padding-left: .7rem;
+        padding-right: .7rem;
+        font-size: .9rem;
+    }
+}

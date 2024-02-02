@@ -58,3 +58,13 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .photosPage {
+        .photos-search-bar-container {
+            .choose-filtering {
+                width: auto;
+            }
+        }
+    }
+}

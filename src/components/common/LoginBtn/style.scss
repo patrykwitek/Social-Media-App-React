@@ -19,7 +19,7 @@
         background-color: rgb(248, 248, 248);
         box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
 
-        .login-icon{
+        .login-icon {
             font-size: 2.5vh;
             margin-left: .4vw;
         }
@@ -30,6 +30,36 @@
             background-color: rgb(63, 63, 67);
             border: 1px rgb(63, 63, 67) solid;
             box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .login-btn-container {
+        .headerLoginSection {
+            height: 4.5vh;
+            padding-right: 0;
+            padding-left: 0;
+            font-size: 1.2rem;
+            border: none;
+            box-shadow: none;
+            background-color: transparent;
+            margin-right: .5rem;
+
+            &:hover {
+                color: black;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+            }
+
+            .login-text {
+                display: none;
+            }
+
+            .login-icon {
+                font-size: 1.2rem;
+            }
         }
     }
 }

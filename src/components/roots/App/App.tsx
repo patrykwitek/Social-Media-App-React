@@ -1,6 +1,6 @@
 import '../../../style/font.css';
 import './style.scss';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Footer } from '../../common/Footer/Footer';
 import { Header } from '../../common/Header/Header';
@@ -25,8 +25,28 @@ import { AddPhoto } from '../AddPhoto/AddPhoto';
 import { AddPost } from '../AddPost/AddPost';
 
 function App() {
+  const [displayMode, setDisplayMode] = useState('light');
+
+  useEffect(() => {
+    const displayedModeData = localStorage.getItem('displayMode');
+
+    if (displayedModeData) {
+      try {
+        const parsedDisplayModeData = JSON.parse(displayedModeData);
+        setDisplayMode(parsedDisplayModeData);
+      } catch (error) {
+        console.error('Parsing data from local storage error:', error);
+      }
+    }
+  }, []);
+
+  const changeDisplayMode = () => {
+    const newMode = displayMode === 'light' ? 'dark' : 'light';
+    setDisplayMode(newMode);
+  };
+
   return (
-    <div className="app">
+    <div className="app" id={displayMode}>
       <AuthProvider>
         <Header />
         <Routes>
@@ -34,7 +54,7 @@ function App() {
           <Route path='posts' element={<RequireAuth><Posts /></RequireAuth>} />
           <Route path='friends' element={<RequireAuth><Friends /></RequireAuth>} />
           <Route path='about' element={<About />} />
-          <Route path='settings' element={<RequireAuth><Settings /></RequireAuth>} />
+          <Route path='settings' element={<RequireAuth><Settings changeDisplayMode={changeDisplayMode} /></RequireAuth>} />
           <Route path='user/:userID' element={<RequireAuth><Profile /></RequireAuth>}>
             <Route index element={<ProfilePhotosSection />} />
             <Route path='photos' element={<ProfilePhotosSection />} />

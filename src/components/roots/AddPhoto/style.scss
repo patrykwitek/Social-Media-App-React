@@ -94,3 +94,26 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .add-photo-page {
+        .add-photo-container {
+            width: 80vw;
+            height: auto;
+
+            .title-section {
+                width: 70vw;
+            }
+
+            .form-section {
+                width: 70vw;
+
+                .choose-photo {
+                    input {
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+}

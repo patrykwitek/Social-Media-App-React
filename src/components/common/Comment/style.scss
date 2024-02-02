@@ -95,3 +95,10 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .comment {
+        width: 70vw;
+        margin: 4vh 5vw;
+    }
+}

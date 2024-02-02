@@ -19,3 +19,13 @@
         outline: none;
     }
 }
+
+@media (max-width: 480px) {
+    .photos-search-bar-by-user-id {
+        width: 60vw;
+
+        .search-input {
+            font-size: .7rem;
+        }
+    }
+}

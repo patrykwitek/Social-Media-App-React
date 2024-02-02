@@ -155,3 +155,24 @@
 body.freeze-scrolling {
     overflow-y: hidden;
 }
+
+@media (max-width: 480px) {
+    .single-album {
+        width: 90vw;
+
+        .album-top-part {
+            width: 90vw;
+        }
+
+        .album-photos {
+            width: 80vw;
+            gap: 1vw;
+        }
+
+        .photo-modal {
+            .remove {
+                right: 8vw;
+            }
+        }
+    }
+}

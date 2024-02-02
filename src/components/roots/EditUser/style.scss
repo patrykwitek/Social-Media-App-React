@@ -106,3 +106,18 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .edit-user-page {
+        .edit-user-form {
+            width: 80vw;
+            border-radius: 2rem;
+
+            .form-section {
+                .section-content {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

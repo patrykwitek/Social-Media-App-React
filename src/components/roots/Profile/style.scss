@@ -51,6 +51,39 @@
                 }
             }
         }
+
+        .userProfileMainConent {
+            width: 60vw;
+            border-top: 1px rgb(165, 165, 165) solid;
+            margin-top: 3vh;
+
+            .userProfileNavigation {
+                width: 60vw;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: baseline;
+            }
+
+            .profileNavigationLink {
+                text-decoration: none;
+                color: black;
+                transition: .2s;
+
+                &:hover {
+                    cursor: pointer;
+                    border-bottom: 2px rgb(198, 198, 198) solid;
+                }
+
+                &.active {
+                    border-bottom: 2px rgb(81, 81, 81) solid;
+                }
+            }
+        }
+    }
+
+    .userProfileChosenItem {
+        width: 100vw;
+        background-color: white;
     }
 
     .userProfileMoreInfo {
@@ -89,35 +122,47 @@
     }
 }
 
-.userProfileMainConent {
-    width: 60vw;
-    border-top: 1px rgb(165, 165, 165) solid;
-    margin-top: 3vh;
+@media (max-width: 480px) {
+    .userProfilePage {
+        .userProfileTopSection {
+            .userInfoSection {
+                width: 90vw;
+                gap: 1.1rem;
+                height: 15vh;
+                align-items: center;
 
-    .userProfileNavigation {
-        width: 60vw;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: baseline;
+                .userInfo {
+                    height: 10vh;
+                    padding-top: 1vh;
+
+                    .username {
+                        font-size: 1.5rem;
+                    }
+
+                    .userDignity {
+                        font-size: .9rem;
+                    }
+                }
+
+                .userProfileImgSection {
+                    img {
+                        width: 15vh;
+                    }
+                }
+            }
+
+            .userProfileMainConent {
+                width: 90vw;
+                margin-top: 5vh;
+
+                .userProfileNavigation {
+                    width: 90vw;
+                }
+            }
+        }
+
+        .userProfileMoreInfo {
+            width: 80vw;
+        }
     }
-}
-
-.userProfileChosenItem {
-    width: 100vw;
-    background-color: white;
-}
-
-.profileNavigationLink {
-    text-decoration: none;
-    color: black;
-    transition: .2s;
-}
-
-.profileNavigationLink:hover {
-    cursor: pointer;
-    border-bottom: 2px rgb(198, 198, 198) solid;
-}
-
-.profileNavigationLink.active {
-    border-bottom: 2px rgb(81, 81, 81) solid;
 }

@@ -1,4 +1,4 @@
-.photos-search-bar{
+.photos-search-bar {
     border-radius: 10px;
     height: 2.5rem;
     display: flex;
@@ -6,7 +6,7 @@
     margin-bottom: 4vh;
     width: 20vw;
 
-    .search-input{
+    .search-input {
         background-color: transparent;
         border: none;
         height: 100%;
@@ -15,7 +15,17 @@
         margin-left: .6rem;
     }
 
-    .search-input:focus{
+    .search-input:focus {
         outline: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .photos-search-bar {
+        width: 60vw;
+
+        .search-input {
+            font-size: .7rem;
+        }
     }
 }

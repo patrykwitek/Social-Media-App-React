@@ -9,17 +9,17 @@
     padding-bottom: 5vh;
     position: relative;
 
-    .welcome-page-top{
+    .welcome-page-top {
         font-size: 3vh;
         text-align: right;
 
-        #bottom-description{
+        #bottom-description {
             font-size: 2vh;
             margin-top: 1vh;
         }
     }
 
-    .welcome-page-login{
+    .welcome-page-login {
         align-self: last baseline;
 
         button {
@@ -37,7 +37,7 @@
             transition: .3s;
             display: flex;
             align-items: center;
-    
+
             .login-icon {
                 position: absolute;
                 right: 50%;
@@ -45,14 +45,14 @@
                 font-size: 2.7vh;
                 color: transparent;
             }
-    
+
             &:hover {
                 cursor: pointer;
                 color: transparent;
                 background-color: rgb(63, 63, 67);
                 border: 1px rgb(63, 63, 67) solid;
                 box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
-    
+
                 .login-icon {
                     display: block;
                     color: white;
@@ -61,12 +61,38 @@
         }
     }
 
-    .welcome-page-picture{
+    .welcome-page-picture {
         z-index: -1;
         position: absolute;
         opacity: .6;
         bottom: 0;
         right: 20vw;
         height: 80vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-page {
+        .welcome-page-top {
+            font-size: 1.2rem;
+
+            #bottom-description {
+                font-size: .9rem;
+                margin-top: 1rem;
+            }
+        }
+
+        .welcome-page-login {
+            align-self: center;
+
+            button {
+                margin-top: 2rem;
+            }
+        }
+
+        .welcome-page-picture {
+            right: 0;
+            height: 60vh;
+        }
     }
 }

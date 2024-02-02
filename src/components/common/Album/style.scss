@@ -101,7 +101,7 @@
 
     .photo-modal {
         z-index: 3;
-        
+
         &,
         .overlay {
             width: 100vw;
@@ -161,4 +161,28 @@
 
 body.freeze-scrolling {
     overflow-y: hidden;
+}
+
+@media (max-width: 480px) {
+    .albumPage {
+        .album-container {
+            width: 90vw;
+
+            .top-container {
+                width: 90vw;
+                text-align: center;
+            }
+
+            .album-photos {
+                width: 80vw;
+                gap: 2vw;
+
+                .displayed-photo {
+                    img {
+                        width: 20vw;
+                    }
+                }
+            }
+        }
+    }
 }

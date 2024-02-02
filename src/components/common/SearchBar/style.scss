@@ -1,11 +1,11 @@
-.searchBar{
+.searchBar {
     width: 25vw;
     border-radius: 10px;
     height: 2.5rem;
     display: flex;
     align-items: center;
 
-    .search-input{
+    .search-input {
         background-color: transparent;
         border: none;
         height: 100%;
@@ -14,7 +14,17 @@
         margin-left: .6rem;
     }
 
-    .search-input:focus{
+    .search-input:focus {
         outline: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .searchBar {
+        width: 80vw;
+
+        .search-input {
+            font-size: 1rem;
+        }
     }
 }
