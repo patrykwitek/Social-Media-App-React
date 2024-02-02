@@ -3,6 +3,7 @@ import '../../../style/font.css';
 import { useState } from 'react';
 import { ToggleDisplayMode } from '../../common/ToggleDisplayMode/ToggleDisplayMode';
 import { useTranslation } from 'react-i18next';
+import { IoSettingsOutline } from 'react-icons/io5';
 
 export const Settings = () => {
     const [translation, i18n] = useTranslation("global");
@@ -25,7 +26,9 @@ export const Settings = () => {
     return (
         <div className='settings-page'>
             <div className='settings-container'>
-                <h2>{translation("settings")}</h2>
+                <h2>
+                    {translation("settings")} <IoSettingsOutline className='settings-logo'/>
+                </h2>
                 <div className='single-option first-option'>
                     {translation("language")}:
                     <select className='choose-language' value={selectedLanguage} onChange={handleLanguageChange}>

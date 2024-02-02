@@ -28,3 +28,19 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .friendsPage {
+        .friendsContainer {
+            width: 80vw;
+
+            .friendsTitle {
+                width: 80vw;
+            }
+
+            .usersSections {
+                width: 80vw;
+            }
+        }
+    }
+}

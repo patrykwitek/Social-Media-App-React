@@ -107,3 +107,27 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .authors {
+        .authorsContent {
+            a {
+                .authorSection {
+                    width: 30vw;
+    
+                    .authorPicture {
+                        width: 30vw;
+                    }
+
+                    .linkedInLogo {
+                        display: none;
+                    }
+
+                    .authorName {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

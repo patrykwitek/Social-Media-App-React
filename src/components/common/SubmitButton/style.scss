@@ -34,3 +34,9 @@ button {
         }
     }
 }
+
+@media (max-width: 480px) {
+    button {
+        width: 70%;
+    }
+}

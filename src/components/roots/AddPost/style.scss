@@ -1,4 +1,4 @@
-.add-post-page{
+.add-post-page {
     width: 100vw;
     height: 82vh;
     display: flex;
@@ -8,7 +8,7 @@
     padding-top: 5vh;
     padding-bottom: 5vh;
 
-    .add-post-container{
+    .add-post-container {
         width: 50vw;
         background-color: white;
         border: 1px lightgray solid;
@@ -18,7 +18,7 @@
         display: flex;
         flex-direction: column;
 
-        .title-section{
+        .title-section {
             width: 40vw;
             height: 6vh;
             display: flex;
@@ -30,7 +30,7 @@
             padding-bottom: 6.5vh;
             padding-top: 1vh;
 
-            .icon{
+            .icon {
                 position: relative;
                 bottom: .3vh;
                 margin-left: .5vw;
@@ -60,10 +60,11 @@
 
             .post-description {
                 margin-top: 2.5vh;
+
                 input {
                     background-color: transparent;
                     border: none;
-                    padding:2px;
+                    padding: 2px;
                     padding-right: 20vw;
                     font-size: 1rem;
                     margin-left: .6rem;
@@ -81,6 +82,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .add-post-page {
+        .add-post-container {
+            width: 80vw;
+            border-radius: 2rem;
+
+            .title-section {
+                width: 80vw;
+            }
+
+            .form-section {
+                width: 60vw;
+            }
         }
     }
 }

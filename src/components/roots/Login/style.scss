@@ -135,3 +135,33 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .login-page {
+        .login-container {
+            width: 50vw;
+
+            .username-container {
+                width: 40vw;
+            }
+
+            .password-container {
+                width: 40vw;
+            }
+
+            .password-message {
+                width: 100%;
+            }
+            
+            .wrong-username-message{
+                width: 100%;
+            }
+
+            .login-button {
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

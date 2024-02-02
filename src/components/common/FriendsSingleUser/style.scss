@@ -23,17 +23,26 @@
         color: rgb(21, 102, 172);
         transition: .3s;
     }
+
+    &:hover {
+        cursor: pointer;
+
+        .singleUser-name {
+            color: rgb(50, 138, 215);
+        }
+
+        img {
+            scale: 109%;
+            opacity: .8;
+        }
+    }
 }
 
-.singleUser:hover {
-    cursor: pointer;
-
-    .singleUser-name {
-        color: rgb(50, 138, 215);
-    }
-
-    img {
-        scale: 109%;
-        opacity: .8;
+@media (max-width: 480px) {
+    .singleUser {
+        .singleUser-name {
+            font-size: .8rem;
+            margin-left: 3vw;
+        }
     }
 }
