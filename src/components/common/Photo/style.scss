@@ -1,13 +1,205 @@
 .somePhoto {
-   border: 1px solid lightgray;
-   border-radius: 20px;
-   box-shadow: 0px 5px 16px -10px rgb(40, 40, 40);
-   display: flex;
-   flex-direction: column;
-   align-self: center;
-   justify-content: center;
+  border-radius: 20px;
 
-   .topPartOfPhoto {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+
+  .topPartOfPhoto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    padding-left: 1vw;
+
+    .userPhoto {
+      height: 8.6vh;
+      transition: 0.2s;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .profilePicture {
+        height: 6vh;
+        border-radius: 50%;
+        transition: 0.2s;
+      }
+
+      .userPhotoUsername {
+        display: flex;
+        align-items: center;
+
+        text-decoration: none;
+        transition: 0.2s;
+        margin-left: 0.9vw;
+        font-size: 0.9rem;
+      }
+    }
+
+    .userPhoto:hover {
+      cursor: pointer;
+
+      .profilePicture {
+        opacity: 0.8;
+        scale: 105%;
+      }
+    }
+
+    .photoDescription {
+      width: 50vh;
+      margin-bottom: 2vh;
+      padding-top: 2vh;
+
+      font-size: 0.85rem;
+
+      .photoTitle {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .albumTitle {
+        display: flex;
+        justify-content: center;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        font-size: 0.73rem;
+        text-align: center;
+
+        span {
+          font-weight: bold;
+        }
+
+        .albumLink:hover {
+          cursor: pointer;
+        }
+      }
+
+      .albumTitle.showMore {
+        display: block;
+      }
+
+      .albumTitle.showLess {
+        display: none;
+      }
+
+      .showTitle {
+        margin-top: 0.5vh;
+        display: flex;
+        justify-content: center;
+      }
+
+      .showTitle:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bottomPartOfPhoto {
+    .displayedPhoto {
+      height: 55vh;
+      border-radius: 0px 0px 20px 20px;
+      margin-bottom: -0.3rem;
+    }
+  }
+}
+
+#light .somePhoto {
+  border: 1px solid lightgray;
+  box-shadow: 0px 5px 16px -10px rgb(40, 40, 40);
+
+  .topPartOfPhoto {
+    border-bottom: 1px solid lightgray;
+
+    .userPhoto {
+      .profilePicture {
+        box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
+      }
+
+      .userPhotoUsername {
+        color: rgb(21, 102, 172);
+      }
+    }
+
+    .userPhoto:hover {
+      .userPhotoUsername {
+        color: rgb(50, 138, 215);
+      }
+    }
+
+    .photoDescription {
+      border-top: 1px lightgray solid;
+
+      .albumTitle {
+        .albumLink:hover {
+          color: rgb(48, 123, 230);
+        }
+      }
+
+      .showTitle {
+        color: rgb(0, 35, 162);
+      }
+
+      .showTitle:hover {
+        color: rgb(48, 123, 230);
+      }
+    }
+  }
+}
+
+#dark .somePhoto {
+  border: 1px solid darkgray;
+
+  .topPartOfPhoto {
+    border-bottom: 1px solid darkgray;
+
+    .userPhoto {
+      .profilePicture {
+        box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
+      }
+
+      .userPhotoUsername {
+        color: rgb(21, 102, 172);
+      }
+    }
+
+    .userPhoto:hover {
+      .userPhotoUsername {
+        color: rgb(50, 138, 215);
+      }
+    }
+
+    .photoDescription {
+      border-top: 1px darkgray solid;
+
+      .photoTitle {
+        color: white;
+      }
+
+      .albumTitle {
+        color: white;
+        .albumLink:hover {
+          color: rgb(48, 123, 230);
+        }
+      }
+
+      .showTitle {
+        color: rgb(0, 35, 162);
+      }
+
+      .showTitle:hover {
+        color: rgb(48, 123, 230);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .somePhoto {
+    width: 90vw;
+
+    .topPartOfPhoto {
       border-bottom: 1px solid lightgray;
       display: flex;
       flex-direction: column;
@@ -16,139 +208,27 @@
       padding-left: 1vw;
 
       .userPhoto {
-         height: 8.6vh;
-         transition: .2s;
-         display: flex;
-         flex-wrap: wrap;
-         align-items: center;
+        .profilePicture {
+          height: 5.5vh;
+          margin-left: 1vw;
+        }
 
-         .profilePicture {
-            height: 6vh;
-            border-radius: 50%;
-            transition: .2s;
-            box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
-         }
-
-         .userPhotoUsername {
-            display: flex;
-            align-items: center;
-            color: rgb(21, 102, 172);
-            text-decoration: none;
-            transition: .2s;
-            margin-left: .9vw;
-            font-size: .9rem;
-         }
-      }
-
-      .userPhoto:hover {
-         cursor: pointer;
-
-         .profilePicture {
-            opacity: .8;
-            scale: 105%;
-         }
-
-         .userPhotoUsername {
-            color: rgb(50, 138, 215);
-         }
+        .userPhotoUsername {
+          margin-left: 3vw;
+          font-size: 0.8rem;
+        }
       }
 
       .photoDescription {
-         width: 50vh;
-         margin-bottom: 2vh;
-         padding-top: 2vh;
-         border-top: 1px lightgray solid;
-         font-size: .85rem;
-
-         .photoTitle {
-            display: flex;
-            justify-content: center;
-            text-align: center;
-         }
-
-         .albumTitle {
-            display: flex;
-            justify-content: center;
-            margin-top: 2vh;
-            margin-bottom: 2vh;
-            font-size: .73rem;
-            text-align: center;
-
-            span {
-               font-weight: bold;
-            }
-
-            .albumLink:hover {
-               cursor: pointer;
-               color: rgb(48, 123, 230);
-            }
-         }
-
-         .albumTitle.showMore {
-            display: block;
-         }
-
-         .albumTitle.showLess {
-            display: none;
-         }
-
-         .showTitle {
-            margin-top: .5vh;
-            display: flex;
-            justify-content: center;
-            color: rgb(0, 35, 162);
-         }
-
-         .showTitle:hover {
-            cursor: pointer;
-            color: rgb(48, 123, 230);
-         }
+        width: 100%;
       }
-   }
+    }
 
-   .bottomPartOfPhoto {
+    .bottomPartOfPhoto {
       .displayedPhoto {
-         height: 55vh;
-         border-radius: 0px 0px 20px 20px;
-         margin-bottom: -.3rem;
+        width: 100%;
+        height: 50%;
       }
-   }
-}
-
-@media (max-width: 480px) {
-   .somePhoto {
-      width: 90vw;
-
-      .topPartOfPhoto {
-         border-bottom: 1px solid lightgray;
-         display: flex;
-         flex-direction: column;
-         flex-wrap: wrap;
-         justify-content: baseline;
-         padding-left: 1vw;
-
-         .userPhoto {
-            .profilePicture {
-               height: 5.5vh;
-               margin-left: 1vw;
-            }
-
-            .userPhotoUsername {
-               margin-left: 3vw;
-               font-size: .8rem;
-            }
-         }
-
-         .photoDescription {
-            width: 100%;
-         }
-      }
-
-      .bottomPartOfPhoto {
-         .displayedPhoto {
-            width: 100%;
-            height: 50%;
-         }
-      }
-   }
+    }
+  }
 }

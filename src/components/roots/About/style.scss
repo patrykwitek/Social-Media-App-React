@@ -1,133 +1,268 @@
 .aboutPage {
-    width: 100vw;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-}
+  width: 100vw;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 
-.projectInfo {
+  .projectInfo {
     margin: 0 auto;
     width: 70vw;
     font-size: 1rem;
     text-align: left;
     padding-bottom: 3rem;
-    border-bottom: 1px rgb(165, 165, 165) solid;
 
-    a{
-        text-decoration: none;
-        color: rgb(45, 88, 141);
-        transition: .2s;
-
-        &:hover{
-            color: rgb(64, 115, 176);
-        }
+    a {
+      text-decoration: none;
+      transition: 0.2s;
     }
-}
+  }
 
-.authors {
+  .authors {
     width: 70vw;
     margin-top: 3rem;
     text-align: center;
     margin: 0 auto;
 
     .authorsTitle {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-        margin-top: 3rem;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      margin-top: 3rem;
     }
 
     .authorsContent {
-        width: 70vw;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6vw;
+      width: 70vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6vw;
 
-        a {
-            text-decoration: none;
-            color: black;
-            transition: .3s;
+      a {
+        text-decoration: none;
+        transition: 0.3s;
 
-            .authorSection {
-                width: 10vw;
+        .authorSection {
+          width: 10vw;
 
-                .authorPicture {
-                    width: 10vw;
-                    margin-bottom: .5rem;
-                    border-radius: 50%;
-                    transition: .3s;
-                    box-shadow: 0px 5px 10px -5px rgb(48, 48, 48);
-                }
+          .authorPicture {
+            width: 10vw;
+            margin-bottom: 0.5rem;
+            border-radius: 50%;
+            transition: 0.3s;
+          }
 
-                .authorName {
-                    position: relative;
-                    left: 10px;
-                    transition: .4s;
-                }
+          .authorName {
+            position: relative;
+            left: 10px;
+            transition: 0.4s;
+          }
 
-                .linkedInLogo {
-                    width: 20px;
-                    position: relative;
-                    top: 3px;
-                    left: 7px;
-                    visibility: hidden;
-                    transition: .1s;
-                }
-            }
+          .linkedInLogo {
+            width: 20px;
+            position: relative;
+            top: 3px;
+            left: 7px;
+            visibility: hidden;
+            transition: 0.1s;
+          }
         }
+      }
 
-        a:hover {
-            cursor: pointer;
+      a:hover {
+        cursor: pointer;
 
-            .authorSection {
-                .authorPicture {
-                    border-radius: 40%;
-                    box-shadow: 0px 5px 10px -2px rgb(48, 48, 48);
-                }
+        .authorSection {
+          .authorPicture {
+            border-radius: 40%;
+          }
 
-                #patrykPhoto {
-                    filter: contrast(160%);
-                    filter: brightness(1.1);
-                }
+          #patrykPhoto {
+            filter: contrast(160%);
+            filter: brightness(1.1);
+          }
 
-                #ruslanPhoto {
-                    filter: saturate(2.5);
-                }
+          #ruslanPhoto {
+            filter: saturate(2.5);
+          }
 
-                .authorName {
-                    color: rgb(44, 84, 185);
-                    left: 0;
-                }
+          .authorName {
+            left: 0;
+          }
 
-                .linkedInLogo {
-                    visibility: visible;
-                }
-            }
+          .linkedInLogo {
+            visibility: visible;
+          }
         }
+      }
     }
+  }
+}
+
+#light .aboutPage {
+  .projectInfo {
+    border-bottom: 1px rgb(165, 165, 165) solid;
+
+    a {
+      color: rgb(45, 88, 141);
+
+      &:hover {
+        color: rgb(64, 115, 176);
+      }
+    }
+  }
+
+  .authors {
+    .authorsTitle {
+    }
+
+    .authorsContent {
+      a {
+        color: black;
+
+        .authorSection {
+          .authorPicture {
+            box-shadow: 0px 5px 10px -5px rgb(48, 48, 48);
+          }
+
+          .authorName {
+          }
+        }
+      }
+
+      a:hover {
+        .authorSection {
+          .authorPicture {
+            box-shadow: 0px 5px 10px -2px rgb(48, 48, 48);
+          }
+
+          .authorName {
+            color: rgb(44, 84, 185);
+          }
+        }
+      }
+    }
+  }
+}
+
+#light .aboutPage {
+  .projectInfo {
+    border-bottom: 1px rgb(165, 165, 165) solid;
+
+    a {
+      color: rgb(45, 88, 141);
+
+      &:hover {
+        color: rgb(64, 115, 176);
+      }
+    }
+  }
+
+  .authors {
+    .authorsTitle {
+    }
+
+    .authorsContent {
+      a {
+        color: black;
+
+        .authorSection {
+          .authorPicture {
+            box-shadow: 0px 5px 10px -5px rgb(48, 48, 48);
+          }
+
+          .authorName {
+          }
+        }
+      }
+
+      a:hover {
+        .authorSection {
+          .authorPicture {
+            box-shadow: 0px 5px 10px -2px rgb(48, 48, 48);
+          }
+
+          .authorName {
+            color: rgb(44, 84, 185);
+          }
+        }
+      }
+    }
+  }
+}
+
+#dark .aboutPage {
+  .projectInfo {
+    border-bottom: 1px darkgray solid;
+    h3 {
+      color: white;
+      a {
+        color: rgb(45, 88, 141);
+
+        &:hover {
+          color: rgb(64, 115, 176);
+        }
+      }
+    }
+    p {
+      color: white;
+    }
+  }
+
+  .authors {
+    .authorsTitle {
+      color: white;
+    }
+
+    .authorsContent {
+      a {
+        color: white;
+
+        .authorSection {
+          .authorPicture {
+            box-shadow: 0px 5px 10px -5px rgb(48, 48, 48);
+          }
+
+          .authorName {
+            color: white;
+          }
+        }
+      }
+
+      a:hover {
+        .authorSection {
+          .authorPicture {
+            box-shadow: 0px 5px 10px -2px rgb(48, 48, 48);
+          }
+
+          .authorName {
+            color: rgb(44, 84, 185);
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
-    .authors {
-        .authorsContent {
-            a {
-                .authorSection {
-                    width: 30vw;
-    
-                    .authorPicture {
-                        width: 30vw;
-                    }
+  .authors {
+    .authorsContent {
+      a {
+        .authorSection {
+          width: 30vw;
 
-                    .linkedInLogo {
-                        display: none;
-                    }
+          .authorPicture {
+            width: 30vw;
+          }
 
-                    .authorName {
-                        left: 0;
-                    }
-                }
-            }
+          .linkedInLogo {
+            display: none;
+          }
+
+          .authorName {
+            left: 0;
+          }
         }
+      }
     }
+  }
 }

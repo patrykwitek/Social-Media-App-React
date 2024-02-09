@@ -1,123 +1,170 @@
 .somePost {
-    border: 1px solid lightgray;
-    border-radius: 20px;
-    box-shadow: 0px 2px 7px -1px rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 55vw;
+
+  .topPartOfPost {
+    height: 9vh;
     display: flex;
     flex-direction: column;
-    align-self: center;
-    justify-content: center;
-    width: 55vw;
+    justify-content: baseline;
+    flex-wrap: wrap;
+    padding-left: 1vw;
+    padding-top: 1vh;
 
-    .topPartOfPost {
-        border-bottom: 1px solid lightgray;
-        height: 9vh;
+    .userPost {
+      height: 8.6vh;
+      transition: 0.2s;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .profilePicture {
+        height: 6vh;
+        border-radius: 50%;
+        transition: 0.2s;
+      }
+
+      .userPostUsername {
         display: flex;
-        flex-direction: column;
-        justify-content: baseline;
-        flex-wrap: wrap;
-        padding-left: 1vw;
-        padding-top: 1vh;
-
-        .userPost {
-            height: 8.6vh;
-            transition: .2s;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-
-            .profilePicture {
-                height: 6vh;
-                border-radius: 50%;
-                transition: .2s;
-                box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
-            }
-
-            .userPostUsername {
-                display: flex;
-                align-items: center;
-                color: rgb(21, 102, 172);
-                text-decoration: none;
-                transition: .2s;
-                margin-left: .9vw;
-                font-size: .9rem;
-            }
-        }
-
-        .userPost:hover {
-            cursor: pointer;
-
-            .profilePicture {
-                opacity: .8;
-                scale: 105%;
-            }
-
-            .userPostUsername {
-                color: rgb(50, 138, 215);
-            }
-        }
+        align-items: center;
+        text-decoration: none;
+        transition: 0.2s;
+        margin-left: 0.9vw;
+        font-size: 0.9rem;
+      }
     }
 
-    .bottomPartOfPost {
-        display: flex;
-        flex-direction: column;
-        justify-content: baseline;
-        flex-wrap: wrap;
-        padding-left: 1vw;
+    .userPost:hover {
+      cursor: pointer;
 
-        .postDescription {
-            width: 53vw;
-            margin-bottom: 2vh;
-            padding-top: 2vh;
-
-            .postTitle {
-                display: flex;
-                text-align: center;
-                font-weight: bold;
-                padding-top: .5vh;
-                padding-bottom: .3vh;
-                padding-left: 1vw;
-                padding-right: 1vw;
-            }
-
-            .postText {
-                display: flex;
-                padding-top: 2vh;
-                padding-left: 1vw;
-                padding-right: 1vw;
-                font-size: 14px;
-            }
-        }
+      .profilePicture {
+        opacity: 0.8;
+        scale: 105%;
+      }
     }
+  }
+
+  .bottomPartOfPost {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    flex-wrap: wrap;
+    padding-left: 1vw;
+
+    .postDescription {
+      width: 53vw;
+      margin-bottom: 2vh;
+      padding-top: 2vh;
+
+      .postTitle {
+        display: flex;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 0.5vh;
+        padding-bottom: 0.3vh;
+        padding-left: 1vw;
+        padding-right: 1vw;
+      }
+
+      .postText {
+        display: flex;
+        padding-top: 2vh;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+#light .somePost {
+  border: 1px solid lightgray;
+  box-shadow: 0px 2px 7px -1px rgba(0, 0, 0, 0.19);
+
+  .topPartOfPost {
+    border-bottom: 1px solid lightgray;
+
+    .userPost {
+      .profilePicture {
+        box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
+      }
+
+      .userPostUsername {
+        color: rgb(21, 102, 172);
+      }
+    }
+
+    .userPost:hover {
+      .userPostUsername {
+        color: rgb(50, 138, 215);
+      }
+    }
+  }
+}
+
+#dark .somePost {
+  border: 1px solid darkgray;
+
+  .topPartOfPost {
+    border-bottom: 1px solid darkgray;
+
+    .userPost {
+      .profilePicture {
+        box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
+      }
+
+      .userPostUsername {
+        color: rgb(21, 102, 172);
+      }
+    }
+
+    .userPost:hover {
+      .userPostUsername {
+        color: rgb(50, 138, 215);
+      }
+    }
+  }
+
+  .postTitle {
+    color: white;
+  }
+  .postText {
+    color: white;
+  }
 }
 
 @media (max-width: 480px) {
-    .somePost {
-        width: 80vw;
+  .somePost {
+    width: 80vw;
 
-        .topPartOfPost {
-            padding-left: 2vw;
+    .topPartOfPost {
+      padding-left: 2vw;
 
-            .userPost {
-                .userPostUsername {
-                    margin-left: 3vw;
-                    font-size: .8rem;
-                }
-            }
+      .userPost {
+        .userPostUsername {
+          margin-left: 3vw;
+          font-size: 0.8rem;
         }
-
-        .bottomPartOfPost {
-            .postDescription {
-                width: 70vw;
-                align-self: center;
-
-                .postTitle {
-                    text-align: left;
-                }
-
-                .postText {
-                    font-size: .8rem;
-                }
-            }
-        }
+      }
     }
+
+    .bottomPartOfPost {
+      .postDescription {
+        width: 70vw;
+        align-self: center;
+
+        .postTitle {
+          text-align: left;
+        }
+
+        .postText {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
 }

@@ -61,7 +61,7 @@ export const Comment = (props: CommentProps) => {
          </div>
          <div className='bodyComment'>
             <div className='comment-title'>{props.comment.name}</div>
-            <div>{props.comment.body}</div>
+            <div className='comment-body'>{props.comment.body}</div>
          </div>
       </div>
    );

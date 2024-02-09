@@ -1,66 +1,96 @@
 .settings-page {
-    width: 100vw;
-    height: 82vh;
+  width: 100vw;
+  height: 82vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+
+  .settings-container {
+    width: 20vw;
+    margin: 0 auto;
+    padding: 2rem 3rem 2rem 3rem;
+    border-radius: 25px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
 
-    .settings-container{
-        width: 20vw;
-        margin: 0 auto;
-        padding: 2rem 3rem 2rem 3rem;
-        border: 1px rgb(203, 203, 203) solid;
-        background-color: rgb(249, 249, 249);
-        border-radius: 25px;
-        box-shadow: 0px 0px 22px -12px rgba(66, 68, 90, 1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    h2 {
+      align-self: center;
+      display: flex;
+      align-items: center;
 
-        h2{
-            align-self: center;
-            display: flex;
-            align-items: center;
-
-            .settings-logo{
-                margin-left: .3rem;
-                font-size: 1.8rem;
-            }
-        }
-
-        .single-option{
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-
-            .choose-language{
-                margin-left: .5vw;
-
-                &:hover{
-                    cursor: pointer;
-                }
-            }
-
-            .toggle{
-                margin-left: .5vw;
-            }
-        }
-
-        .first-option{
-            border-top: 1px lightgray solid;
-            padding-top: 2rem;
-        }
+      .settings-logo {
+        margin-left: 0.3rem;
+        font-size: 1.8rem;
+      }
     }
+
+    .single-option {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .choose-language {
+        margin-left: 0.5vw;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .toggle {
+        margin-left: 0.5vw;
+      }
+    }
+
+    .first-option {
+      padding-top: 2rem;
+    }
+  }
+}
+
+#light .settings-page {
+  .settings-container {
+    border: 1px rgb(203, 203, 203) solid;
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0px 0px 22px -12px rgba(66, 68, 90, 1);
+
+    .first-option {
+      border-top: 1px lightgray solid;
+    }
+  }
+}
+
+#dark .settings-page {
+  .settings-container {
+    border: 1px darkgray solid;
+    background-color: rgb(21, 21, 21);
+
+    h2 {
+      color: white;
+      .settings-logo {
+        color: white;
+      }
+    }
+
+    .single-option {
+      color: white;
+    }
+  }
+
+  .first-option {
+    border-top: 1px lightgray solid;
+  }
 }
 
 @media (max-width: 700px) {
-    .settings-page {
-        .settings-container{
-            width: 80vw;
-        }
+  .settings-page {
+    .settings-container {
+      width: 80vw;
     }
+  }
 }
