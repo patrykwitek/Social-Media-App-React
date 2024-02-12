@@ -8,14 +8,14 @@
   padding-top: 5vh;
   padding-bottom: 5vh;
 
-  .settings-container {
-    width: 20vw;
-    margin: 0 auto;
-    padding: 2rem 3rem 2rem 3rem;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    .settings-container{
+        width: 20vw;
+        margin: 0 auto;
+        padding: 2rem 3rem 2rem 3rem;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
     h2 {
       align-self: center;
@@ -47,44 +47,36 @@
       }
     }
 
-    .first-option {
-      padding-top: 2rem;
+        .first-option{
+            padding-top: 2rem;
+        }
     }
-  }
 }
 
 #light .settings-page {
-  .settings-container {
-    border: 1px rgb(203, 203, 203) solid;
-    background-color: rgb(249, 249, 249);
-    box-shadow: 0px 0px 22px -12px rgba(66, 68, 90, 1);
+    .settings-container{
+        border: 1px rgb(203, 203, 203) solid;
+        background-color: rgb(249, 249, 249);
+        box-shadow: 0px 0px 22px -12px rgba(66, 68, 90, 1);
 
-    .first-option {
-      border-top: 1px lightgray solid;
+        .first-option{
+            border-top: 1px lightgray solid;
+        }
     }
-  }
 }
 
 #dark .settings-page {
-  .settings-container {
-    border: 1px darkgray solid;
-    background-color: rgb(21, 21, 21);
+    color: white;
 
-    h2 {
-      color: white;
-      .settings-logo {
-        color: white;
-      }
+    .settings-container{
+        border: 1px rgb(102, 102, 102) solid;
+        background-color: rgb(20, 20, 20);
+        box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
+        .first-option{
+            border-top: 1px rgb(102, 102, 102) solid;
+        }
     }
-
-    .single-option {
-      color: white;
-    }
-  }
-
-  .first-option {
-    border-top: 1px lightgray solid;
-  }
 }
 
 @media (max-width: 700px) {

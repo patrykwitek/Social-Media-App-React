@@ -14,61 +14,59 @@
     display: none;
   }
 
-  .closeComments {
-    margin-left: 1.9vw;
-    margin-bottom: 1.5vh;
-    display: flex;
-    justify-content: flex-start;
-
-    &:hover {
-      cursor: pointer;
+   .closeComments {
       margin-left: 1.9vw;
       margin-bottom: 1.5vh;
       display: flex;
       justify-content: flex-start;
-    }
-  }
+
+      &:hover {
+         cursor: pointer;
+         margin-left: 1.9vw;
+         margin-bottom: 1.5vh;
+         display: flex;
+         justify-content: flex-start;
+      }
+   }
 
   .iconComment {
     transition: 0.2s;
     scale: 120%;
 
-    &:hover {
-      cursor: pointer;
-    }
-  }
+      &:hover {
+         cursor: pointer;
+      }
+   }
 }
 
 #light .comments-section {
-  .closeComments {
-    color: rgb(0, 0, 0);
+   .closeComments {
+      color: rgb(0, 0, 0);
 
-    &:hover {
-      color: rgb(52, 52, 52);
-    }
-  }
+      &:hover {
+         color: rgb(52, 52, 52);
+      }
+   }
 
-  .iconComment {
-    &:hover {
-      color: rgb(50, 138, 215);
-    }
-  }
+   .iconComment {
+      &:hover {
+         color: rgb(50, 138, 215);
+      }
+   }
 }
 
 #dark .comments-section {
-  .closeComments {
-    color: rgb(0, 0, 0);
+   .closeComments {
+      color: white;
 
-    &:hover {
-      color: rgb(52, 52, 52);
-    }
-  }
+      &:hover {
+         color: white;
+      }
+   }
 
-  .iconComment {
-    color: white;
-
-    &:hover {
-      color: rgb(50, 138, 215);
-    }
-  }
+   .iconComment {
+      &:hover {
+         color: rgb(50, 138, 215);
+      }
+   }
 }

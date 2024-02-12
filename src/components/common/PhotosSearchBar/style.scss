@@ -20,6 +20,14 @@
     }
 }
 
+#dark .photos-search-bar {
+    color: white;
+
+    .search-input {
+        color: white;
+    }
+}
+
 @media (max-width: 480px) {
     .photos-search-bar {
         width: 60vw;

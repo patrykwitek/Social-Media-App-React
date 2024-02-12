@@ -20,6 +20,14 @@
     }
 }
 
+#dark .photos-search-bar-by-album-id{
+    color: white;
+
+    .search-input{
+        color: white;
+    }
+}
+
 @media (max-width: 480px) {
     .photos-search-bar-by-album-id {
         width: 60vw;

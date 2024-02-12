@@ -3,62 +3,60 @@
   bottom: 5vh;
   right: 5vh;
 
-  .nav-add-photo {
-    border-radius: 50%;
-    height: 7vh;
-    width: 7vh;
-    transition: 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .nav-add-photo {
+        border-radius: 50%;
+        height: 7vh;
+        width: 7vh;
+        transition: .2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .icon {
+            font-size: 5.5vh;
+        }
 
-    .icon {
-      font-size: 5.5vh;
+        &:hover {
+            cursor: pointer;
+            box-shadow: none;
+        }
     }
-
-    &:hover {
-      cursor: pointer;
-
-      box-shadow: none;
-    }
-  }
 }
 
 #light .add-button-container {
-  .nav-add-photo {
-    border: 0.4vh rgb(47, 47, 47) solid;
-    box-shadow: 0px 0px 4px -1px rgb(47, 47, 47);
-    background-color: rgba(244, 244, 244, 0.7);
+    .nav-add-photo {
+        border: .4vh rgb(47, 47, 47) solid;
+        box-shadow: 0px 0px 4px -1px rgb(47, 47, 47);
+        background-color: rgba(244, 244, 244, .7);
+        
+        .icon {
+            color: rgb(47, 47, 47);
+        }
 
-    .icon {
-      color: rgb(47, 47, 47);
+        &:hover {
+            background-color: rgb(47, 47, 47);
+
+            .icon{
+                color: white;
+            }
+        }
     }
-
-    &:hover {
-      background-color: rgb(47, 47, 47);
-
-      .icon {
-        color: white;
-      }
-    }
-  }
 }
 
 #dark .add-button-container {
-  .nav-add-photo {
-    border: 0.4vh white solid;
-    box-shadow: 0px 0px 14px -8px rgb(255, 255, 255);
-    background-color: #0f0f0f;
-    .icon {
-      color: white;
-    }
+    .nav-add-photo {
+        border: .4vh rgb(47, 47, 47) solid;
+        background-color: rgb(47, 47, 47);
+        transition: .2s;
+        
+        .icon {
+            color: white;
+        }
 
-    &:hover {
-      background-color: white;
-
-      .icon {
-        color: #0f0f0f;
-      }
+        &:hover {
+            .icon{
+                color: rgb(79, 79, 79);
+            }
+        }
     }
-  }
 }

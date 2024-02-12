@@ -6,7 +6,6 @@
 
     .userProfileTopSection {
         width: 100vw;
-        background-color: rgb(248, 248, 248);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -47,14 +46,12 @@
                 img {
                     border-radius: 50%;
                     width: 20vh;
-                    box-shadow: 0px 0px 10px -4px rgb(66, 66, 66);
                 }
             }
         }
 
         .userProfileMainConent {
             width: 60vw;
-            border-top: 1px rgb(165, 165, 165) solid;
             margin-top: 3vh;
 
             .userProfileNavigation {
@@ -66,16 +63,10 @@
 
             .profileNavigationLink {
                 text-decoration: none;
-                color: black;
                 transition: .2s;
 
                 &:hover {
                     cursor: pointer;
-                    border-bottom: 2px rgb(198, 198, 198) solid;
-                }
-
-                &.active {
-                    border-bottom: 2px rgb(81, 81, 81) solid;
                 }
             }
         }
@@ -83,7 +74,6 @@
 
     .userProfileChosenItem {
         width: 100vw;
-        background-color: white;
     }
 
     .userProfileMoreInfo {
@@ -105,12 +95,7 @@
             .more-info-webside {
                 a {
                     text-decoration: none;
-                    color: rgb(21, 102, 172);
                     transition: .2s;
-                }
-
-                a:hover {
-                    color: rgb(89, 167, 235);
                 }
             }
         }
@@ -118,6 +103,106 @@
         .userBottomData {
             margin-top: 1.5vh;
             font-size: .9rem;
+        }
+    }
+}
+
+#light .userProfilePage {
+    .userProfileTopSection {
+        background-color: rgb(248, 248, 248);
+
+        .userInfoSection {
+            .userProfileImgSection {
+                img {
+                    box-shadow: 0px 0px 10px -4px rgb(66, 66, 66);
+                }
+            }
+        }
+
+        .userProfileMainConent {
+            border-top: 1px rgb(165, 165, 165) solid;
+
+            .profileNavigationLink {
+                color: black;
+
+                &:hover {
+                    border-bottom: 2px rgb(198, 198, 198) solid;
+                }
+
+                &.active {
+                    border-bottom: 2px rgb(81, 81, 81) solid;
+                }
+            }
+        }
+    }
+
+    .userProfileChosenItem {
+        background-color: white;
+    }
+
+    .userProfileMoreInfo {
+        .more-info-content {
+            .more-info-webside {
+                a {
+                    color: rgb(21, 102, 172);
+                }
+
+                a:hover {
+                    color: rgb(89, 167, 235);
+                }
+            }
+        }
+    }
+}
+
+#dark .userProfilePage {
+    .userProfileTopSection {
+        background-color: rgb(15, 15, 15);
+        color: white;
+
+        .userInfoSection {
+            .userProfileImgSection {
+                img {
+                    box-shadow: 0px 0px 10px -4px rgb(255, 255, 255);
+                }
+            }
+        }
+
+        .userProfileMainConent {
+            border-top: 1px rgb(62, 62, 62) solid;
+
+            .profileNavigationLink {
+                color: white;
+
+                &:hover {
+                    border-bottom: 2px rgb(255, 255, 255) solid;
+                }
+
+                &.active {
+                    border-bottom: 2px rgb(255, 255, 255) solid;
+                }
+            }
+        }
+    }
+
+    .userProfileChosenItem {
+        background-color: rgb(15, 15, 15);
+    }
+
+    .userProfileMoreInfo {
+        color: white;
+        border-top: 1px rgb(62, 62, 62) solid;
+
+        .more-info-content {
+            .more-info-webside {
+                a {
+                    color: rgb(21, 102, 172);
+                }
+
+                a:hover {
+                    color: rgb(89, 167, 235);
+                }
+            }
         }
     }
 }

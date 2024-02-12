@@ -17,21 +17,45 @@
         height: 4vh;
         margin-top: 4vh;
         margin-bottom: 4vh;
-        border: 1px lightgray solid;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: white;
         border-radius: 3rem;
-        color: rgb(47, 47, 47);
         transition: .2s;
-        box-shadow: 0px 2px 8px -5px rgb(66, 66, 66);
         font-size: 1.7vh;
 
         &:hover {
             cursor: pointer;
+        }
+    }
+}
+
+#light .profilePhotosSection {
+    .show-users-gallery {
+        border: 1px lightgray solid;
+        background-color: white;
+        color: rgb(47, 47, 47);
+        box-shadow: 0px 2px 8px -5px rgb(66, 66, 66);
+
+        &:hover {
             color: white;
             background-color: rgb(47, 47, 47);
+            border: 1px rgb(47, 47, 47) solid;
+        }
+    }
+}
+
+
+#dark .profilePhotosSection {
+    .show-users-gallery {
+        border: 1px rgb(45, 45, 45) solid;
+        background-color: rgb(19, 19, 19);
+        color: white;
+        box-shadow: 0px 0px 8px -8px rgb(255, 255, 255);
+        
+        &:hover {
+            color: white;
+            background-color: rgb(35, 35, 35);
             border: 1px rgb(47, 47, 47) solid;
         }
     }

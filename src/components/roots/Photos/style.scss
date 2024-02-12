@@ -16,26 +16,26 @@
     text-align: center;
     gap: 1vw;
 
-    .choose-filtering {
-      height: 3.5vh;
-      width: 6vw;
-      border: none;
-      position: relative;
-      top: 0.25vh;
-      font-size: 1.7vh;
-      cursor: pointer;
-      padding: 0.5vh 0.3vw;
-      transition: 0.2s;
-      margin-top: 0.3rem;
-      option {
-        border: none;
-      }
+        .choose-filtering {
+            height: 3.5vh;
+            width: 6vw;
+            border: none;
+            position: relative;
+            top: .25vh;
+            font-size: 1.7vh;
+            cursor: pointer;
+            padding: .5vh .3vw;
+            transition: .2s;
+            margin-top: .3rem;
+            option {
+                border: none;
+            }
 
-      &:focus {
-        outline: 0;
-      }
+            &:focus {
+                outline: 0;
+            }
+        }
     }
-  }
 
   .photosContent {
     margin: 0 auto;
@@ -51,35 +51,36 @@
 }
 
 #light .photosPage {
-  .photos-search-bar-container {
-    .choose-filtering {
-      background-color: rgba(128, 128, 128, 0.15);
+    .photos-search-bar-container {
+        .choose-filtering {
+            background-color: rgba(128, 128, 128, 0.15);
 
-      &:hover {
-        background-color: rgba(128, 128, 128, 0.3);
-      }
+            &:hover {
+                background-color: rgba(128, 128, 128, 0.3);
+            }
 
-      &:active {
-        background-color: rgba(128, 128, 128, 0.3);
-      }
+            &:active {
+                background-color: rgba(128, 128, 128, 0.3);
+            }
+        }
     }
-  }
 }
 
 #dark .photosPage {
-  .photos-search-bar-container {
-    .choose-filtering {
-      background-color: rgba(251, 251, 251, 0.15);
+    .photos-search-bar-container {
+        .choose-filtering {
+            background-color: rgb(58, 58, 58);
+            color: white;
 
-      &:hover {
-        background-color: rgba(251, 251, 251, 0.3);
-      }
+            &:hover {
+                background-color: rgb(58, 58, 58);
+            }
 
-      &:active {
-        background-color: rgba(251, 251, 251, 0.3);
-      }
+            &:active {
+                background-color: rgb(58, 58, 58);
+            }
+        }
     }
-  }
 }
 
 @media (max-width: 480px) {

@@ -1,6 +1,5 @@
 .dropdown-menu-item {
     width: 190px;
-    border-top: 1px rgb(195, 195, 195) solid;
     margin-top: 1rem;
     padding-top: 1rem;
     text-align: center;
@@ -15,15 +14,30 @@
     span {
         position: relative;
         bottom: .5rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        img {
+            scale: 130%;
+        }
+    }
+}
+
+#light .dropdown-menu-item {
+    border-top: 1px rgb(195, 195, 195) solid;
+
+    span {
         color: rgb(62, 62, 62);
     }
 }
 
-.dropdown-menu-item:hover {
-    cursor: pointer;
+#dark .dropdown-menu-item {
+    border-top: 1px rgb(66, 66, 66) solid;
 
-    img {
-        scale: 130%;
+    span {
+        color: white;
     }
 }
 

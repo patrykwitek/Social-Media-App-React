@@ -1,76 +1,63 @@
 button {
-  position: relative;
-  width: 10vw;
-  height: 4.5vh;
-  //   color: black;
-  border-radius: 20px;
-  //   background-color: rgb(247, 247, 247);
-  //   border: 1px lightgray solid;
-  font-size: 2vh;
-  //   box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .submit-icon {
-    position: absolute;
-    right: 50%;
-    transform: translate(50%);
-    font-size: 3.4vh;
-    color: transparent;
-  }
-
-  &:hover {
-    cursor: pointer;
-    color: transparent;
-    // background-color: rgb(63, 63, 67);
-    // border: 1px rgb(63, 63, 67) solid;
-    // box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
+    position: relative;
+    width: 10vw;
+    height: 4.5vh;
+    border-radius: 20px;
+    font-size: 2vh;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .submit-icon {
-      display: block;
-      //   color: white;
+        position: absolute;
+        right: 50%;
+        transform: translate(50%);
+        font-size: 3.4vh;
+        color: transparent;
     }
-  }
+
+    &:hover {
+        cursor: pointer;
+        color: transparent;
+
+        .submit-icon {
+            display: block;
+        }
+    }
 }
 
 #light button {
-  color: black;
-  background-color: rgb(247, 247, 247);
-  border: 1px lightgray solid;
-  box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
+    color: black;
+    background-color: rgb(247, 247, 247);
+    border: 1px lightgray solid;
+    box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
 
-  &:hover {
-    cursor: pointer;
-    color: transparent;
-    background-color: rgb(63, 63, 67);
-    border: 1px rgb(63, 63, 67) solid;
-    box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
+    &:hover {
+        background-color: rgb(63, 63, 67);
+        border: 1px rgb(63, 63, 67) solid;
+        box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
 
-    .submit-icon {
-      color: white;
+        .submit-icon {
+            color: white;
+        }
     }
-  }
 }
 
 #dark button {
-  color: white;
-  background-color: rgb(45, 45, 46);
-  border: 1px rgb(63, 63, 67) solid;
-  box-shadow: 0px 2px 10px -7px rgb(71, 71, 71);
+    color: rgb(255, 255, 255);
+    background-color: rgb(19, 19, 19);
+    border: 1px rgb(54, 54, 54) solid;
+    box-shadow: 0px 0px 10px -7px rgb(255, 255, 255);
 
-  &:hover {
-    cursor: pointer;
-    color: transparent;
-    background-color: rgb(63, 63, 67);
-    border: 1px rgb(63, 63, 67) solid;
-    box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
+    &:hover {
+        background-color: rgb(255, 255, 255);
+        border: 1px rgb(255, 255, 255) solid;
 
-    .submit-icon {
-      color: white;
+        .submit-icon {
+            color: rgb(0, 0, 0);
+        }
     }
-  }
 }
 
 @media (max-width: 480px) {

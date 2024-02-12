@@ -1,17 +1,16 @@
 .somePhoto {
-  border-radius: 20px;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   align-self: center;
+   justify-content: center;
 
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
-
-  .topPartOfPhoto {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: baseline;
-    padding-left: 1vw;
+   .topPartOfPhoto {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: baseline;
+      padding-left: 1vw;
 
     .userPhoto {
       height: 8.6vh;
@@ -20,38 +19,36 @@
       flex-wrap: wrap;
       align-items: center;
 
-      .profilePicture {
-        height: 6vh;
-        border-radius: 50%;
-        transition: 0.2s;
-      }
+         .profilePicture {
+            height: 6vh;
+            border-radius: 50%;
+            transition: .2s;
+         }
 
-      .userPhotoUsername {
-        display: flex;
-        align-items: center;
-
-        text-decoration: none;
-        transition: 0.2s;
-        margin-left: 0.9vw;
-        font-size: 0.9rem;
+         .userPhotoUsername {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: .2s;
+            margin-left: .9vw;
+            font-size: .9rem;
+         }
       }
-    }
 
     .userPhoto:hover {
       cursor: pointer;
 
-      .profilePicture {
-        opacity: 0.8;
-        scale: 105%;
+         .profilePicture {
+            opacity: .8;
+            scale: 105%;
+         }
       }
-    }
 
-    .photoDescription {
-      width: 50vh;
-      margin-bottom: 2vh;
-      padding-top: 2vh;
-
-      font-size: 0.85rem;
+      .photoDescription {
+         width: 50vh;
+         margin-bottom: 2vh;
+         padding-top: 2vh;
+         font-size: .85rem;
 
       .photoTitle {
         display: flex;
@@ -71,10 +68,10 @@
           font-weight: bold;
         }
 
-        .albumLink:hover {
-          cursor: pointer;
-        }
-      }
+            .albumLink:hover {
+               cursor: pointer;
+            }
+         }
 
       .albumTitle.showMore {
         display: block;
@@ -84,115 +81,118 @@
         display: none;
       }
 
-      .showTitle {
-        margin-top: 0.5vh;
-        display: flex;
-        justify-content: center;
-      }
+         .showTitle {
+            margin-top: .5vh;
+            display: flex;
+            justify-content: center;
+         }
 
-      .showTitle:hover {
-        cursor: pointer;
+         .showTitle:hover {
+            cursor: pointer;
+         }
       }
-    }
-  }
+   }
 
-  .bottomPartOfPhoto {
-    .displayedPhoto {
-      height: 55vh;
-      border-radius: 0px 0px 20px 20px;
-      margin-bottom: -0.3rem;
-    }
-  }
+   .bottomPartOfPhoto {
+      .displayedPhoto {
+         height: 55vh;
+         border-radius: 0px 0px 20px 20px;
+         margin-bottom: -.3rem;
+      }
+   }
 }
 
 #light .somePhoto {
-  border: 1px solid lightgray;
-  box-shadow: 0px 5px 16px -10px rgb(40, 40, 40);
+   border: 1px solid lightgray;
+   box-shadow: 0px 5px 16px -10px rgb(40, 40, 40);
 
-  .topPartOfPhoto {
-    border-bottom: 1px solid lightgray;
+   .topPartOfPhoto {
+      border-bottom: 1px solid lightgray;
 
-    .userPhoto {
-      .profilePicture {
-        box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
+      .userPhoto {
+         .profilePicture {
+            box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
+         }
+
+         .userPhotoUsername {
+            color: rgb(21, 102, 172);
+         }
       }
 
-      .userPhotoUsername {
-        color: rgb(21, 102, 172);
-      }
-    }
-
-    .userPhoto:hover {
-      .userPhotoUsername {
-        color: rgb(50, 138, 215);
-      }
-    }
-
-    .photoDescription {
-      border-top: 1px lightgray solid;
-
-      .albumTitle {
-        .albumLink:hover {
-          color: rgb(48, 123, 230);
-        }
+      .userPhoto:hover {
+         .userPhotoUsername {
+            color: rgb(50, 138, 215);
+         }
       }
 
-      .showTitle {
-        color: rgb(0, 35, 162);
-      }
+      .photoDescription {
+         border-top: 1px lightgray solid;
 
-      .showTitle:hover {
-        color: rgb(48, 123, 230);
+         .albumLink:hover {
+            color: rgb(48, 123, 230);
+         }
+
+         .showTitle {
+            color: rgb(0, 35, 162);
+         }
+
+         .showTitle:hover {
+            color: rgb(48, 123, 230);
+         }
       }
-    }
-  }
+   }
 }
 
 #dark .somePhoto {
-  border: 1px solid darkgray;
+   border: none;
+   border-top: 1px rgb(64, 64, 64) solid;
+   box-shadow: none;
+   border-radius: 0;
 
-  .topPartOfPhoto {
-    border-bottom: 1px solid darkgray;
+   .topPartOfPhoto {
+      border-bottom: none;
+      margin-top: 1rem;
 
-    .userPhoto {
-      .profilePicture {
-        box-shadow: 0px 0px 5px -2px rgb(67, 67, 67);
+      .userPhoto {
+         .profilePicture {
+            box-shadow: none;
+         }
+
+         .userPhotoUsername {
+            color: white;
+         }
       }
 
-      .userPhotoUsername {
-        color: rgb(21, 102, 172);
-      }
-    }
-
-    .userPhoto:hover {
-      .userPhotoUsername {
-        color: rgb(50, 138, 215);
-      }
-    }
-
-    .photoDescription {
-      border-top: 1px darkgray solid;
-
-      .photoTitle {
-        color: white;
+      .userPhoto:hover {
+         .userPhotoUsername {
+            color: white;
+         }
       }
 
-      .albumTitle {
-        color: white;
-        .albumLink:hover {
-          color: rgb(48, 123, 230);
-        }
-      }
+      .photoDescription {
+         border-top: none;
+         padding-top: 0;
+         color: white;
 
-      .showTitle {
-        color: rgb(0, 35, 162);
-      }
+         .albumLink:hover {
+            color: rgb(64, 64, 64);
+         }
 
-      .showTitle:hover {
-        color: rgb(48, 123, 230);
+         .showTitle {
+            color: rgb(64, 64, 64);
+         }
+
+         .showTitle:hover {
+            color: rgb(64, 64, 64);
+         }
       }
-    }
-  }
+   }
+
+   .bottomPartOfPhoto {
+      .displayedPhoto {
+         border-radius: 0;
+      }
+   }
 }
 
 @media (max-width: 480px) {

@@ -8,24 +8,24 @@
   padding-top: 5vh;
   padding-bottom: 5vh;
 
-  .add-photo-container {
-    width: 50vw;
-    height: 50vh;
-    border-radius: 3rem;
-    padding: 3vh 2vw;
-    display: flex;
-    flex-direction: column;
+    .add-photo-container {
+        width: 50vw;
+        height: 50vh;
+        border-radius: 3rem;
+        padding: 3vh 2vw;
+        display: flex;
+        flex-direction: column;
 
-    .title-section {
-      width: 40vw;
-      height: 6vh;
-      display: flex;
-      align-self: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 3vh;
-      padding-bottom: 6.5vh;
-      padding-top: 1vh;
+        .title-section {
+            width: 40vw;
+            height: 6vh;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 3vh;
+            padding-bottom: 6.5vh;
+            padding-top: 1vh;
 
       .icon {
         position: relative;
@@ -40,12 +40,12 @@
       padding: 5vh 0;
       align-self: center;
 
-      .photo-title {
-        input {
-          border: none;
-          height: 100%;
-          font-size: 1.1rem;
-          margin-left: 0.6rem;
+            .photo-title {
+                input {
+                    border: none;
+                    height: 100%;
+                    font-size: 1.1rem;
+                    margin-left: .6rem;
 
           &:focus {
             outline: none;
@@ -56,25 +56,25 @@
       .choose-photo {
         margin-top: 2.5vh;
 
-        input {
-          height: 100%;
-          font-size: 1rem;
-          margin-top: 0.5vh;
+                input {
+                    height: 100%;
+                    font-size: 1rem;
+                    margin-top: .5vh;
 
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
 
       .choose-album {
         margin-top: 2.5vh;
 
-        .select-option-album {
-          width: 200px;
+                .select-option-album {
+                    width: 200px;
+                }
+            }
         }
-      }
-    }
 
     .submit-button-section {
       width: 100%;
@@ -88,83 +88,78 @@
 }
 
 #light .add-photo-page {
-  .add-photo-container {
-    background-color: white;
-    border: 1px lightgray solid;
-    box-shadow: 0px 3px 10px -5px rgb(56, 56, 56);
+    .add-photo-container {
+        background-color: white;
+        border: 1px lightgray solid;
+        box-shadow: 0px 3px 10px -5px rgb(56, 56, 56);
 
-    .title-section {
-      border-bottom: 1px lightgray solid;
+        .title-section {
+            border-bottom: 1px lightgray solid;
+        }
+
+        .form-section {
+            .photo-title {
+                input {
+                    background-color: transparent;
+                }
+            }
+
+            .choose-photo {
+                input {
+                    color: rgb(35, 35, 35);
+
+                    &:hover {
+                        color: rgb(110, 110, 110);
+                    }
+                }
+            }
+
+            .choose-album {
+                .select-option-album {
+                    color: black;
+                }
+            }
+        }
     }
-
-    .form-section {
-      .photo-title {
-        input {
-          background-color: transparent;
-        }
-      }
-
-      .choose-photo {
-        input {
-          color: rgb(35, 35, 35);
-
-          &:hover {
-            color: rgb(110, 110, 110);
-          }
-        }
-      }
-
-      .choose-album {
-        .select-option-album {
-          color: black;
-        }
-      }
-    }
-  }
 }
 
 #dark .add-photo-page {
-  .add-photo-container {
-    background-color: rgb(21, 21, 21);
-    border: 1px darkgray solid;
-    box-shadow: 0px 3px 10px -5px rgb(56, 56, 56);
+    color: white;
 
-    .title-section {
-      color: white;
-      border-bottom: 1px darkgray solid;
+    .add-photo-container {
+        background-color: rgb(19, 19, 19);
+        border: 1px rgb(44, 44, 44) solid;
+        box-shadow: 0px 0px 10px -5px rgb(255, 255, 255);
 
-      .icon {
-        color: white;
-      }
+        .title-section {
+            border-bottom: 1px rgb(52, 52, 52) solid;
+        }
+
+        .form-section {
+            .photo-title {
+                input {
+                    background-color: transparent;
+                    color: white;
+                }
+            }
+
+            .choose-photo {
+                input {
+                    color: rgb(255, 255, 255);
+
+                    &:hover {
+                        color: rgb(78, 78, 78);
+                    }
+                }
+            }
+
+            .choose-album {
+                .select-option-album {
+                    color: black;
+                }
+            }
+        }
     }
-
-    .form-section {
-      .photo-title {
-        color: white;
-        input {
-          background-color: transparent;
-        }
-      }
-
-      .choose-photo {
-        color: white;
-        input {
-          color: rgb(220, 220, 220);
-
-          &:hover {
-            color: rgb(145, 145, 145);
-          }
-        }
-      }
-
-      .choose-album {
-        color: white;
-        .select-option-album {
-          color: black;
-        }
-      }
-    }
-  }
 }
 
 @media (max-width: 480px) {

@@ -1,9 +1,9 @@
 .singleUser {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: baseline;
-  padding-bottom: 1.5vh;
-  margin-bottom: 1.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    padding-bottom: 1.5vh;
+    margin-bottom: 1.5vh;
 
   img {
     height: 5vh;
@@ -12,56 +12,52 @@
     transition: 0.3s;
   }
 
-  .singleUser-name {
-    height: 5vh;
-    padding-top: 1.35vh;
-    font-size: 0.95rem;
-    display: flex;
-    justify-items: center;
-    margin-left: 0.8vw;
-    transition: 0.3s;
-  }
-
-  &:hover {
-    cursor: pointer;
-
-    img {
-      scale: 109%;
-      opacity: 0.8;
+    .singleUser-name {
+        height: 5vh;
+        padding-top: 1.35vh;
+        font-size: .95rem;
+        display: flex;
+        justify-items: center;
+        margin-left: .8vw;
+        transition: .3s;
     }
-  }
+
+    &:hover {
+        cursor: pointer;
+
+        img {
+            scale: 109%;
+            opacity: .8;
+        }
+    }
 }
 
 #light .singleUser {
-  border-bottom: 1px lightgray solid;
-
-  .singleUser-name {
-    color: rgb(21, 102, 172);
-  }
-
-  &:hover {
-    cursor: pointer;
+    border-bottom: 1px lightgray solid;
 
     .singleUser-name {
-      color: rgb(50, 138, 215);
+        color: rgb(21, 102, 172);
     }
-  }
+
+    &:hover {
+        .singleUser-name {
+            color: rgb(50, 138, 215);
+        }
+    }
 }
 
 #dark .singleUser {
-  border-bottom: 1px darkgray solid;
-
-  .singleUser-name {
-    color: rgb(21, 102, 172);
-  }
-
-  &:hover {
-    cursor: pointer;
+    border-bottom: 1px rgb(53, 53, 53) solid;
 
     .singleUser-name {
-      color: rgb(50, 138, 215);
+        color: white;
     }
-  }
+
+    &:hover {
+        .singleUser-name {
+            color: rgb(50, 138, 215);
+        }
+    }
 }
 
 @media (max-width: 480px) {

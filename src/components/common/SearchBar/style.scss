@@ -19,6 +19,14 @@
     }
 }
 
+#dark .searchBar {
+    color: white;
+
+    .search-input {
+        color: white;
+    }
+}
+
 @media (max-width: 480px) {
     .searchBar {
         width: 80vw;

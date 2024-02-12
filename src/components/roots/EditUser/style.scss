@@ -109,9 +109,6 @@
         .row {
           color: rgb(2, 23, 48);
 
-          .icon {
-          }
-
           input {
             color: rgb(11, 42, 144);
           }
@@ -132,11 +129,12 @@
 #dark .edit-user-page {
   .edit-user-form {
     background-color: rgb(21, 21, 21);
-    border: 1px darkgray solid;
+    border: 1px rgb(57, 57, 57) solid;
 
     .form-title {
       color: white;
-      border-bottom: 1px darkgray solid;
+      border-bottom: 1px rgb(57, 57, 57) solid;
+
       .icon-title {
         color: white;
       }
@@ -146,6 +144,7 @@
       .section-heading {
         color: white;
       }
+
       .section-content {
         &:hover {
           .row {
