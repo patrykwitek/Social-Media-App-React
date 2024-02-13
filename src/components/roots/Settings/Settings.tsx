@@ -11,22 +11,14 @@ type SettingsProps = {
 
 export const Settings = (props: SettingsProps) => {
     const [translation, i18n] = useTranslation("global");
-
     const chosenLanguage = i18n.resolvedLanguage ?? 'en';
-
     const [selectedLanguage, setSelectedLanguage] = useState(chosenLanguage);
-    const [displayMode, setDisplayMode] = useState('light');
     
     useEffect(() => {
         const displayedModeData = localStorage.getItem('displayMode');
 
-        if (displayedModeData) {
-            try {
-                const parsedDisplayModeData = JSON.parse(displayedModeData);
-                setDisplayMode(parsedDisplayModeData);
-            } catch (error) {
-                console.error('Parsing data from local storage error:', error);
-            }
+        if (displayedModeData == null) {
+            localStorage.setItem('displayMode', JSON.stringify('light'));
         }
     }, []);
 
@@ -37,9 +29,14 @@ export const Settings = (props: SettingsProps) => {
     };
 
     const handleDisplayModeChange = () => {
-        setDisplayMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+        const displayedModeData = localStorage.getItem('displayMode');
 
-        localStorage.setItem('displayMode', JSON.stringify(displayMode));
+        if(JSON.parse(displayedModeData || '') == 'light'){
+            localStorage.setItem('displayMode', JSON.stringify('dark'));
+        }
+        else if(JSON.parse(displayedModeData || '') == 'dark'){
+            localStorage.setItem('displayMode', JSON.stringify('light'));
+        }
 
         props.changeDisplayMode();
     };

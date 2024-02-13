@@ -75,5 +75,19 @@
   "showMore": "Pokaż więcej",
   "showLess": "Pokaż mniej",
   "photos": "Zdjęcia",
-  "showPhoto": "Pokaż zdjęcie"
+  "showPhoto": "Pokaż zdjęcie",
+  "aboutPageParagraphOne1": "Jest to projekt oparty wyłącznie na frameworku React, bez napisanego backendu. Dane są pobierane z ",
+  "aboutPageParagraphOne2": "i jest traktowana jako REST API. Jest to strona, która udostępnia fałszywe API (tabele użytkowników, ich zdjęcia, posty, komentarze itp.)",
+  "aboutPageParagraphOne3": "Celem aplikacji są media społecznościowe, w których użytkownik może się zalogować, wstawiać zdjęcia/posty i komentować prace innych. Niezalogowany użytkownik nie ma dostępu do większości zawartości strony. Ponieważ Placeholder API nie oferuje rzeczywistego zarządzania danymi, po wykonaniu określonego zdarzenia (na przykład wstawienia zdjęcia), dane zdjęcie nie pojawi się na odświeżonej stronie, ale obsługa wymiany danych po stronie React działa poprawnie.",
+  "aboutPageParagraphOne4": "Co warte powiedzieć, wygląd strony został w 100% zaprojektowany przez nas w czystym scss, a do stworzenia aplikacji nie został użyty bootstrap.",
+  "aboutPageParagraphTwoTitle": "Możliwości użytkownika",
+  "aboutPageParagraphTwo1": "Aplikacja wykorzystuje większość tabel udostępnianych przez Placeholder API i większość możliwości zarządzania tymi danymi (operacje CRUD). Dlatego też w aplikacji użytkownik może się zalogować, ale bez podawania hasła (ponieważ Placeholder API ma tylko pole nazwy użytkownika), przeglądać zdjęcia dostępne w bazie danych, przeglądać albumy użytkowników, przeglądać posty i wstawiać/przeglądać komentarze, dodawać nowe zdjęcia i posty oraz usuwać własne, wyszukiwać zdjęcia w przeglądarce oraz wyszukiwać użytkowników o danej nazwie użytkownika w przeglądarce i edytować ich dane profilowe.",
+  "aboutPageParagraphTwo2": "Lista nazw użytkowników strony JSON Placeholder:",
+  "aboutPageParagraphThreeTitle": "Dodatki",
+  "aboutPageParagraphThree1": "Aplikacja posiada kilka ulepszeń, które umilają czas użytkownika podczas korzystania z aplikacji. Należą do nich:",
+  "aboutPageParagraphThree2": "Tryb jasny / ciemny",
+  "aboutPageParagraphThree3": "Tłumaczenia: angielskie, polskie i ukraińskie",
+  "aboutPageParagraphThree4": "Responsywność strony",
+  "previewPage": "Podgląd strony",
+  "previewSettingsPage": "Podgląd ustawień"
 }

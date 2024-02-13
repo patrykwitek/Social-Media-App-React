@@ -19,7 +19,6 @@ button {
 
     &:hover {
         cursor: pointer;
-        color: transparent;
 
         .submit-icon {
             display: block;
@@ -37,6 +36,7 @@ button {
         background-color: rgb(63, 63, 67);
         border: 1px rgb(63, 63, 67) solid;
         box-shadow: 0px 2px 10px -6px rgb(63, 63, 67);
+        color: transparent;
 
         .submit-icon {
             color: white;
@@ -51,11 +51,12 @@ button {
     box-shadow: 0px 0px 10px -7px rgb(255, 255, 255);
 
     &:hover {
-        background-color: rgb(255, 255, 255);
-        border: 1px rgb(255, 255, 255) solid;
+        border: 1px rgb(50, 50, 50) solid;
+        color: transparent;
+        box-shadow: none;
 
         .submit-icon {
-            color: rgb(0, 0, 0);
+            color: white;
         }
     }
 }

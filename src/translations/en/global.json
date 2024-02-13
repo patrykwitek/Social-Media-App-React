@@ -75,5 +75,19 @@
     "showMore": "Show More",
     "showLess": "Show Less",
     "photos": "Photos",
-    "showPhoto": "Show Photo"
+    "showPhoto": "Show Photo",
+    "aboutPageParagraphOne1": "This is a pure React framework project, without a written backend. The data is pulled from the",
+    "aboutPageParagraphOne2": "page and is treated as a REST API. This is a site that provides a fake API (tables of users, their photos, posts, comments, etc.)",
+    "aboutPageParagraphOne3": "The intent of the application is social media, where the user can log in, insert photos/posts and comment on the work of others. A non-logged-in user does not have access to most of the site's content. Since the Placeholder API does not offer real data management, when a particular event is executed (for example, inserting a photo), the photo in question will not appear on the refreshed page, but the data exchange handling on the React side works fine.",
+    "aboutPageParagraphOne4": "What is worth mentioning, the appearance of the site was 100% designed by us in pure scss and bootstrap was not used to create the application.",
+    "aboutPageParagraphTwoTitle": "User's capabilities",
+    "aboutPageParagraphTwo1": "The application uses most of the tables provided by the Placeholder API and most of the capabilities for managing this data (CRUD operations). Therefore, in the application, a user can log in, but without providing a password (since the Placeholder API only has a username field), view photos available in the database, browse user albums, view posts and insert/view comments, add new photos and posts and delete their own, search for photos in the browser, and search for users with a given username in the browser and edit their profile data.",
+    "aboutPageParagraphTwo2": "JSON Placeholder usernames list:",
+    "aboutPageParagraphThreeTitle": "Extras",
+    "aboutPageParagraphThree1": "The application has several upgrades that make the user's time while using the app more pleasant. These include:",
+    "aboutPageParagraphThree2": "Light / Dark mode",
+    "aboutPageParagraphThree3": "Translations: english, polish & ukrainian",
+    "aboutPageParagraphThree4": "Responsiveness for phones",
+    "previewPage": "Preview Page",
+    "previewSettingsPage": "Preview Settings Page"
 }

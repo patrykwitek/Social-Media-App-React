@@ -12,7 +12,7 @@ export const Login = () => {
     const auth = useAuth();
     const [translation, i18n] = useTranslation("global");
 
-    const [username, setUsername] = useState('Antonette'); //Just for quicker testing; TO-DO: remove 'Antonette' in the future
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [passwordMessageVisibility, setPasswordMessageVisibility] = useState('none');
     const [wrongUsernameMessageVisibility, setWrongUsernameMessageVisibility] = useState('none');
@@ -46,7 +46,6 @@ export const Login = () => {
                         type='text'
                         className='username-input'
                         placeholder={translation("login")}
-                        value={username} //Just for quicker testing; TO-DO: remove this line in the future
                         onChange={(event) => setUsername(event.target.value)}
                     />
                 </div>

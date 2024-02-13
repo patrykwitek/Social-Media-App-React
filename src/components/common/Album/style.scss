@@ -129,6 +129,20 @@
             padding-left: 1vw;
             padding-right: 1vw;
             box-shadow: 0px 0px 10px -5px rgb(49, 49, 49);
+
+            .somePhoto {
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
+
+                .showTitle {
+                    display: none;
+                }
+
+                .displayedPhoto {
+                    border-radius: 0;
+                }
+            }
         }
 
         .close {
@@ -142,25 +156,101 @@
                 color: rgb(255, 65, 65);
             }
         }
-
-        .somePhoto {
-            border: none;
-            box-shadow: none;
-            border-radius: 0;
-
-            .showTitle {
-                display: none;
-            }
-
-            .displayedPhoto {
-                border-radius: 0;
-            }
-        }
     }
 }
 
 body.freeze-scrolling {
     overflow-y: hidden;
+}
+
+#light .albumPage {
+    .album-container {
+        border: 1px lightgray solid;
+        background-color: rgb(239, 239, 239);
+        box-shadow: 0px 3px 12px -7px rgb(71, 71, 71);
+
+        .top-container {
+            .album-info {
+                color: rgb(71, 71, 71);
+            }
+        }
+
+        .album-photos {
+            background-color: white;
+            border: 1px lightgray solid;
+            box-shadow: 0px 1px 7px -5px rgb(71, 71, 71);
+
+            &:hover {
+                border: 1px rgb(167, 167, 167) solid;
+            }
+
+        }
+    }
+
+    .photo-modal {
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .photo-modal-content {
+            background: rgb(241, 241, 241);
+            box-shadow: 0px 0px 10px -5px rgb(49, 49, 49);
+
+            .somePhoto {
+                border: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+#dark .albumPage {
+    .album-container {
+        color: white;
+        border: 1px rgb(55, 55, 55) solid;
+        background-color: rgb(19, 19, 19);
+        box-shadow: 0px 3px 12px -7px rgb(255, 255, 255);
+
+        .top-container {
+            .album-info {
+                color: white;
+            }
+        }
+
+        .album-photos {
+            background-color: rgb(19, 19, 19);
+            border: none;
+            box-shadow: none;
+
+            &:hover {
+                border: none;
+            }
+        }
+    }
+
+    .photo-modal {
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .photo-modal-content {
+            background: rgb(19, 19, 19);
+            box-shadow: 0px 0px 10px -5px rgb(255, 255, 255);
+
+            .somePhoto {
+                border: none;
+                box-shadow: none;
+            }
+        }
+
+        .close {
+            color: white;
+
+            &:hover {
+                color: rgb(255, 65, 65);
+            }
+        }
+    }
 }
 
 @media (max-width: 480px) {
